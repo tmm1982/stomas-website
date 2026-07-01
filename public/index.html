@@ -25,117 +25,126 @@
 
 <body class="bg-slate-950 text-white">
 
-    <header class="fixed top-0 left-0 right-0 z-50">
+    <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-    <div class="mx-auto max-w-7xl px-6">
+        <nav class="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 px-6 py-4 backdrop-blur-md">
 
-        <nav class="flex items-center justify-between py-6">
-
+            
             <a href="/" class="group">
 
-                <div class="text-2xl font-black tracking-widest">
-
+                <h2 class="font-display text-3xl font-extrabold tracking-wider text-white">
                     STOMAS
+                </h2>
 
-                </div>
-
-                <div class="text-sm tracking-[0.35em] text-cyan-400">
-
-                    MERE END EN STEMME
-
-                </div>
+                <p class="text-xs uppercase tracking-[0.35em] text-cyan-400 transition group-hover:text-cyan-300">
+                    Mere end en stemme
+                </p>
 
             </a>
 
-            <ul class="hidden md:flex items-center gap-10">
+            
+            <div class="hidden items-center gap-10 text-sm font-medium text-slate-200 lg:flex">
 
-                <li><a href="#om" class="hover:text-cyan-400 transition">Om</a></li>
+                <a href="#historien" class="transition hover:text-cyan-400">
+                    Historien
+                </a>
 
-                <li><a href="#foredrag" class="hover:text-cyan-400 transition">Foredrag</a></li>
+                <a href="#foredrag" class="transition hover:text-cyan-400">
+                    Foredrag
+                </a>
 
-                <li><a href="#kontakt" class="hover:text-cyan-400 transition">Kontakt</a></li>
+                <a href="#blog" class="transition hover:text-cyan-400">
+                    Blog
+                </a>
 
-            </ul>
+                <a href="#kontakt" class="transition hover:text-cyan-400">
+                    Kontakt
+                </a>
+
+            </div>
+
+            
+            <a href="#kontakt"
+               class="hidden rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:scale-105 hover:bg-cyan-300 lg:inline-flex">
+
+                Book foredrag
+
+            </a>
 
         </nav>
 
     </div>
-
 </header>
 
 
     <main>
         
 
-<section
-class="min-h-screen bg-slate-950 text-white">
+<section class="relative min-h-screen bg-slate-950 text-white">
 
-<div
-class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pt-32 pb-16 lg:grid-cols-2">
+    <div class="mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-40 pb-24">
 
-<div>
+        <div class="grid w-full items-center gap-16 lg:grid-cols-2">
 
-<p
-class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+            
 
-MERE END EN STEMME
+            <div>
 
-</p>
+                <p class="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+                    FOREDRAG · LIVSMOD · KRÆFT · ADHD
+                </p>
 
-<h1
-class="font-display text-5xl font-extrabold leading-tight md:text-7xl">
+                <h1 class="font-display text-5xl font-extrabold leading-none md:text-7xl">
+                    Jeg mistede<br>
+                    min stemme.
+                </h1>
 
-Jeg mistede
-min stemme.
+                <h2 class="mt-6 text-2xl font-semibold text-white md:text-4xl">
+                    Men jeg mistede aldrig noget at sige.
+                </h2>
 
-</h1>
+                <p class="mt-8 max-w-xl text-lg leading-8 text-slate-300">
+                    Jeg holder foredrag om kræft, livet som strubeløs,
+                    ADHD, humor og håbet om at finde sig selv igen.
+                    Et foredrag, der giver publikum perspektiv, eftertanke
+                    og troen på, at livet kan tage en ny retning.
+                </p>
 
-<p
-class="mt-8 max-w-xl text-xl leading-relaxed text-slate-300">
+                <div class="mt-10 flex flex-wrap gap-4">
 
-Et foredrag om identitet,
-kræft,
-humor,
-ADHD
-og håbet om,
-at livet kan blive godt igen.
+                    <a href="#kontakt"
+                        class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition-all duration-300 hover:scale-105 hover:bg-cyan-300">
 
-</p>
+                        Book et foredrag
 
-<div
-class="mt-10 flex flex-wrap gap-4">
+                    </a>
 
-<a
-href="#kontakt"
-class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:scale-105">
+                    <a href="#historien"
+                        class="rounded-xl border border-slate-600 px-8 py-4 text-slate-200 transition-all duration-300 hover:border-cyan-400 hover:text-white">
 
-Book et foredrag
+                        Min historie
 
-</a>
+                    </a>
 
-<a
-href="#om"
-class="rounded-xl border border-slate-600 px-8 py-4 transition hover:border-cyan-400">
+                </div>
 
-Min historie
+            </div>
 
-</a>
+            
 
-</div>
+            <div class="flex justify-center">
 
-</div>
+                <img
+                    src="/images/hero/thomas.png"
+                    alt="Thomas Mølgaard"
+                    class="w-full max-w-md object-contain">
 
-<div
-class="flex justify-center">
+            </div>
 
-<img
-src="/images/hero/thomas.png"
-alt="Thomas"
-class="max-h-[700px] rounded-3xl object-cover">
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </section>
 
