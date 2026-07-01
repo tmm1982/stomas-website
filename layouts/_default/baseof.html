@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    {{ partial "layout/head.html" . }}
+</head>
+
+<body class="bg-slate-950 text-white">
+
+    {{ partial "layout/navbar.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "layout/footer.html" . }}
+
+</body>
+
+</html>
