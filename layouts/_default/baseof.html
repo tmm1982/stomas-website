@@ -2,18 +2,18 @@
 <html lang="da">
 
 <head>
-    {{ partial "head.html" . }}
+    {{ partial "layout/head.html" . }}
 </head>
 
-<body>
+<body class="bg-slate-950 text-white">
 
-    {{ partial "navbar.html" . }}
+    {{ partial "layout/navbar.html" . }}
 
     <main>
         {{ block "main" . }}{{ end }}
     </main>
 
-    {{ partial "footer.html" . }}
+    {{ partial "layout/footer.html" . }}
 
 </body>
 

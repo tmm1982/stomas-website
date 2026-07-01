@@ -11,8 +11,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "dev:css": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./static/css/main.css --watch",
+  "build:css": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./static/css/main.css --minify"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tmm1982/stomas-website.git"
