@@ -2,12 +2,78 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ .Site.Title }}</title>
+<title>
+{{ if .Title }}
+{{ .Title }} | {{ end }}{{ .Site.Title }}
+</title>
+
+<meta name="description"
+      content="{{ with .Description }}{{ . }}{{ else }}Foredrag om livsmod, humor, kræft, ADHD og livet efter en total laryngektomi.{{ end }}">
+
+<meta name="author" content="Thomas Mølgaard">
+
+<meta name="robots" content="index,follow">
+
+<meta name="theme-color" content="#020617">
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="STOMAS">
+
+<meta property="og:title"
+      content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+
+<meta property="og:description"
+      content="{{ with .Description }}{{ . }}{{ else }}Foredrag om livsmod, humor, kræft, ADHD og livet efter en total laryngektomi.{{ end }}">
+
+<meta property="og:url" content="{{ .Permalink }}">
+
+<meta property="og:image" content="/images/og-image.jpg">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+
+<meta name="twitter:description"
+      content="{{ with .Description }}{{ . }}{{ else }}Foredrag om livsmod, humor, kræft, ADHD og livet efter en total laryngektomi.{{ end }}">
+
+<meta name="twitter:image" content="/images/og-image.jpg">
+
+<!-- Fonts -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet">
+
+<!-- CSS -->
 
 <link rel="stylesheet" href="/css/main.css">
+
+<!-- Favicon (kommer senere) -->
+
+<link rel="icon" href="/favicon.ico">
+
+<!-- Schema.org -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Thomas Mølgaard",
+  "url":"https://stomas.dk",
+  "email":"info@stomas.dk",
+  "telephone":"+4521907305",
+  "jobTitle":"Foredragsholder",
+  "description":"Foredrag om livsmod, humor, kræft, ADHD og livet efter en total laryngektomi."
+}
+</script>

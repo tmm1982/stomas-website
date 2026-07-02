@@ -1,0 +1,21 @@
+{{- $variant := .variant | default "primary" -}}
+
+{{ if eq $variant "primary" }}
+
+<a href="{{ .href }}"
+   class="inline-flex items-center justify-center rounded-xl bg-cyan-400 px-8 py-4 text-lg font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/20">
+
+    {{ .text }}
+
+</a>
+
+{{ else if eq $variant "secondary" }}
+
+<a href="{{ .href }}"
+   class="inline-flex items-center justify-center rounded-xl border border-slate-700 px-8 py-4 text-lg text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-900">
+
+    {{ .text }}
+
+</a>
+
+{{ end }}

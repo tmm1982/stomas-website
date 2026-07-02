@@ -1,0 +1,19 @@
+<div class="max-w-3xl">
+
+    {{ with .eyebrow }}
+    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+        {{ . }}
+    </p>
+    {{ end }}
+
+    <h2 class="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl">
+        {{ .title }}
+    </h2>
+
+    {{ with .text }}
+    <p class="mt-8 text-xl leading-9 text-slate-300">
+        {{ . }}
+    </p>
+    {{ end }}
+
+</div>

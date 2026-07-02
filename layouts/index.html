@@ -1,19 +1,13 @@
 {{ define "main" }}
 
-<section class="flex min-h-screen items-center justify-center">
+{{ partial "sections/hero.html" . }}
 
-    <div class="text-center">
+{{ partial "sections/why.html" . }}
 
-        <h1 class="text-6xl font-bold text-cyan-400">
-            STOMAS V2
-        </h1>
+{{ partial "sections/story.html" . }}
 
-        <p class="mt-6 text-xl text-slate-300">
-            Fundamentet er klar 🚀
-        </p>
+{{ partial "sections/audience.html" . }}
 
-    </div>
-
-</section>
+{{ partial "sections/booking.html" . }}
 
 {{ end }}
