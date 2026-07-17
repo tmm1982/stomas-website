@@ -1,94 +1,49 @@
-/* ==========================================================
-   STOMAS Studio
-   Signature Controller v2
-========================================================== */
+// ==========================================================
+// STOMAS Creator
+// Signature Studio
+// Live Preview Engine v1
+// ==========================================================
 
-document.addEventListener("DOMContentLoaded", init);
-
-const defaults = {
-
-    name: "Thomas Fugleberg Mølgaard",
-
-    title1: "Næstformand",
-
-    title2: "Strubeløskonsulent",
-
-    title3: "Foredragsholder",
-
-    email: "tmm@live.dk",
-
-    phone: "21 90 73 05",
-
-    website: "stomas.dk"
-
+const fields = {
+    name: "sig-name",
+    title1: "sig-title1",
+    company1: "sig-company1",
+    title2: "sig-title2",
+    company2: "sig-company2",
+    title3: "sig-title3",
+    company3: "sig-company3",
+    email: "sig-email",
+    phone: "sig-phone",
+    website: "sig-website"
 };
 
-function init() {
+function updateField(inputId, outputId){
 
-    bindInputs();
+    const input = document.getElementById(inputId);
+    const output = document.getElementById(outputId);
 
-    fillDefaults();
+    if(!input || !output) return;
 
-    updatePreview();
-
-}
-
-function bindInputs() {
-
-    document
-        .querySelectorAll("input")
-        .forEach(input => {
-
-            input.addEventListener("input", updatePreview);
-
-        });
+    output.textContent = input.value;
 
 }
 
-function fillDefaults(){
+function render(){
 
-    Object.keys(defaults).forEach(key=>{
-
-        const input=document.getElementById(key);
-
-        if(!input) return;
-
-        if(input.value===""){
-
-            input.value=defaults[key];
-
-        }
-
+    Object.entries(fields).forEach(([input,output])=>{
+        updateField(input,output);
     });
 
 }
 
-function updatePreview(){
+Object.keys(fields).forEach(id=>{
 
-    sync("name","sig-name");
+    const el=document.getElementById(id);
 
-    sync("title1","sig-title1");
+    if(!el) return;
 
-    sync("title2","sig-title2");
+    el.addEventListener("input",render);
 
-    sync("title3","sig-title3");
+});
 
-    sync("email","sig-email");
-
-    sync("phone","sig-phone");
-
-    sync("website","sig-website");
-
-}
-
-function sync(inputId,targetId){
-
-    const input=document.getElementById(inputId);
-
-    const target=document.getElementById(targetId);
-
-    if(!input || !target) return;
-
-    target.textContent=input.value;
-
-}
+render();

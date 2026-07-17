@@ -74,4 +74,7 @@
 {{ $signature := resources.Get "css/signature.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $signature.RelPermalink }}">
 
+{{ $js := resources.Get "js/signature.js" }}
+<script src="{{ $js.RelPermalink }}"></script>
+
 {{ end }}
