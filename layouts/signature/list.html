@@ -1,0 +1,77 @@
+{{ define "main" }}
+
+<div class="st-shell">
+
+    <!-- ==========================================
+         Sidebar
+    =========================================== -->
+
+    <aside class="st-sidebar">
+
+        {{ partial "signature/sidebar.html" . }}
+
+    </aside>
+
+    <!-- ==========================================
+         Workspace
+    =========================================== -->
+
+    <section class="st-workspace">
+
+        <!-- Toolbar -->
+
+        <header class="st-toolbar">
+
+            <div class="toolbar-left">
+
+                <h1>Signature Studio</h1>
+
+                <span class="toolbar-version">
+
+                    STOMAS Studio v0.1 RC1
+
+                </span>
+
+            </div>
+
+            <div class="toolbar-right">
+
+                <button
+                    id="copy-signature"
+                    class="st-btn">
+
+                    📋 Kopiér signatur
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Canvas -->
+
+        <main class="st-content">
+
+            <div class="st-canvas">
+
+                <div class="st-canvas-inner">
+
+                    {{ partial "signature/signature.html" . }}
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+</div>
+
+{{ $studio := resources.Get "css/studio.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $studio.RelPermalink }}">
+
+{{ $signature := resources.Get "css/signature.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $signature.RelPermalink }}">
+
+{{ end }}

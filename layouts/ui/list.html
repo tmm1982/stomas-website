@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<div class="ui-shell">
+
+    <aside class="ui-nav">
+
+        <div class="logo">
+            <h2>STOMAS UI</h2>
+            <small>Version 0.1</small>
+        </div>
+
+        <nav>
+
+            <a href="#overview">Overview</a>
+            <a href="#colors">Colors</a>
+            <a href="#typography">Typography</a>
+            <a href="#cards">Cards</a>
+            <a href="#buttons">Buttons</a>
+            <a href="#inputs">Inputs</a>
+            <a href="#signature">Signature Studio</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="ui-main">
+
+        {{ partial "ui/overview.html" . }}
+        {{ partial "ui/colors.html" . }}
+        {{ partial "ui/cards-demo.html" . }}
+
+    </main>
+
+</div>
+
+{{ end }}

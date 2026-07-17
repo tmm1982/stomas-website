@@ -1,0 +1,53 @@
+.st-panel{
+
+    background:#172033;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+}
+
+.st-panel h3{
+
+    margin-top:0;
+
+    color:white;
+
+}
+
+.st-panel label{
+
+    display:block;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    margin-top:18px;
+
+    margin-bottom:6px;
+
+}
+
+.st-panel input{
+
+    width:100%;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    box-sizing:border-box;
+
+}

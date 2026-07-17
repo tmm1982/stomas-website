@@ -1,0 +1,236 @@
+/* ==========================================================
+   STOMAS Studio
+   Signature v0.1 RC1
+========================================================== */
+
+.mail-signature{
+
+    width:760px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 30px 70px rgba(15,23,42,.12);
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 170px;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-accent{
+
+    height:8px;
+
+    background:#1F6FB2;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-content{
+
+    padding:36px 40px;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-header h1{
+
+    margin:0;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#16385F;
+
+    line-height:1.15;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-roles{
+
+    margin-top:28px;
+
+}
+
+.sig-role{
+
+    margin-bottom:22px;
+
+}
+
+.sig-role:last-child{
+
+    margin-bottom:0;
+
+}
+
+.sig-role-title{
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#1F6FB2;
+
+}
+
+.sig-role-company{
+
+    margin-top:4px;
+
+    color:#6b7280;
+
+    font-size:15px;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-divider{
+
+    margin:28px 0;
+
+    height:1px;
+
+    background:#eceff3;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.sig-contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:15px;
+
+    color:#374151;
+
+}
+
+.sig-icon{
+
+    width:22px;
+
+    text-align:center;
+
+    color:#1F6FB2;
+
+    font-size:16px;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+}
+
+.sig-footer img{
+
+    height:34px;
+
+    width:auto;
+
+}
+
+/* ---------------------------------------------------------- */
+
+.sig-brand{
+
+    background:#f8fafc;
+
+    border-left:1px solid #eceff3;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:36px 22px;
+
+}
+
+.sig-logo{
+    width:80px;
+}
+
+.sig-brand-text{
+
+    margin-top:22px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+/* ---------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .mail-signature{
+
+        width:100%;
+
+    }
+
+    .sig-wrapper{
+    display:grid;
+    grid-template-columns:1fr 130px;
+}
+
+    .sig-brand{
+
+        border-left:none;
+
+        border-top:1px solid #eceff3;
+
+    }
+
+}

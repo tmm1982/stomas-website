@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+{{ partial "guide/hero.html" . }}
+
+<section class="mx-auto max-w-4xl px-6 py-12">
+
+    {{ partial "guide/shortanswer.html" . }}
+    {{ partial "guide/toc.html" . }}
+
+    <article class="guide mt-16">
+
+        {{ .Content }}
+        {{ partial "guide/thomas.html" . }}
+
+    </article>
+
+</section>
+
+{{ end }}

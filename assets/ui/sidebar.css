@@ -1,0 +1,120 @@
+/* ==========================================================
+   STOMAS Studio
+   Sidebar
+========================================================== */
+
+.st-brand{
+
+    margin-bottom:32px;
+
+    padding-bottom:24px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.st-brand-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin:0;
+
+}
+
+.st-brand-subtitle{
+
+    color:#94a3b8;
+
+    margin-top:6px;
+
+    font-size:14px;
+
+}
+
+.st-brand-version{
+
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:#1e293b;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
+
+.st-panel{
+
+    margin-bottom:24px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.st-panel h3{
+
+    margin:0 0 18px 0;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+}
+
+.st-panel label{
+
+    display:block;
+
+    margin:14px 0 6px;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+.st-panel input{
+
+    width:100%;
+
+    padding:12px 14px;
+
+    border-radius:10px;
+
+    border:1px solid #374151;
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    box-sizing:border-box;
+
+    transition:.2s;
+
+}
+
+.st-panel input:focus{
+
+    outline:none;
+
+    border-color:#1F6FB2;
+
+    box-shadow:0 0 0 3px rgba(31,111,178,.20);
+
+}

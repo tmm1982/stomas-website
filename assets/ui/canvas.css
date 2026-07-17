@@ -1,0 +1,31 @@
+/* ==========================================================
+   STOMAS UI
+   Canvas
+========================================================== */
+
+.st-canvas{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    min-height:100%;
+
+    padding:60px;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:32px 32px;
+
+}
+
+.st-canvas-inner{
+
+    width:100%;
+    max-width:1000px;
+
+}

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<script src="/js/main.js"></script>
 <html lang="da">
 
 <head>
     {{ partial "layout/head.html" . }}
 </head>
 
-<body class="bg-slate-950 text-white">
+<body class="{{ if eq .Section "signature" }}studio-body{{ else }}bg-slate-950 text-white{{ end }}">
 
-    {{ partial "layout/navbar.html" . }}
+    {{ if ne .Section "signature" }}
+        {{ partial "layout/navbar.html" . }}
+    {{ end }}
 
     <main>
         {{ block "main" . }}{{ end }}
     </main>
 
-    {{ partial "layout/footer.html" . }}
+    {{ if ne .Section "signature" }}
+        {{ partial "layout/footer.html" . }}
+    {{ end }}
 
 </body>
 

@@ -1,0 +1,91 @@
+/* ==========================================================
+   STOMAS Creator
+========================================================== */
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+    height:100%;
+
+}
+
+.studio-body{
+
+    margin:0;
+    background:#eef2f7;
+    overflow:hidden;
+
+}
+
+.st-shell{
+
+    display:grid;
+    grid-template-columns:340px 1fr;
+    height:100vh;
+
+}
+
+.st-sidebar{
+
+    background:#0f172a;
+    overflow:auto;
+    padding:30px;
+
+    border-right:1px solid rgba(255,255,255,.06);
+
+}
+
+.st-workspace{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.st-toolbar{
+
+    height:72px;
+
+    background:white;
+
+    border-bottom:1px solid #e5e7eb;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+}
+
+.st-content{
+
+    flex:1;
+
+    overflow:auto;
+
+}
+
+.st-canvas{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:60px;
+
+    min-height:100%;
+
+    background-image:
+        linear-gradient(#e8ecf3 1px, transparent 1px),
+        linear-gradient(90deg,#e8ecf3 1px,transparent 1px);
+
+    background-size:28px 28px;
+
+}

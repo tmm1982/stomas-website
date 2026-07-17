@@ -1,0 +1,72 @@
+/* ==========================================================
+   STOMAS UI
+   Card Component
+========================================================== */
+
+.st-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    border:1px solid #e5e7eb;
+
+    padding:28px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.st-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.12);
+
+}
+
+.st-card-header{
+
+    margin-bottom:24px;
+
+}
+
+.st-card-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--stomas-dark);
+
+    margin:0;
+
+}
+
+.st-card-subtitle{
+
+    margin-top:8px;
+
+    color:var(--gray-500);
+
+}
+
+.st-card-body{
+
+}
+
+.st-card-footer{
+
+    margin-top:28px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--gray-200);
+
+}

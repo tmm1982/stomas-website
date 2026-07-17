@@ -1,0 +1,35 @@
+<div class="st-shell">
+
+    <aside class="st-sidebar">
+
+        {{ block "sidebar" . }}{{ end }}
+
+    </aside>
+
+    <section class="st-workspace">
+
+        <header class="st-toolbar">
+
+            <div class="st-title">
+
+                {{ .Title }}
+
+            </div>
+
+            <div class="st-version">
+
+                STOMAS Studio v0.1
+
+            </div>
+
+        </header>
+
+        <main class="st-content">
+
+            {{ block "content" . }}{{ end }}
+
+        </main>
+
+    </section>
+
+</div>

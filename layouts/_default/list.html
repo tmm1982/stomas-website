@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<section class="mx-auto max-w-5xl px-6 py-32">
+
+    <h1 class="mb-12 text-5xl font-black">
+
+        {{ .Title }}
+
+    </h1>
+
+    {{ .Content }}
+
+    <div class="mt-12 space-y-8">
+
+        {{ range .Pages }}
+
+        <article class="rounded-2xl border border-slate-800 p-8">
+
+            <h2 class="text-3xl font-bold">
+
+                <a href="{{ .RelPermalink }}">
+
+                    {{ .Title }}
+
+                </a>
+
+            </h2>
+
+            {{ with .Description }}
+
+            <p class="mt-4 text-slate-400">
+
+                {{ . }}
+
+            </p>
+
+            {{ end }}
+
+        </article>
+
+        {{ end }}
+
+    </div>
+
+</section>
+
+{{ end }}

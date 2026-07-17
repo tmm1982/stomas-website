@@ -1,0 +1,33 @@
+<section class="my-16 rounded-3xl border border-sky-500/20 bg-sky-500/10 p-8">
+
+    <div class="flex items-start gap-4">
+
+        <div class="text-3xl">
+            💙
+        </div>
+
+        <div>
+
+            <h2 class="text-2xl font-bold text-white">
+                Kort svar
+            </h2>
+
+            <p class="mt-4 text-lg leading-relaxed text-slate-300">
+
+                {{ with .Params.shortanswer }}
+
+                    {{ . }}
+
+                {{ else }}
+
+                    Denne guide har endnu ikke et kort svar.
+
+                {{ end }}
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
