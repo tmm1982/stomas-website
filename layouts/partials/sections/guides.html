@@ -1,0 +1,33 @@
+<section class="py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+
+    <h2 class="text-3xl font-bold mb-8">
+      Seneste guider
+    </h2>
+
+    {{ range first 3 (where site.RegularPages "Section" "guiden") }}
+
+    <article class="mb-8 border-b pb-8">
+
+      <h3 class="text-2xl font-semibold mb-2">
+        <a href="{{ .RelPermalink }}" class="hover:underline">
+          {{ .Title }}
+        </a>
+      </h3>
+
+      {{ with .Description }}
+      <p class="text-gray-600 mb-4">
+        {{ . }}
+      </p>
+      {{ end }}
+
+      <a href="{{ .RelPermalink }}" class="font-semibold">
+        Læs guiden →
+      </a>
+
+    </article>
+
+    {{ end }}
+
+  </div>
+</section>
