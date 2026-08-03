@@ -1,0 +1,133 @@
+<article class="group overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10">
+
+    <a href="{{ .RelPermalink }}" class="block">
+
+        <!-- Hero -->
+
+        <div class="relative h-56 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+
+            {{ with .Resources.GetMatch "hero*" }}
+
+                <img
+                    src="{{ .RelPermalink }}"
+                    alt="{{ $.Title }}"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+
+            {{ else }}
+
+                <!-- STOMAS Placeholder -->
+
+                <div class="relative flex h-full items-center justify-center overflow-hidden">
+
+                    <!-- Dekorative cirkler -->
+
+                    <div class="absolute inset-0">
+
+                        <div class="absolute -top-20 -right-20 h-64 w-64 rounded-full border border-cyan-400/10"></div>
+
+                        <div class="absolute -bottom-28 -left-24 h-80 w-80 rounded-full border border-cyan-400/10"></div>
+
+                    </div>
+
+                    <!-- Indhold -->
+
+                    <div class="relative text-center">
+
+                        <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/10">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 class="h-10 w-10 text-cyan-400"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor"
+                                 stroke-width="1.5">
+
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M9 12h6"/>
+
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M12 9v6"/>
+
+                                <circle cx="12"
+                                        cy="12"
+                                        r="9"/>
+
+                            </svg>
+
+                        </div>
+
+                        <p class="text-xs font-semibold uppercase tracking-[0.45em] text-cyan-400">
+
+                            STOMAS GUIDEN
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            {{ end }}
+
+        </div>
+
+        <!-- Content -->
+
+        <div class="p-8">
+
+            {{ with .Params.category }}
+
+                <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-400">
+
+                    {{ . }}
+
+                </p>
+
+            {{ end }}
+
+            <h3 class="text-3xl font-bold leading-tight transition-colors duration-300 group-hover:text-cyan-300">
+
+                {{ .Title }}
+
+            </h3>
+
+            {{ with .Description }}
+
+                <p class="mt-5 text-lg leading-8 text-slate-400">
+
+                    {{ . }}
+
+                </p>
+
+            {{ end }}
+
+            {{ with .Params.summary }}
+
+                <div class="mt-8 border-l-2 border-cyan-400 pl-5">
+
+                    <p class="italic leading-7 text-slate-300">
+
+                        "{{ . }}"
+
+                    </p>
+
+                </div>
+
+            {{ end }}
+
+            <div class="mt-10 flex justify-end">
+
+                <span class="font-semibold text-cyan-400 transition-transform duration-300 group-hover:translate-x-1">
+
+                    Læs guiden →
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </a>
+
+</article>

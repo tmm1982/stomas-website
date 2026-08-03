@@ -1,33 +1,52 @@
-<section class="py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
+<section class="py-24">
+    <div class="container mx-auto max-w-7xl px-6">
 
-    <h2 class="text-3xl font-bold mb-8">
-      Seneste guider
-    </h2>
+        <!-- Overskrift -->
 
-    {{ range first 3 (where site.RegularPages "Section" "guiden") }}
+        <div class="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 
-    <article class="mb-8 border-b pb-8">
+            <div class="max-w-3xl">
 
-      <h3 class="text-2xl font-semibold mb-2">
-        <a href="{{ .RelPermalink }}" class="hover:underline">
-          {{ .Title }}
-        </a>
-      </h3>
+                <p class="mb-3 text-xs font-semibold uppercase tracking-[0.4em] text-cyan-400">
+                    STOMAS Guiden
+                </p>
 
-      {{ with .Description }}
-      <p class="text-gray-600 mb-4">
-        {{ . }}
-      </p>
-      {{ end }}
+                <h2 class="mb-5 text-5xl font-bold tracking-tight">
+                    Seneste guider
+                </h2>
 
-      <a href="{{ .RelPermalink }}" class="font-semibold">
-        Læs guiden →
-      </a>
+                <p class="text-lg leading-8 text-slate-400">
+                    Ærlige erfaringer, praktiske råd og svar på de spørgsmål,
+                    jeg selv stod med efter min operation.
+                </p>
 
-    </article>
+            </div>
 
-    {{ end }}
+            {{ if gt (len (where site.RegularPages "Section" "guiden")) 3 }}
 
-  </div>
+            <a href="/guiden/"
+               class="font-semibold text-cyan-400 transition hover:text-cyan-300">
+
+                Se alle guider →
+
+            </a>
+
+            {{ end }}
+
+        </div>
+
+
+        <!-- Kort -->
+
+        <div class="grid gap-10 lg:grid-cols-3">
+
+            {{ range first 3 (where site.RegularPages "Section" "guiden") }}
+
+                {{ partial "components/guide-card.html" . }}
+
+            {{ end }}
+
+        </div>
+
+    </div>
 </section>

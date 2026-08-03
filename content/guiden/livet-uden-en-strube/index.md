@@ -1,17 +1,11 @@
 ---
-description: Hvordan er livet efter en total laryngektomi? En personlig
-  og ærlig fortælling om at leve som strubeløs -- med både udfordringer,
-  håb og praktiske erfaringer.
+title: "Livet uden en strube – det ville jeg ønske, nogen havde fortalt mig"
+description: "Hvordan er livet efter en total laryngektomi? En personlig og ærlig fortælling om at leve som strubeløs."
+date: 2026-07-31
 draft: false
-keywords:
-- strubeløs
-- total laryngektomi
-- stoma
-- Provox
-- livet efter laryngektomi
-slug: livet-uden-en-strube
-title: Livet uden en strube -- det ville jeg ønske, nogen havde fortalt
-  mig
+
+category: "Livet som strubeløs"
+summary: "Ja. Man kan få et godt liv igen."
 ---
 
 # Livet uden en strube -- det ville jeg ønske, nogen havde fortalt mig
