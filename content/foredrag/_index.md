@@ -1,6 +1,6 @@
 ---
-title: "Foredrag"
-description: "Et foredrag om livsmod, humor, kræft, ADHD og håbet om, at livet kan blive godt igen."
+title: "Foredrag & undervisning"
+description: "Patientbaserede foredrag og undervisning om livet efter laryngektomi – til sundhedsprofessionelle, studerende, virksomheder og organisationer."
 layout: "foredrag"
 url: "/foredrag/"
 ---
