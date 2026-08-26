@@ -1,6 +1,6 @@
 ---
-title: "Kontakt"
-description: "Kontakt STOMAS for en uforpligtende snak om et foredrag."
+title: "Kontakt STOMAS"
+description: "Kontakt STOMAS om foredrag, undervisning, samarbejde, presse, podcast, events eller andre idéer."
 layout: "kontakt"
 url: "/kontakt/"
 ---
