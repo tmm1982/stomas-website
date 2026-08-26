@@ -1,22 +1,26 @@
-<header id="navbar"
-class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
+<header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-slate-950/90 backdrop-blur transition-all duration-500">
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+    <a href="/" class="text-3xl font-extrabold tracking-wide">STOMAS</a>
 
-    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+    <nav class="hidden items-center gap-7 text-sm font-semibold md:flex">
+      <a class="transition hover:text-cyan-400" href="/#historie">Om STOMAS</a>
+      <a class="transition hover:text-cyan-400" href="/foredrag/">Foredrag & undervisning</a>
+      <a class="transition hover:text-cyan-400" href="/samarbejde/">Samarbejde</a>
+      <a class="transition hover:text-cyan-400" href="/medier/">Medier</a>
+      <a class="transition hover:text-cyan-400" href="/guiden/">Guides</a>
+      <a class="rounded-lg bg-cyan-400 px-4 py-2 text-slate-950 transition hover:bg-cyan-300" href="/kontakt/">Kontakt</a>
+    </nav>
 
-        <a href="/" class="text-3xl font-extrabold tracking-wide">
-            STOMAS
-        </a>
-
-        <nav class="hidden gap-10 md:flex">
-
-            <a href="#historie">Historien</a>
-
-            <a href="#foredrag">Foredrag</a>
-
-            <a href="#booking">Booking</a>
-
-        </nav>
-
-    </div>
-
+    <details class="relative md:hidden">
+      <summary class="cursor-pointer list-none rounded-lg border border-slate-700 px-4 py-2 font-semibold">Menu</summary>
+      <nav class="absolute right-0 mt-3 w-72 space-y-1 rounded-2xl border border-slate-800 bg-slate-950 p-4 shadow-2xl">
+        <a class="block rounded-lg px-4 py-3 hover:bg-slate-900" href="/#historie">Om STOMAS</a>
+        <a class="block rounded-lg px-4 py-3 hover:bg-slate-900" href="/foredrag/">Foredrag & undervisning</a>
+        <a class="block rounded-lg px-4 py-3 hover:bg-slate-900" href="/samarbejde/">Samarbejde</a>
+        <a class="block rounded-lg px-4 py-3 hover:bg-slate-900" href="/medier/">Presse & medier</a>
+        <a class="block rounded-lg px-4 py-3 hover:bg-slate-900" href="/guiden/">Guides</a>
+        <a class="mt-2 block rounded-lg bg-cyan-400 px-4 py-3 font-semibold text-slate-950" href="/kontakt/">Kontakt STOMAS</a>
+      </nav>
+    </details>
+  </div>
 </header>
