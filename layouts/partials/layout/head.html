@@ -32,7 +32,7 @@
 
 <meta property="og:url" content="{{ .Permalink }}">
 
-<meta property="og:image" content="/images/og-image.jpg">
+<meta property="og:image" content="{{ with .Params.image }}{{ . }}{{ else }}/images/og-image.jpg{{ end }}">
 
 <!-- Twitter -->
 
@@ -44,7 +44,7 @@
 <meta name="twitter:description"
       content="{{ with .Description }}{{ . }}{{ else }}Foredrag om livsmod, humor, kræft, ADHD og livet efter en total laryngektomi.{{ end }}">
 
-<meta name="twitter:image" content="/images/og-image.jpg">
+<meta name="twitter:image" content="{{ with .Params.image }}{{ . }}{{ else }}/images/og-image.jpg{{ end }}">
 
 <!-- Fonts -->
 
