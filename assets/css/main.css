@@ -328,10 +328,10 @@
 .teaching-case-back:hover,
 .teaching-case-back:focus-visible { color:#22d3ee; }
 .teaching-case-hero h1 {
-    max-width:13ch;
+    max-width:15ch;
     margin-top:1rem;
     font-family:Manrope, Inter, sans-serif;
-    font-size:clamp(2.65rem, 6.5vw, 5.4rem);
+    font-size:clamp(2.65rem, 5.5vw, 4.65rem);
     font-weight:800;
     letter-spacing:-.035em;
     line-height:1.02;
