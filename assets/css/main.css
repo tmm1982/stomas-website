@@ -791,3 +791,13 @@
 @media (min-width:64rem) {
     .workshop-hero__inner { grid-template-columns:minmax(0, 1.02fr) minmax(27rem, .88fr); }
 }
+
+.site-footer-links {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.75rem 1.25rem;
+}
+@media (min-width:48rem) {
+    .site-footer-links { justify-content:flex-end; }
+}
