@@ -134,7 +134,7 @@ Ja, men det kræver særlige hjælpemidler.
 
 Thomas er strubeløskonsulent, foredragsholder og stifter af STOMAS.
 
-Han deler sine egne erfaringer for at hjælpe patienter, pårørende og
+Han deler sine egne erfaringer for at hjælpe patienter, medrørende og
 fagpersoner.
 
 ------------------------------------------------------------------------
