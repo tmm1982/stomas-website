@@ -1,44 +1,44 @@
 ---
-title: What should you do if your voice prosthesis leaks?
-description: How to recognise possible leakage through or around a Provox voice prosthesis
-  and when to contact your clinical team.
+title: Was tun, wenn die Stimmprothese undicht ist?
+description: Mögliche Undichtigkeiten durch oder neben einer Provox-Stimmprothese erkennen und rechtzeitig
+  das Behandlungsteam kontaktieren.
 date: 2026-08-05
 draft: false
-url: /guides/leaking-voice-prosthesis/
-shortanswer: Follow the leakage plan given by your clinical team. Ongoing leakage
-  after cleaning, or leakage around the prosthesis, needs prompt advice from your
-  specialist team.
+url: /ratgeber/undichte-stimmprothese/
+shortanswer: Halte dich an den Plan, den du mit deinem Behandlungsteam für Undichtigkeiten vereinbart
+  hast. Bleibt die Undichtigkeit nach der Reinigung bestehen oder tritt Flüssigkeit neben der Prothese
+  aus, brauchst du zeitnah fachlichen Rat.
 danish_url: /guiden/provox_laekker/
+english_url: /guides/leaking-voice-prosthesis/
 ---
+Eine undichte Stimmprothese kann frustrierend sein. Das bedeutet nicht unbedingt, dass du etwas falsch gemacht hast.
 
-A leaking voice prosthesis can be frustrating. It does not necessarily mean you have done anything wrong.
+## Woran kannst du eine Undichtigkeit bemerken?
 
-## How might you notice a leak?
+Du hustest möglicherweise während oder nach dem Trinken oder Essen oder bemerkst Speise- beziehungsweise Getränkereste im Schleim. Auch eine veränderte Stimme oder mehr Anstrengung beim Sprechen solltest du mit deinem Team besprechen.
 
-You may cough during or after drinking or eating, or notice food- or drink-stained mucus. Changes in your voice or greater effort when speaking are also worth discussing with your team.
+## Was kann die Ursache sein?
 
-## What can cause it?
+Mögliche Ursachen sind Ablagerungen, Verschleiß oder Bakterien- und Hefepilzbeläge, die das Ventil beeinträchtigen. Flüssigkeit kann **durch die Mitte** der Prothese oder **neben der Prothese** austreten. Diese Fälle erfordern unterschiedliche Maßnahmen.
 
-Possible causes include deposits, wear, or bacterial and yeast build-up affecting the valve. Leakage can occur **through the centre** of the prosthesis or **around its outside**. These need different responses.
+## Was solltest du tun?
 
-## What should you do?
+Halte dich an den individuellen Plan, den du mit deiner Logopädin, deinem Logopäden oder deinem Klinikteam für diesen Fall vereinbart hast. Eine Reinigung nach der gezeigten Anleitung kann eine Undichtigkeit durch das Ventil beheben.
 
-Follow the individual leakage plan provided by your speech and language therapist or hospital team. Cleaning as you have been taught may resolve a leak through the valve.
+Bleibt die Undichtigkeit bestehen oder vermutest du einen Austritt neben der Prothese, kontaktiere dein Team zeitnah. Teste die Undichtigkeit nicht immer wieder durch erneutes Trinken. Versuche nicht, die Prothese selbst zu reparieren oder zu entfernen.
 
-If leakage continues, or you suspect leakage around the prosthesis, contact your team promptly for instructions. Do not keep testing the leak by repeatedly drinking. Do not try to repair or remove the prosthesis yourself.
+Wenn du Atemnot bekommst, suche sofort medizinische Hilfe. Erkläre, dass dein Kehlkopf vollständig entfernt wurde und du durch den Hals atmest.
 
-If you develop breathing difficulty, seek urgent medical help and explain that you have had a total laryngectomy and breathe through your neck.
+## Gut zu wissen
 
-## Remember
+Stimmprothesen müssen mit der Zeit ausgetauscht werden. Eine anhaltende Undichtigkeit muss abgeklärt werden, weil Nahrung oder Flüssigkeit in die Atemwege gelangen kann.
 
-Voice prostheses need replacement over time. Persistent leakage needs attention because food or fluid can enter the airway.
+## Weitere Informationen
 
-## Further information
+[Atos Medical: Tipps für Menschen mit Stimmprothese (Englisch)](https://www.atosmedical.co.uk/laryngectomy/care/tips-for-voice-prosthesis-users).
 
-[Atos Medical: tips for voice prosthesis users](https://www.atosmedical.co.uk/laryngectomy/care/tips-for-voice-prosthesis-users).
+[Cambridge University Hospitals: Pflege von Stoma und Stimmprothese (Englisch)](https://www.cuh.nhs.uk/patient-information/caring-for-a-laryngeal-stoma-and-voice-prosthesis-after-a-laryngectomy/).
 
-[Cambridge University Hospitals: stoma and voice prosthesis care](https://www.cuh.nhs.uk/patient-information/caring-for-a-laryngeal-stoma-and-voice-prosthesis-after-a-laryngectomy/).
+## Weitere Beiträge
 
-## Related guides
-
-- [Cleaning your voice prosthesis](/guides/cleaning-your-voice-prosthesis/)
+- [Stimmprothese reinigen](/ratgeber/stimmprothese-reinigen/)

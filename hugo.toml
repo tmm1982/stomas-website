@@ -1,7 +1,7 @@
-baseURL = "https://stomasguide.com/"
-locale = "en-GB"
-defaultContentLanguage = "en"
-title = "STOMAS Guide"
+baseURL = "https://stomas.de/"
+locale = "de-DE"
+defaultContentLanguage = "de"
+title = "STOMAS"
 
 enableRobotsTXT = true
 

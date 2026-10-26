@@ -1,8 +1,9 @@
 ---
-title: Contact STOMAS
-description: Get in touch about talks, teaching, collaboration, media, podcasts, events
-  or other ideas.
+title: STOMAS kontaktieren
+description: Kontakt zu Vorträgen, Schulungen, Zusammenarbeit, Medien, Podcasts, Veranstaltungen und weiteren
+  Ideen.
 layout: kontakt
-url: /contact/
+url: /kontakt/
 danish_url: /kontakt/
+english_url: /contact/
 ---

@@ -1,32 +1,32 @@
 ---
-title: How do you clean your voice prosthesis?
-description: A starting point for looking after a Provox voice prosthesis and following
-  the routine taught by your clinical team.
+title: Wie reinigt man eine Stimmprothese?
+description: Eine erste Orientierung zur Pflege einer Provox-Stimmprothese und zur Reinigungsroutine nach
+  Anleitung des Behandlungsteams.
 date: 2026-08-05
 draft: false
-url: /guides/cleaning-your-voice-prosthesis/
-shortanswer: Use the cleaning equipment and routine taught by your speech and language
-  therapist or specialist team. Follow the instructions for your specific prosthesis.
+url: /ratgeber/stimmprothese-reinigen/
+shortanswer: Verwende das Reinigungszubehör und die Routine, die dir deine Logopädin, dein Logopäde oder
+  dein spezialisiertes Team gezeigt hat. Beachte die Anleitung für deine konkrete Stimmprothese.
 danish_url: /guiden/provox-rengoering/
+english_url: /guides/cleaning-your-voice-prosthesis/
 ---
+Die Reinigung der Stimmprothese gehört nach einer Kehlkopfentfernung zur täglichen Pflege. Speisereste oder Schleim können das Ventil beeinträchtigen, das Sprechen erschweren oder Undichtigkeiten verursachen.
 
-Keeping your voice prosthesis clean is part of everyday care after laryngectomy. Food or mucus can interfere with the valve and may affect speaking or cause leakage.
+## Halte dich an die gezeigte Routine
 
-## Follow the routine you have been taught
+Verwende die Bürste und weiteres Reinigungszubehör, das für deine konkrete Stimmprothese vorgesehen ist. Beachte die Herstelleranleitung und die Technik, die dein Behandlungsteam dir gezeigt hat.
 
-Use the brush and any other cleaning equipment supplied for your particular prosthesis. Follow the manufacturer’s instructions and the technique demonstrated by your clinical team.
+Atos Medical empfiehlt, Provox-Stimmprothesen regelmäßig zu reinigen, unter anderem morgens, abends und nach den Mahlzeiten. Dein Team kann dir die Routine für dein Modell erklären.
 
-Atos Medical recommends regular cleaning of Provox voice prostheses, including in the morning, evening and after meals. Your own team can explain the routine for your device.
+## Wann solltest du um Hilfe bitten?
 
-## When should you ask for help?
+Kontaktiere dein spezialisiertes Team, wenn eine Undichtigkeit oder Schwierigkeiten beim Sprechen nach der Reinigung bestehen bleiben. Lass dir die Anwendung noch einmal zeigen, wenn du unsicher bist.
 
-Contact your specialist team if cleaning does not resolve leakage or difficulty speaking. Ask for another demonstration if you are unsure how to use your equipment.
+## Weitere Informationen
 
-## Further information
+[Atos Medical: Reinigung der Provox-Stimmprothese](https://www.atosmedical.de/pflege-2/wie-sie-ihre-provox-stimmprothese-reinigen).
 
-[Atos Medical: tips for voice prosthesis users](https://www.atosmedical.co.uk/laryngectomy/care/tips-for-voice-prosthesis-users).
+## Weitere Beiträge
 
-## Related guides
-
-- [What to do if your voice prosthesis leaks](/guides/leaking-voice-prosthesis/)
-- [Life without a larynx](/guides/life-without-a-larynx/)
+- [Was tun bei einer undichten Stimmprothese?](/ratgeber/undichte-stimmprothese/)
+- [Leben ohne Kehlkopf](/ratgeber/leben-ohne-kehlkopf/)

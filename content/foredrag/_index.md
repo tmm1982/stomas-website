@@ -1,8 +1,9 @@
 ---
-title: Talks & teaching
-description: Talks and teaching about life after laryngectomy, from the patient perspective,
-  for healthcare professionals, students, businesses and organisations.
+title: Vorträge & Schulungen
+description: Vorträge und Schulungen über das Leben nach Kehlkopfentfernung aus Patientensicht – für Fachkräfte,
+  Studierende, Unternehmen und Organisationen.
 layout: foredrag
-url: /talks/
+url: /vortraege/
 danish_url: /foredrag/
+english_url: /talks/
 ---

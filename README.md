@@ -1,15 +1,16 @@
-# STOMAS Guide — English edition
+# STOMAS — deutsche Ausgabe
 
-English translation of the STOMAS website at https://stomas.dk, published at https://stomasguide.com.
+Deutsche Übersetzung der STOMAS-Website unter https://stomas.dk, veröffentlicht unter https://stomas.de.
 
-- Source: `stomasguide-en` branch of `tmm1982/stomas-website`.
-- Hosting: separate Cloudflare Pages project `stomasguide`.
-- Build: `hugo --minify`; output: `public`; Hugo 0.168.0.
-- The Danish website and app continue to deploy from `main`.
-- The Danish app is excluded from this build; `/app/` redirects to https://app.stomas.dk/.
+- Repository: `tmm1982/stomas-website`, Branch `stomas-de`.
+- Hosting: eigenes Cloudflare-Pages-Projekt `stomas-de`.
+- Build: `hugo --minify`; Ausgabe: `public`; Hugo 0.168.0.
+- Grundlage: die englische Ausgabe, Commit `dc884e1856b0dd4ab5bb73026ee82db1d71b6e52`.
+- Die dänische Website und App werden weiterhin aus `main` veröffentlicht; die englische Website aus `stomasguide-en`.
+- Die dänische App ist vom Build ausgeschlossen. `/app/` leitet zu https://app.stomas.dk/ weiter.
 
-The design, photographs, original events and organisational names are retained. Public pages and six guides have English text and English URLs. Original Danish URLs redirect to the English counterparts. Danish media is labelled as Danish.
+Design, Fotos, Veranstaltungen und tatsächliche Organisationsnamen bleiben erhalten. Öffentliche Seiten und sechs Ratgeberbeiträge sind ins Deutsche übersetzt und haben deutsche URLs. Die bisherigen dänischen und englischen URLs leiten zur jeweiligen deutschen Seite weiter. Dänische Medien sind als dänisch gekennzeichnet. Die ursprünglichen dänischen PDF- und XLSX-Dateien sind nicht übersetzt.
 
-The source file named `provox-rengoering` contained a duplicate of the smell guide. This edition provides a short voice-prosthesis care guide with a manufacturer reference. Water safety and prosthesis care wording refers readers to their clinical team. Editorial image placeholders have been removed. These are patient information and personal experience, not a claim of clinical endorsement.
+Die Ratgeber teilen persönliche Erfahrungen und allgemeine Informationen. Hinweise zur Wassersicherheit und zur Stimmprothese verweisen auf das spezialisierte Behandlungsteam. Die Reinigungsseite verlinkt die deutschsprachige Herstelleranleitung; englischsprachige Quellen sind als solche gekennzeichnet. Eine medizinische Freigabe wird nicht behauptet.
 
-Contact details and the existing FormSubmit destination are retained. Form delivery must be verified by the owner; no test messages were sent during deployment.
+Kontaktdaten und das vorhandene FormSubmit-Ziel sind unverändert. Die tatsächliche E-Mail-Zustellung muss vom Eigentümer geprüft werden. Es wurden keine Testnachrichten gesendet.

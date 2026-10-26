@@ -1,44 +1,44 @@
 ---
-title: Can you smell after a laryngectomy?
-description: Why your sense of smell may change after total laryngectomy and where
-  to find support.
+title: Kann man nach einer Kehlkopfentfernung riechen?
+description: Warum sich der Geruchssinn nach vollständiger Kehlkopfentfernung verändern kann und wo du
+  Unterstützung findest.
 date: 2026-08-05
 draft: false
-url: /guides/smell-after-laryngectomy/
-shortanswer: Often yes, although your sense of smell may be reduced. Your speech and
-  language therapist can advise you on techniques that may help.
+url: /ratgeber/riechen-nach-kehlkopfentfernung/
+shortanswer: Häufig ja, auch wenn der Geruchssinn eingeschränkt sein kann. Deine Logopädin oder dein Logopäde
+  kann dir geeignete Techniken zeigen.
 danish_url: /guiden/kan-man-lugte/
+english_url: /guides/smell-after-laryngectomy/
 ---
+Die kurze Antwort lautet: **Ja, aber oft anders als vorher.**
 
-The short answer is **yes, but often differently from before**.
+Nach einer vollständigen Kehlkopfentfernung atmest du durch das Tracheostoma statt durch die Nase. Dadurch strömt deutlich weniger Luft durch die Nase, was die Geruchswahrnehmung beeinflusst.
 
-After a total laryngectomy, you breathe through your neck stoma rather than your nose. Much less air passes through your nose, which affects how you detect smells.
+## Warum verändert sich der Geruchssinn?
 
-## Why does your sense of smell change?
+Damit du etwas riechst, müssen Duftstoffe die Rezeptoren in deiner Nase erreichen. Bei einem geringeren Luftstrom gelangen weniger Duftstoffe dorthin. Viele Menschen bemerken deshalb einen schwächeren Geruchssinn.
 
-Smell depends on scent particles reaching the receptors inside your nose. With less nasal airflow, fewer of these particles reach them. Many people therefore notice a weaker sense of smell.
+## Geht der Geruchssinn immer vollständig verloren?
 
-## Is your sense of smell always lost completely?
+Nein. Die Erfahrungen sind unterschiedlich. Manche Menschen nehmen weiterhin Gerüche wahr und bemerken mit der Zeit Veränderungen.
 
-No. Experiences vary. Some people can still detect smells and may notice changes over time.
+## Kann sich auch der Geschmack verändern?
 
-## Can it affect taste?
+Ja. Der Geruch trägt zum Geschmackserlebnis bei. Deshalb kann Essen nach einer Kehlkopfentfernung anders schmecken.
 
-Yes. Smell contributes to the flavour of food, so food may taste different after laryngectomy.
+## Gibt es Unterstützung?
 
-## Can you get help?
+In der Logopädie kannst du Techniken lernen, die den Luftstrom durch die Nase fördern. Frage dein Behandlungsteam, was für dich geeignet ist.
 
-Your speech and language therapist can teach techniques to encourage airflow through your nose. Ask your team what may be suitable for you.
+## Gut zu wissen
 
-## Remember
+Ein veränderter Geruchssinn bedeutet nicht unbedingt, dass er vollständig verschwunden ist. Sprich das Thema während der Rehabilitation an.
 
-A change in your sense of smell does not necessarily mean it has disappeared completely. It is worth raising the subject during rehabilitation.
+## Weitere Informationen
 
-## Further information
+[Macmillan Cancer Support: Leben mit einem Tracheostoma nach Kehlkopfentfernung (Englisch)](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-[Macmillan Cancer Support: living with a laryngectomy stoma](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
+## Weitere Beiträge
 
-## Related guides
-
-- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
-- [Life without a larynx](/guides/life-without-a-larynx/)
+- [Duschen nach Kehlkopfentfernung](/ratgeber/duschen-nach-kehlkopfentfernung/)
+- [Leben ohne Kehlkopf](/ratgeber/leben-ohne-kehlkopf/)

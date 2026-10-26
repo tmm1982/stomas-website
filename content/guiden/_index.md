@@ -1,7 +1,8 @@
 ---
-title: STOMAS Guide
-description: Practical experiences and guides to life after total laryngectomy.
+title: STOMAS Ratgeber
+description: Praktische Erfahrungen und Orientierung für das Leben nach vollständiger Kehlkopfentfernung.
 draft: false
 danish_url: /guiden/
-url: /guides/
+url: /ratgeber/
+english_url: /guides/
 ---

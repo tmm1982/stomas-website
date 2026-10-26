@@ -1,45 +1,45 @@
 ---
-title: Can you swim after a laryngectomy?
-description: Swimming after total laryngectomy requires specialist advice, suitable
-  equipment and training to protect the airway.
+title: Kann man nach einer Kehlkopfentfernung schwimmen?
+description: Schwimmen nach vollständiger Kehlkopfentfernung erfordert fachliche Beratung, geeignete Hilfsmittel
+  und Training zum Schutz der Atemwege.
 date: 2026-08-05
 draft: false
-url: /guides/swimming-after-laryngectomy/
-shortanswer: Swimming needs specialist assessment, equipment and training. Do not
-  enter the water for swimming without an individual plan agreed with your laryngectomy
-  care team.
+url: /ratgeber/schwimmen-nach-kehlkopfentfernung/
+shortanswer: Schwimmen erfordert eine individuelle fachliche Beurteilung, geeignete Hilfsmittel und Training.
+  Gehe erst schwimmen, wenn du mit deinem spezialisierten Behandlungsteam einen persönlichen Plan vereinbart
+  hast.
 danish_url: /guiden/kan-man-svoemme/
+english_url: /guides/swimming-after-laryngectomy/
 ---
+Manche Menschen können nach einer vollständigen Kehlkopfentfernung wieder schwimmen. Dafür sind jedoch spezielle Hilfsmittel und ein entsprechendes Training erforderlich.
 
-Some people return to swimming after total laryngectomy, but it requires specialist equipment and training.
+Das Tracheostoma am Hals ist dein Atemweg. Wenn es unter Wasser gerät, kann Wasser direkt in die Lunge gelangen. Schwimmen ohne geeigneten Schutz ist gefährlich.
 
-Your neck stoma is your breathing airway. If it goes under water, water can enter your lungs directly. Swimming without appropriate protection is dangerous.
+## Ist Schwimmen grundsätzlich ausgeschlossen?
 
-## Is swimming always impossible?
+Nein. Unter besonderen Voraussetzungen kann es für manche Menschen möglich sein. Deine Logopädin, dein Logopäde oder dein spezialisiertes Behandlungsteam kann mit dir besprechen, ob es für dich infrage kommt.
 
-No. There are specialist arrangements that can make it possible for some people. Your speech and language therapist or laryngectomy care team can discuss whether this is an option for you.
+## Welche Hilfsmittel sind nötig?
 
-## What equipment is needed?
+Spezielle Schwimmhilfen unterscheiden sich von Hilfsmitteln für die alltägliche Stomaversorgung. Lass dich von einem qualifizierten Team beraten und praktisch anleiten, bevor du versuchst zu schwimmen.
 
-Specialist swimming equipment is different from everyday stoma care. Get advice and practical training from a qualified team before attempting to swim.
+## Was ist mit Tauchen?
 
-## What about diving?
+Tauche nicht und bringe dein Stoma nicht unter Wasser, außer im Rahmen einer speziellen, mit deinem Behandlungsteam vereinbarten Vorgehensweise.
 
-Do not dive or submerge your stoma outside a specialist arrangement agreed with your clinical team.
+## Kann ich trotzdem an den Strand oder ins Schwimmbad gehen?
 
-## Can I still enjoy the beach or poolside?
+Ja. Achte auf Wellen, Spritzwasser und die Gefahr, versehentlich ins Wasser zu fallen. Überlege vorher, wie du deinen Atemweg schützen kannst.
 
-Yes. Be aware of waves, splashing and accidental falls into the water. Plan how to keep your airway protected.
+## Gut zu wissen
 
-## Remember
+Ein aktives Leben kann weiterhin möglich sein. Wenn dir Schwimmen wichtig ist, besprich zuerst deine persönliche Situation und die Möglichkeiten mit deinem spezialisierten Team.
 
-An active life can still be possible. If swimming matters to you, start by discussing your circumstances and the available options with your specialist team.
+## Weitere Informationen
 
-## Further information
+[Macmillan Cancer Support: Leben nach Kehlkopfentfernung, auch zum Thema Schwimmen (Englisch)](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-[Macmillan Cancer Support: living with a laryngectomy stoma, including swimming](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
+## Weitere Beiträge
 
-## Related guides
-
-- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
-- [Life without a larynx](/guides/life-without-a-larynx/)
+- [Duschen nach Kehlkopfentfernung](/ratgeber/duschen-nach-kehlkopfentfernung/)
+- [Leben ohne Kehlkopf](/ratgeber/leben-ohne-kehlkopf/)

@@ -1,8 +1,9 @@
 ---
-title: STOMAS Workshop
-description: A forthcoming collection of wooden products, designed and made by Thomas
-  Mølgaard in small batches or to order.
+title: STOMAS Werkstatt
+description: Eine kommende Kollektion von Holzprodukten, die Thomas Mølgaard selbst entwirft und in kleinen
+  Serien oder auf Bestellung fertigt.
 layout: vaerksted
-url: /workshop/
+url: /werkstatt/
 danish_url: /vaerksted/
+english_url: /workshop/
 ---

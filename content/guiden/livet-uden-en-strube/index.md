@@ -1,88 +1,88 @@
 ---
-title: 'Life without a larynx: what I wish someone had told me'
-description: A personal and honest account of life after total laryngectomy, including
-  breathing, family, exercise, identity and intimacy.
+title: 'Leben ohne Kehlkopf: Was ich gerne vorher gewusst hätte'
+description: 'Ein persönlicher und ehrlicher Einblick in das Leben nach vollständiger Kehlkopfentfernung:
+  Atmung, Familie, Bewegung, Identität und Intimität.'
 date: 2026-07-31
 draft: false
-url: /guides/life-without-a-larynx/
-shortanswer: In my experience, life after laryngectomy can be good again. It takes
-  time, support and adjustments, and everyone’s experience is different.
+url: /ratgeber/leben-ohne-kehlkopf/
+shortanswer: Meiner Erfahrung nach kann das Leben nach einer Kehlkopfentfernung wieder gut werden. Es
+  braucht Zeit, Unterstützung und Anpassungen. Jeder Mensch erlebt es anders.
 danish_url: /guiden/livet-uden-en-strube/
-category: Life after laryngectomy
-summary: A good life is possible again.
+category: Leben nach der Kehlkopfentfernung
+summary: Ein gutes Leben ist wieder möglich.
+english_url: /guides/life-without-a-larynx/
 ---
+> **An dem Tag, an dem mein Kehlkopf entfernt wurde, verlor ich meine Stimme. Aber nicht mich selbst.**
 
-> **The day my larynx was removed, I lost my voice. But I did not lose myself.**
+Wenn dir eine vollständige Kehlkopfentfernung bevorsteht, ein dir nahestehender Mensch sich auf die Operation vorbereitet oder du beruflich Menschen ohne Kehlkopf begleitest, hoffe ich, dass dieser Beitrag dir hilft.
 
-If you are facing a total laryngectomy, if someone close to you is preparing for surgery, or if you work with people who have had their larynx removed, I hope this article helps.
+Ich schreibe als jemand, der selbst ohne Kehlkopf lebt. Ich teile meine persönlichen Erfahrungen, um dich auf ein Leben vorzubereiten, das gut sein kann – und zugleich anders.
 
-I write as someone who lives without a larynx. These are my personal experiences, shared to help prepare you for a life that can be good, while also being different.
+## Was bedeutet eine vollständige Kehlkopfentfernung?
 
-## What does a total laryngectomy mean?
+Der gesamte Kehlkopf wird entfernt. Der medizinische Begriff dafür ist totale Laryngektomie.
 
-The whole larynx, or voice box, is removed.
+- Du atmest nicht mehr durch Nase und Mund.
+- Du atmest durch ein dauerhaftes Tracheostoma am Hals.
+- Deine ursprüngliche Stimme geht verloren.
+- Viele Menschen sprechen mithilfe einer Stimmprothese, zum Beispiel Provox, wieder. Es gibt auch andere Möglichkeiten der Kommunikation.
 
-- You no longer breathe through your nose and mouth.
-- You breathe through a permanent stoma in your neck.
-- Your original voice is lost.
-- Many people use a voice prosthesis, such as Provox, to speak again. Other methods of communication are also available.
+Jeder Mensch erlebt dies anders.
 
-No two experiences are the same.
+## Für mich war das Bild vorher etwas zu rosig
 
-## I felt the picture had been a little too rosy
+Vor der Operation wurde ich darüber informiert, was auf mich zukommen würde. Danach fühlte sich die Wirklichkeit weitreichender an, als ich erwartet hatte.
 
-Before surgery, I received information about what to expect. Afterwards, the reality felt more far-reaching than I had imagined.
+Hoffnung ist wichtig. Realistische Erwartungen sind es auch. Sie können helfen, wieder Halt zu finden.
 
-Hope matters. So do realistic expectations, which can make it easier to find your feet.
+## Die ersten Monate waren schwierig
 
-## The first months were difficult
+In den ersten zwei Monaten nach der Operation durfte ich nicht sprechen. Gleichzeitig hatte ich vier Kinder, drei davon unter sieben Jahren.
 
-I was not allowed to speak for the first two months after my operation. At the same time, I had four children, three of them under seven.
+Schleim war eine der größten Herausforderungen. Nach der Kehlkopfentfernung muss er durch das Stoma nach außen gelangen. Anfangs benutzte ich mehrmals täglich ein tragbares Absauggerät. Später lernte ich, den Schleim selbst abzuhusten.
 
-Mucus was one of the biggest challenges. After laryngectomy, it has to come out through the stoma. At first, I used a portable suction machine several times a day. Later, I learned to cough the mucus out myself.
+## Die Atmung
 
-## Breathing
+Für mich ist die Atmung die größte Herausforderung.
 
-For me, breathing is the biggest challenge.
+Ich gehe gerne spazieren. Ich laufe gerne. Beides ist schwieriger geworden.
 
-I love walking. I love running. Both have become harder.
+An manchen Tagen bin ich frustriert. An anderen bin ich stolz darauf, dass ich es trotzdem tue. Ich habe beschlossen, dass die Operation nicht bestimmen soll, wovon ich träumen darf.
 
-Some days I feel frustrated. Other days I feel proud that I am still doing it. I have decided that the operation should not decide what I am allowed to dream about.
+## Worüber wir selten sprechen
 
-## The things we rarely discuss
+Die Operation hat auch mein Sexleben verändert. Dabei geht es um Lust, aber auch die Atmung kann Grenzen setzen.
 
-The operation has also affected my sex life. Desire is part of the picture, and breathing can be a limitation too.
+Ich möchte nicht, dass sich jemand mit diesen Fragen allein fühlt.
 
-I do not want anyone to feel alone with these questions.
+## Kann das Leben wieder gut werden?
 
-## Can life be good again?
+Ja. Entschlossenheit, Humor und Hoffnung haben mir geholfen. Das Leben ist anders als vorher, aber es kann weiterhin sehr gut sein.
 
-Yes. Determination, humour and hope have helped me. Life is different from before, but it can still be very good.
+## Häufige Fragen
 
-## Frequently asked questions
+### Kann man sprechen?
 
-### Can you speak?
+Viele Menschen lernen eine andere Art zu sprechen, zum Beispiel mit einer Stimmprothese. In der Logopädie erfährst du, welche Möglichkeiten es für dich gibt.
 
-Many people learn another way to speak, including using a voice prosthesis. Your speech and language therapist can explain the options for you.
+### Kann man normal essen?
 
-### Can you eat normally?
+Viele Menschen können das. Andere müssen anpassen, was oder wie sie essen.
 
-Many people can. Others need to adapt what or how they eat.
+### Kann man Sport treiben?
 
-### Can you exercise?
+Ja, viele Menschen bleiben aktiv. Was möglich ist und welche Anpassungen sinnvoll sind, hängt von deiner persönlichen Situation ab.
 
-Yes, many people remain active. What is possible and how to adapt will depend on your circumstances.
+### Kann man schwimmen?
 
-### Can you swim?
+Schwimmen erfordert fachliche Beratung, spezielle Hilfsmittel und Training. [Lies den Beitrag zum Schwimmen](/ratgeber/schwimmen-nach-kehlkopfentfernung/).
 
-Swimming requires specialist advice, equipment and training. [Read the swimming guide](/guides/swimming-after-laryngectomy/).
+## Über den Autor
 
-## About the author
+Thomas ist Peer-Berater nach Kehlkopfentfernung, Referent und Gründer von STOMAS. Er teilt seine Erfahrungen, um Betroffene, ihre Partnerinnen und Partner, nahestehende Menschen und Fachkräfte zu unterstützen.
 
-Thomas is a laryngectomy peer-support consultant, speaker and founder of STOMAS. He shares his experiences to help patients, partners and loved ones, and healthcare professionals.
+## Du bist nicht allein
 
-## You are not alone
+Bei Fragen oder Vorschlägen für weitere Themen kannst du gerne [STOMAS kontaktieren](/kontakt/).
 
-You are welcome to [contact STOMAS](/contact/) with questions or suggestions for future topics.
-
-**My voice. My story. Your insight.**
+**Meine Stimme. Meine Geschichte. Dein Einblick.**

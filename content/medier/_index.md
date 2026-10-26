@@ -1,7 +1,8 @@
 ---
-title: Press & media
-description: STOMAS in podcasts, interviews and other media about life after laryngectomy.
+title: Presse & Medien
+description: STOMAS in Podcasts, Interviews und anderen Medien über das Leben nach Kehlkopfentfernung.
 layout: medier
-url: /media/
+url: /medien/
 danish_url: /medier/
+english_url: /media/
 ---
