@@ -1,61 +1,44 @@
 ---
-title: "Kan man bade, når man er strubeløs?"
-description: "Mange nyopererede spørger, om man stadig kan gå i bad som strubeløs. Her får du svar på, hvad du skal være opmærksom på."
+title: Can you shower after a laryngectomy?
+description: Practical precautions for showering and washing your hair with a permanent
+  breathing stoma in your neck.
 date: 2026-08-05
 draft: false
-tags:
-  - Strubeløs
-  - Laryngektomi
-  - Stoma
-  - Bad
-  - Guide
-categories:
-  - Guiden
+url: /guides/showering-after-laryngectomy/
+shortanswer: Yes, with the precautions and shower protection recommended by your laryngectomy
+  care team. Water must not enter your breathing stoma.
+danish_url: /guiden/kan-man-bade/
 ---
 
-# Kan man bade, når man er strubeløs?
+Yes, you can shower after a total laryngectomy. Because you breathe through the stoma in your neck, you need to prevent water from entering your airway.
 
-Ja – du kan sagtens gå i bad, når du er strubeløs. Men fordi du trækker vejret gennem din stoma, er det vigtigt at passe på, at der ikke kommer vand direkte ned i luftvejene.
+## Why do you need to take care?
 
-Det kræver blot nogle enkle forholdsregler.
+After a total laryngectomy, your nose and mouth are no longer connected to your lungs. Air passes in and out through your neck stoma.
 
-## Hvorfor skal man passe på?
+Water entering the stoma can pass straight into the lungs. That is why showering needs a different routine.
 
-Efter en total laryngektomi er forbindelsen mellem næse, mund og lunger afbrudt. Luften går derfor ind og ud gennem stomaen på halsen.
+## Practical precautions
 
-Hvis vand kommer direkte ind i stomaen, kan det løbe ned i lungerne og give kraftig hoste eller i værste fald føre til kvælning.
+- Keep the shower spray away from your stoma.
+- Use the shower shield or aid recommended by your specialist team, following its instructions.
+- Ask your team to demonstrate a safe way to wash and rinse your hair.
+- Take your time while you get used to the routine.
 
-## Gode råd til badet
+## Can I wash my hair?
 
-- Undgå at lade bruseren ramme stomaen direkte.
-- Hold ansigtet vendt væk fra bruseren, når du skyller håret.
-- Brug eventuelt en badebeskytter eller et stoma-cover, hvis du har fået anbefalet det.
-- Tag dig god tid – der er ingen grund til at stresse.
+Yes. Positioning the shower spray and your body helps keep water away from your stoma. Your specialist nurse or speech and language therapist can show you an approach that suits you.
 
-## Kan jeg vaske hår?
+## Remember
 
-Ja. Mange vælger at bøje hovedet let bagover eller til siden, så vandet ikke løber ned over stomaen.
+With guidance and practice, showering can become a familiar part of everyday life again. If you have recently had surgery or feel unsure, ask your clinical team for individual advice.
 
-Find den metode, der føles mest sikker for dig.
+## Further information
 
-## Husk
+[Cambridge University Hospitals: caring for a laryngeal stoma and voice prosthesis](https://www.cuh.nhs.uk/patient-information/caring-for-a-laryngeal-stoma-and-voice-prosthesis-after-a-laryngectomy/).
 
-De fleste strubeløse går i bad hver dag uden problemer. Efter lidt øvelse bliver det en naturlig del af hverdagen.
+## Related guides
 
-Er du nyopereret eller usikker, så spørg din strubeløskonsulent om gode råd, der passer til netop dig.
-
----
-
-> 💙 **Har du et spørgsmål?**
->
-> Mangler du svar om livet som strubeløs?
-> Følg STOMAS på YouTube, TikTok og Instagram, hvor jeg deler erfaringer, guides og svar på de spørgsmål, jeg selv har haft.
->
-> **STOMAS – Min stemme. Min historie. Dit indblik.**
-
-## 📚 Relaterede guider
-
-- Sådan rengør du din Provox-stemmeventil
-- Hvad gør du, hvis din Provox lækker?
-- Kan man svømme, når man er strubeløs?
-- Kan man nyse som strubeløs?
+- [Swimming after laryngectomy](/guides/swimming-after-laryngectomy/)
+- [Cleaning your voice prosthesis](/guides/cleaning-your-voice-prosthesis/)
+- [What to do if your voice prosthesis leaks](/guides/leaking-voice-prosthesis/)

@@ -1,61 +1,44 @@
 ---
-title: "Hvad gør du, hvis din Provox lækker?"
-description: "En lækkende Provox-stemmeventil kan være frustrerende. Læs om de mest almindelige årsager, hvad du selv kan gøre, og hvornår du bør kontakte din strubeløskonsulent."
+title: What should you do if your voice prosthesis leaks?
+description: How to recognise possible leakage through or around a Provox voice prosthesis
+  and when to contact your clinical team.
 date: 2026-08-05
 draft: false
-tags:
-  - Provox
-  - Stemmeventil
-  - Strubeløs
-  - Laryngektomi
-  - Stoma
-  - Guide
-categories:
-  - Guiden
+url: /guides/leaking-voice-prosthesis/
+shortanswer: Follow the leakage plan given by your clinical team. Ongoing leakage
+  after cleaning, or leakage around the prosthesis, needs prompt advice from your
+  specialist team.
+danish_url: /guiden/provox_laekker/
 ---
 
-# Hvad gør du, hvis din Provox lækker?
+A leaking voice prosthesis can be frustrating. It does not necessarily mean you have done anything wrong.
 
-En lækkende Provox-stemmeventil er noget, de fleste oplever på et tidspunkt. Det kan være frustrerende, men det er sjældent noget, du har gjort forkert.
+## How might you notice a leak?
 
-## Hvordan opdager du det?
+You may cough during or after drinking or eating, or notice food- or drink-stained mucus. Changes in your voice or greater effort when speaking are also worth discussing with your team.
 
-Det mest almindelige tegn er, at væske fra mad eller drikke kommer igennem stemmeventilen, så du begynder at hoste, når du synker.
+## What can cause it?
 
-Nogle oplever også, at stemmen ændrer sig, eller at det bliver sværere at tale.
+Possible causes include deposits, wear, or bacterial and yeast build-up affecting the valve. Leakage can occur **through the centre** of the prosthesis or **around its outside**. These need different responses.
 
-## Hvad kan være årsagen?
+## What should you do?
 
-Der kan være flere årsager:
+Follow the individual leakage plan provided by your speech and language therapist or hospital team. Cleaning as you have been taught may resolve a leak through the valve.
 
-- Belægninger på ventilen.
-- Slid på ventilen.
-- Gærsvamp eller bakterier.
-- Ventilen har nået slutningen af sin levetid.
+If leakage continues, or you suspect leakage around the prosthesis, contact your team promptly for instructions. Do not keep testing the leak by repeatedly drinking. Do not try to repair or remove the prosthesis yourself.
 
-## Hvad kan du selv gøre?
+If you develop breathing difficulty, seek urgent medical help and explain that you have had a total laryngectomy and breathe through your neck.
 
-Start med at rengøre ventilen grundigt med de hjælpemidler, du har fået udleveret.
+## Remember
 
-Hvis problemet fortsætter, bør du undgå at presse ventilen eller forsøge at reparere den selv.
+Voice prostheses need replacement over time. Persistent leakage needs attention because food or fluid can enter the airway.
 
-## Hvornår skal du kontakte din strubeløskonsulent?
+## Further information
 
-Kontakt din strubeløskonsulent eller sygehus, hvis:
+[Atos Medical: tips for voice prosthesis users](https://www.atosmedical.co.uk/laryngectomy/care/tips-for-voice-prosthesis-users).
 
-- ventilen fortsat lækker efter rengøring,
-- du får gentagne hosteanfald, når du drikker,
-- stemmen ændrer sig markant,
-- du er i tvivl om, hvad der er galt.
+[Cambridge University Hospitals: stoma and voice prosthesis care](https://www.cuh.nhs.uk/patient-information/caring-for-a-laryngeal-stoma-and-voice-prosthesis-after-a-laryngectomy/).
 
-En stemmeventil er et hjælpemiddel, som med tiden skal udskiftes. Det er helt normalt.
+## Related guides
 
-## Husk
-
-Du står ikke alene.
-
-En lækkende Provox er en almindelig udfordring, og der findes næsten altid en løsning.
-
----
-
-> **💙 STOMAS – Min stemme. Min historie. Dit indblik.**
+- [Cleaning your voice prosthesis](/guides/cleaning-your-voice-prosthesis/)

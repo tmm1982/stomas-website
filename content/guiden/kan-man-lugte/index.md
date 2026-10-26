@@ -1,68 +1,44 @@
 ---
-title: "Kan man lugte, når man er strubeløs?"
-description: "Mange spørger, om lugtesansen forsvinder efter en total laryngektomi. Her får du en forklaring på, hvorfor lugtesansen ændrer sig, og hvad du kan gøre."
+title: Can you smell after a laryngectomy?
+description: Why your sense of smell may change after total laryngectomy and where
+  to find support.
 date: 2026-08-05
 draft: false
-tags:
-  - Strubeløs
-  - Laryngektomi
-  - Lugtesans
-  - Stoma
-  - Guide
-categories:
-  - Guiden
+url: /guides/smell-after-laryngectomy/
+shortanswer: Often yes, although your sense of smell may be reduced. Your speech and
+  language therapist can advise you on techniques that may help.
+danish_url: /guiden/kan-man-lugte/
 ---
 
-# Kan man lugte, når man er strubeløs?
+The short answer is **yes, but often differently from before**.
 
-Det korte svar er: **Ja – men ofte ikke på samme måde som før.**
+After a total laryngectomy, you breathe through your neck stoma rather than your nose. Much less air passes through your nose, which affects how you detect smells.
 
-Efter en total laryngektomi trækker du vejret gennem din stoma i stedet for gennem næsen. Derfor passerer der meget mindre luft gennem næsehulen, og det påvirker lugtesansen.
+## Why does your sense of smell change?
 
-## Hvorfor ændrer lugtesansen sig?
+Smell depends on scent particles reaching the receptors inside your nose. With less nasal airflow, fewer of these particles reach them. Many people therefore notice a weaker sense of smell.
 
-Lugtesansen fungerer ved, at luft med duftstoffer passerer op gennem næsen og stimulerer lugtereceptorerne.
+## Is your sense of smell always lost completely?
 
-Når du ikke længere trækker vejret gennem næsen, når færre duftstoffer frem til receptorerne. Derfor oplever mange, at lugtesansen bliver svagere.
+No. Experiences vary. Some people can still detect smells and may notice changes over time.
 
-## Forsvinder lugtesansen helt?
+## Can it affect taste?
 
-Nej – ikke nødvendigvis.
+Yes. Smell contributes to the flavour of food, so food may taste different after laryngectomy.
 
-Mange kan stadig opfange dufte, især hvis de bevidst leder luft gennem næsen ved hjælp af særlige teknikker.
+## Can you get help?
 
-Nogle oplever også, at lugtesansen forbedres med tiden.
+Your speech and language therapist can teach techniques to encourage airflow through your nose. Ask your team what may be suitable for you.
 
-## Påvirker det smagssansen?
+## Remember
 
-Ja, det kan det.
+A change in your sense of smell does not necessarily mean it has disappeared completely. It is worth raising the subject during rehabilitation.
 
-En stor del af det, vi opfatter som smag, hænger sammen med lugtesansen. Derfor kan mad opleves anderledes efter en laryngektomi.
+## Further information
 
-## Kan man træne lugtesansen?
+[Macmillan Cancer Support: living with a laryngectomy stoma](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-Ja.
+## Related guides
 
-Mange strubeløse lærer teknikker, som kan hjælpe med at føre luft gennem næsen igen. Din strubeløskonsulent eller talepædagog kan vejlede dig om mulighederne.
-
-## Husk
-
-Selvom lugtesansen kan ændre sig, betyder det ikke, at den nødvendigvis er væk.
-
-Tal med din strubeløskonsulent, hvis du ønsker at arbejde med din lugtesans.
-
----
-
-> 💙 **Har du et spørgsmål?**
->
-> Mangler du svar om livet som strubeløs?
-> Følg STOMAS på YouTube, TikTok og Instagram, hvor jeg deler erfaringer, guides og svar på de spørgsmål, jeg selv har haft.
->
-> **STOMAS – Min stemme. Min historie. Dit indblik.**
-
-## 📚 Relaterede guider
-
-- Kan man nyse som strubeløs?
-- Kan man bade, når man er strubeløs?
-- Kan man svømme, når man er strubeløs?
-- Hvad gør du, hvis din Provox lækker?
+- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
+- [Life without a larynx](/guides/life-without-a-larynx/)

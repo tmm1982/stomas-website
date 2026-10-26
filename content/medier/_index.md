@@ -1,6 +1,7 @@
 ---
-title: "Presse & medier"
-description: "STOMAS i podcasts, interviews og andre medier om livet efter laryngektomi."
-layout: "medier"
-url: "/medier/"
+title: Press & media
+description: STOMAS in podcasts, interviews and other media about life after laryngectomy.
+layout: medier
+url: /media/
+danish_url: /medier/
 ---

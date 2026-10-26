@@ -4,11 +4,11 @@ export const state = {
 
         name:"Thomas Fugleberg Mølgaard",
 
-        title1:"Næstformand",
+        title1:"Vice-chair",
 
-        title2:"Strubeløskonsulent",
+        title2:"Laryngectomy peer-support consultant",
 
-        title3:"Foredragsholder"
+        title3:"Speaker"
 
     },
 
@@ -18,7 +18,7 @@ export const state = {
 
         phone:"21 90 73 05",
 
-        website:"https://stomas.dk"
+        website:"https://stomasguide.com"
 
     },
 

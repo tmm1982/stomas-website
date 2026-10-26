@@ -1,5 +1,7 @@
 ---
-title: "STOMAS UI"
-layout: "ui"
-url: "/ui/"
+title: STOMAS UI
+layout: ui
+url: /ui/
+sitemap:
+  disable: true
 ---

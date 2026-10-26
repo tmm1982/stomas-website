@@ -1,6 +1,8 @@
 ---
-title: "Foredrag & undervisning"
-description: "Patientbaserede foredrag og undervisning om livet efter laryngektomi – til sundhedsprofessionelle, studerende, virksomheder og organisationer."
-layout: "foredrag"
-url: "/foredrag/"
+title: Talks & teaching
+description: Talks and teaching about life after laryngectomy, from the patient perspective,
+  for healthcare professionals, students, businesses and organisations.
+layout: foredrag
+url: /talks/
+danish_url: /foredrag/
 ---

@@ -23,7 +23,7 @@ async function copySignature() {
 
     if (!signature) {
 
-        alert("Signaturen blev ikke fundet.");
+        alert("The signature could not be found.");
 
         return;
 
@@ -59,7 +59,7 @@ async function copySignature() {
 
         }
 
-        showToast("✅ Signaturen er kopieret.");
+        showToast("✅ Signature copied.");
 
     }
 

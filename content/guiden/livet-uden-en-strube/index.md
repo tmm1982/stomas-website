@@ -1,147 +1,88 @@
 ---
-title: "Livet uden en strube – det ville jeg ønske, nogen havde fortalt mig"
-description: "Hvordan er livet efter en total laryngektomi? En personlig og ærlig fortælling om at leve som strubeløs."
+title: 'Life without a larynx: what I wish someone had told me'
+description: A personal and honest account of life after total laryngectomy, including
+  breathing, family, exercise, identity and intimacy.
 date: 2026-07-31
 draft: false
-
-category: "Livet som strubeløs"
-summary: "Ja. Man kan få et godt liv igen."
+url: /guides/life-without-a-larynx/
+shortanswer: In my experience, life after laryngectomy can be good again. It takes
+  time, support and adjustments, and everyone’s experience is different.
+danish_url: /guiden/livet-uden-en-strube/
+category: Life after laryngectomy
+summary: A good life is possible again.
 ---
 
-# Livet uden en strube -- det ville jeg ønske, nogen havde fortalt mig
+> **The day my larynx was removed, I lost my voice. But I did not lose myself.**
 
-> **Den dag jeg fik fjernet min strube, mistede jeg min stemme. Men jeg
-> mistede ikke mig selv.**
+If you are facing a total laryngectomy, if someone close to you is preparing for surgery, or if you work with people who have had their larynx removed, I hope this article helps.
 
-Hvis du står over for en total laryngektomi, hvis en af dine nærmeste
-skal opereres, eller hvis du arbejder med mennesker, der har fået
-fjernet struben, håber jeg, at denne artikel kan hjælpe.
+I write as someone who lives without a larynx. These are my personal experiences, shared to help prepare you for a life that can be good, while also being different.
 
-Jeg skriver ikke som læge.
+## What does a total laryngectomy mean?
 
-Jeg skriver som én, der selv lever uden en strube.
+The whole larynx, or voice box, is removed.
 
-Mit mål er ikke at skræmme dig.
+- You no longer breathe through your nose and mouth.
+- You breathe through a permanent stoma in your neck.
+- Your original voice is lost.
+- Many people use a voice prosthesis, such as Provox, to speak again. Other methods of communication are also available.
 
-Mit mål er at forberede dig.
+No two experiences are the same.
 
-For livet efter en laryngektomi kan blive godt.
+## I felt the picture had been a little too rosy
 
-Men det bliver anderledes.
+Before surgery, I received information about what to expect. Afterwards, the reality felt more far-reaching than I had imagined.
 
-> **Tip:** Indsæt et personligt billede af dig selv med synlig stomi
-> lige her.
+Hope matters. So do realistic expectations, which can make it easier to find your feet.
 
-## Hvad betyder det at være strubeløs?
+## The first months were difficult
 
-Ved en total laryngektomi fjernes hele struben.
+I was not allowed to speak for the first two months after my operation. At the same time, I had four children, three of them under seven.
 
--   Du trækker ikke længere vejret gennem næse og mund.
--   Du trækker vejret gennem et stoma på halsen.
--   Din naturlige stemme er væk.
--   Mange får en taleventil (Provox), som gør det muligt at tale igen.
+Mucus was one of the biggest challenges. After laryngectomy, it has to come out through the stoma. At first, I used a portable suction machine several times a day. Later, I learned to cough the mucus out myself.
 
-Ingen forløb er ens.
+## Breathing
 
-## Jeg følte, der blev malet et lidt for lyserødt billede
+For me, breathing is the biggest challenge.
 
-Inden operationen fik jeg information om, hvad der ventede mig.
+I love walking. I love running. Both have become harder.
 
-Bagefter følte jeg, at virkeligheden var mere omfattende, end jeg havde
-forestillet mig.
+Some days I feel frustrated. Other days I feel proud that I am still doing it. I have decided that the operation should not decide what I am allowed to dream about.
 
-Man ønsker ikke at tage håbet fra mennesker.
+## The things we rarely discuss
 
-Men realistiske forventninger kan gøre det lettere at finde fodfæste.
+The operation has also affected my sex life. Desire is part of the picture, and breathing can be a limitation too.
 
-## De første måneder var hårde
+I do not want anyone to feel alone with these questions.
 
-Jeg måtte ikke tale de første to måneder efter operationen.
+## Can life be good again?
 
-Samtidig havde jeg fire børn, hvor tre var under syv år.
+Yes. Determination, humour and hope have helped me. Life is different from before, but it can still be very good.
 
-Noget af det, der fyldte mest, var slimen.
+## Frequently asked questions
 
-Som strubeløs skal slimen ud gennem stomien.
+### Can you speak?
 
-I starten måtte jeg bruge en mobil sugemaskine flere gange om dagen.
+Many people learn another way to speak, including using a voice prosthesis. Your speech and language therapist can explain the options for you.
 
-Senere lærte jeg at hoste slimen op selv.
+### Can you eat normally?
 
-## Vejrtrækningen
+Many people can. Others need to adapt what or how they eat.
 
-For mig er vejrtrækningen den største udfordring.
+### Can you exercise?
 
-Jeg elsker at vandre.
+Yes, many people remain active. What is possible and how to adapt will depend on your circumstances.
 
-Jeg elsker at løbe.
+### Can you swim?
 
-Det er blevet sværere.
+Swimming requires specialist advice, equipment and training. [Read the swimming guide](/guides/swimming-after-laryngectomy/).
 
-Nogle dage bliver jeg frustreret.
+## About the author
 
-Andre dage bliver jeg stolt over, at jeg stadig gør det.
+Thomas is a laryngectomy peer-support consultant, speaker and founder of STOMAS. He shares his experiences to help patients, partners and loved ones, and healthcare professionals.
 
-Jeg har valgt, at operationen ikke skal bestemme, hvad jeg må drømme om.
+## You are not alone
 
-## De ting, vi sjældent taler om
+You are welcome to [contact STOMAS](/contact/) with questions or suggestions for future topics.
 
-Operationen har også påvirket mit sexliv.
-
-Det handler ikke kun om lyst.
-
-Vejrtrækningen kan også blive en begrænsning.
-
-Ingen skal gå og tro, at de er alene.
-
-## Kan man få et godt liv?
-
-Ja.
-
-Men efter min erfaring kræver det:
-
--   Vilje
--   Humor
--   Livsmod
-
-Livet bliver ikke som før.
-
-Men det kan stadig blive rigtig godt.
-
-## Ofte stillede spørgsmål
-
-### Kan man tale?
-
-Ja. De fleste får en taleventil (Provox).
-
-### Kan man spise normalt?
-
-Mange kan.
-
-Andre må tilpasse kosten.
-
-### Kan man dyrke motion?
-
-Ja.
-
-### Kan man svømme?
-
-Ja, men det kræver særlige hjælpemidler.
-
-------------------------------------------------------------------------
-
-## Om forfatteren
-
-Thomas er strubeløskonsulent, foredragsholder og stifter af STOMAS.
-
-Han deler sine egne erfaringer for at hjælpe patienter, medrørende og
-fagpersoner.
-
-------------------------------------------------------------------------
-
-## Du er ikke alene
-
-Har du spørgsmål eller forslag til emner, er du altid velkommen til at
-kontakte STOMAS.
-
-**Min stemme. Min historie. Dit indblik.**
+**My voice. My story. Your insight.**

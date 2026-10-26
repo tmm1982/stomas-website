@@ -1,9 +1,11 @@
 ---
-title: "Patientperspektivet i undervisningen på Rigshospitalet"
-description: "Thomas Mølgaard underviste medicinstuderende på Rigshospitalet om sygdomsforløbet, Provox-stemmen og livet efter en total laryngektomi."
+title: The patient perspective in medical teaching at Rigshospitalet
+description: Thomas Mølgaard shared his cancer experience, Provox voice and everyday
+  life after total laryngectomy with medical students at Rigshospitalet.
 date: 2026-09-28
-type: "case"
-layout: "single"
-url: "/foredrag/rigshospitalet/"
-image: "/img/rigshospitalet-undervisning-thomas.webp"
+type: case
+layout: single
+url: /talks/rigshospitalet/
+image: /img/rigshospitalet-undervisning-thomas.webp
+danish_url: /foredrag/rigshospitalet/
 ---

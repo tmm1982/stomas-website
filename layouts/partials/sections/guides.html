@@ -8,26 +8,25 @@
             <div class="max-w-3xl">
 
                 <p class="mb-3 text-xs font-semibold uppercase tracking-[0.4em] text-cyan-400">
-                    STOMAS Guiden
+                    STOMAS Guide
                 </p>
 
                 <h2 class="mb-5 text-5xl font-bold tracking-tight">
-                    Seneste guider
+                    Latest guides
                 </h2>
 
                 <p class="text-lg leading-8 text-slate-400">
-                    Ærlige erfaringer, praktiske råd og svar på de spørgsmål,
-                    jeg selv stod med efter min operation.
+                    Honest experiences, practical guidance and answers to the questions I had after my own operation.
                 </p>
 
             </div>
 
             {{ if gt (len (where site.RegularPages "Section" "guiden")) 3 }}
 
-            <a href="/guiden/"
+            <a href="/guides/"
                class="font-semibold text-cyan-400 transition hover:text-cyan-300">
 
-                Se alle guider →
+                See all guides →
 
             </a>
 

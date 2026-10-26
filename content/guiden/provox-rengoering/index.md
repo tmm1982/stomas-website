@@ -1,68 +1,32 @@
 ---
-title: "Kan man lugte, når man er strubeløs?"
-description: "Mange spørger, om lugtesansen forsvinder efter en total laryngektomi. Her får du en forklaring på, hvorfor lugtesansen ændrer sig, og hvad du kan gøre."
+title: How do you clean your voice prosthesis?
+description: A starting point for looking after a Provox voice prosthesis and following
+  the routine taught by your clinical team.
 date: 2026-08-05
 draft: false
-tags:
-  - Strubeløs
-  - Laryngektomi
-  - Lugtesans
-  - Stoma
-  - Guide
-categories:
-  - Guiden
+url: /guides/cleaning-your-voice-prosthesis/
+shortanswer: Use the cleaning equipment and routine taught by your speech and language
+  therapist or specialist team. Follow the instructions for your specific prosthesis.
+danish_url: /guiden/provox-rengoering/
 ---
 
-# Kan man lugte, når man er strubeløs?
+Keeping your voice prosthesis clean is part of everyday care after laryngectomy. Food or mucus can interfere with the valve and may affect speaking or cause leakage.
 
-Det korte svar er: **Ja – men ofte ikke på samme måde som før.**
+## Follow the routine you have been taught
 
-Efter en total laryngektomi trækker du vejret gennem din stoma i stedet for gennem næsen. Derfor passerer der meget mindre luft gennem næsehulen, og det påvirker lugtesansen.
+Use the brush and any other cleaning equipment supplied for your particular prosthesis. Follow the manufacturer’s instructions and the technique demonstrated by your clinical team.
 
-## Hvorfor ændrer lugtesansen sig?
+Atos Medical recommends regular cleaning of Provox voice prostheses, including in the morning, evening and after meals. Your own team can explain the routine for your device.
 
-Lugtesansen fungerer ved, at luft med duftstoffer passerer op gennem næsen og stimulerer lugtereceptorerne.
+## When should you ask for help?
 
-Når du ikke længere trækker vejret gennem næsen, når færre duftstoffer frem til receptorerne. Derfor oplever mange, at lugtesansen bliver svagere.
+Contact your specialist team if cleaning does not resolve leakage or difficulty speaking. Ask for another demonstration if you are unsure how to use your equipment.
 
-## Forsvinder lugtesansen helt?
+## Further information
 
-Nej – ikke nødvendigvis.
+[Atos Medical: tips for voice prosthesis users](https://www.atosmedical.co.uk/laryngectomy/care/tips-for-voice-prosthesis-users).
 
-Mange kan stadig opfange dufte, især hvis de bevidst leder luft gennem næsen ved hjælp af særlige teknikker.
+## Related guides
 
-Nogle oplever også, at lugtesansen forbedres med tiden.
-
-## Påvirker det smagssansen?
-
-Ja, det kan det.
-
-En stor del af det, vi opfatter som smag, hænger sammen med lugtesansen. Derfor kan mad opleves anderledes efter en laryngektomi.
-
-## Kan man træne lugtesansen?
-
-Ja.
-
-Mange strubeløse lærer teknikker, som kan hjælpe med at føre luft gennem næsen igen. Din strubeløskonsulent eller talepædagog kan vejlede dig om mulighederne.
-
-## Husk
-
-Selvom lugtesansen kan ændre sig, betyder det ikke, at den nødvendigvis er væk.
-
-Tal med din strubeløskonsulent, hvis du ønsker at arbejde med din lugtesans.
-
----
-
-> 💙 **Har du et spørgsmål?**
->
-> Mangler du svar om livet som strubeløs?
-> Følg STOMAS på YouTube, TikTok og Instagram, hvor jeg deler erfaringer, guides og svar på de spørgsmål, jeg selv har haft.
->
-> **STOMAS – Min stemme. Min historie. Dit indblik.**
-
-## 📚 Relaterede guider
-
-- Kan man nyse som strubeløs?
-- Kan man bade, når man er strubeløs?
-- Kan man svømme, når man er strubeløs?
-- Hvad gør du, hvis din Provox lækker?
+- [What to do if your voice prosthesis leaks](/guides/leaking-voice-prosthesis/)
+- [Life without a larynx](/guides/life-without-a-larynx/)

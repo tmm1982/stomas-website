@@ -1,74 +1,45 @@
 ---
-title: "Kan man svømme, når man er strubeløs?"
-description: "Mange tror, at det er umuligt at svømme som strubeløs. Det kan lade sig gøre, men det kræver det rigtige udstyr og de rette forholdsregler."
+title: Can you swim after a laryngectomy?
+description: Swimming after total laryngectomy requires specialist advice, suitable
+  equipment and training to protect the airway.
 date: 2026-08-05
 draft: false
-tags:
-  - Strubeløs
-  - Laryngektomi
-  - Stoma
-  - Svømning
-  - Guide
-categories:
-  - Guiden
+url: /guides/swimming-after-laryngectomy/
+shortanswer: Swimming needs specialist assessment, equipment and training. Do not
+  enter the water for swimming without an individual plan agreed with your laryngectomy
+  care team.
+danish_url: /guiden/kan-man-svoemme/
 ---
 
-# Kan man svømme, når man er strubeløs?
+Some people return to swimming after total laryngectomy, but it requires specialist equipment and training.
 
-Ja – men ikke uden de rette forholdsregler.
+Your neck stoma is your breathing airway. If it goes under water, water can enter your lungs directly. Swimming without appropriate protection is dangerous.
 
-Når du er strubeløs, trækker du vejret gennem din stoma. Derfor må der ikke komme vand direkte ned i luftvejene. Almindelig svømning uden beskyttelse kan derfor være farlig.
+## Is swimming always impossible?
 
-## Er det umuligt?
+No. There are specialist arrangements that can make it possible for some people. Your speech and language therapist or laryngectomy care team can discuss whether this is an option for you.
 
-Nej.
+## What equipment is needed?
 
-Nogle strubeløse svømmer og lever et aktivt liv. Det kræver dog særligt udstyr og grundig instruktion.
+Specialist swimming equipment is different from everyday stoma care. Get advice and practical training from a qualified team before attempting to swim.
 
-## Hvilket udstyr findes der?
+## What about diving?
 
-Der findes forskellige hjælpemidler, som kan gøre svømning mulig, blandt andet særlige svømmehjælpemidler udviklet til personer med stoma.
+Do not dive or submerge your stoma outside a specialist arrangement agreed with your clinical team.
 
-Tal altid med din strubeløskonsulent om, hvilket udstyr der passer til dig.
+## Can I still enjoy the beach or poolside?
 
-## Kan jeg dykke?
+Yes. Be aware of waves, splashing and accidental falls into the water. Plan how to keep your airway protected.
 
-Nej.
+## Remember
 
-Dykning uden specialudstyr anbefales ikke, da vand hurtigt kan trænge ned i luftvejene gennem stomaen.
+An active life can still be possible. If swimming matters to you, start by discussing your circumstances and the available options with your specialist team.
 
-## Hvad med stranden?
+## Further information
 
-Du kan sagtens nyde en dag ved stranden eller poolen.
+[Macmillan Cancer Support: living with a laryngectomy stoma, including swimming](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-Vær blot opmærksom på:
+## Related guides
 
-- Store bølger.
-- Legende børn, der kan sprøjte vand.
-- Pludselige fald i vandet.
-
-Lidt ekstra opmærksomhed kan gøre en stor forskel.
-
-## Husk
-
-Det vigtigste er ikke, hvad du ikke kan.
-
-Det vigtigste er at finde de løsninger, der gør, at du fortsat kan leve et aktivt liv.
-
-Har du lyst til at svømme igen, så tal med din strubeløskonsulent om mulighederne.
-
----
-
-> 💙 **Har du et spørgsmål?**
->
-> Mangler du svar om livet som strubeløs?
-> Følg STOMAS på YouTube, TikTok og Instagram, hvor jeg deler erfaringer, guides og svar på de spørgsmål, jeg selv har haft.
->
-> **STOMAS – Min stemme. Min historie. Dit indblik.**
-
-## 📚 Relaterede guider
-
-- Kan man bade, når man er strubeløs?
-- Sådan rengør du din Provox-stemmeventil
-- Hvad gør du, hvis din Provox lækker?
-- Kan man nyse som strubeløs?
+- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
+- [Life without a larynx](/guides/life-without-a-larynx/)

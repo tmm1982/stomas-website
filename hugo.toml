@@ -1,8 +1,14 @@
-baseURL = "https://stomas.dk/"
-languageCode = "da-DK"
-title = "STOMAS"
+baseURL = "https://stomasguide.com/"
+locale = "en-GB"
+defaultContentLanguage = "en"
+title = "STOMAS Guide"
 
 enableRobotsTXT = true
+
+[[module.mounts]]
+  source = "static"
+  target = "static"
+  files = ["! app/**"]
 
 [markup]
   [markup.goldmark]

@@ -1,4 +1,6 @@
 ---
-title: "Signature Lab"
-layout: "signature"
+title: Signature Lab
+layout: signature
+sitemap:
+  disable: true
 ---
