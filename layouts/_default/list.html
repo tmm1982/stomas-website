@@ -4,7 +4,7 @@
 
     <h1 class="mb-12 text-5xl font-black">
 
-        {{ .Title }}
+        {{ (index (dict "Categories" "Catégories" "Tags" "Mots-clés") .Title) | default .Title }}
 
     </h1>
 

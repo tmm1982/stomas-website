@@ -1,9 +1,10 @@
+{{ $pageTitle := (index (dict "Categories" "Catégories" "Tags" "Mots-clés" "404 Page not found" "Page introuvable") .Title) | default .Title }}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{ $description := .Description | default "Life after total laryngectomy, shared by Thomas Mølgaard: practical guides, personal experiences, talks, teaching and collaboration." }}
+{{ $description := .Description | default "La vie après une laryngectomie totale : Thomas Mølgaard partage son expérience, des guides pratiques, des conférences, des formations et des collaborations." }}
 {{ $image := "/img/thomas.png" | absURL }}
 {{ with .Params.image }}{{ $image = . | absURL }}{{ end }}
-<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<title>{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}</title>
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="Thomas Mølgaard">
 {{ if in (slice "signature" "ui") .Section }}
@@ -13,19 +14,22 @@
 {{ end }}
 <meta name="theme-color" content="#020617">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="alternate" hreflang="en" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="fr" href="{{ .Permalink }}">
 {{ if or .IsHome .Params.danish_url }}
 <link rel="alternate" hreflang="da" href="https://stomas.dk{{ .Params.danish_url | default "/" }}">
 {{ end }}
+{{ if or .IsHome .Params.english_url }}
+<link rel="alternate" hreflang="en" href="https://stomasguide.com{{ .Params.english_url | default "/" }}">
+{{ end }}
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="STOMAS Guide">
-<meta property="og:locale" content="en_GB">
-<meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta property="og:site_name" content="STOMAS">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ $image }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta name="twitter:title" content="{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}">
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $image }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,11 +42,11 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Thomas Mølgaard",
-  "url": "https://stomasguide.com/",
-  "sameAs": ["https://stomas.dk/"],
+  "url": "https://stomas.fr/",
+  "sameAs": ["https://stomas.dk/", "https://stomasguide.com/", "https://stomas.de/"],
   "email": "info@stomas.dk",
   "telephone": "+4521907305",
-  "jobTitle": "Speaker and laryngectomy peer-support consultant",
-  "description": "Personal experiences of life after total laryngectomy, talks, teaching and patient collaboration."
+  "jobTitle": "Conférencier et pair-aidant auprès de personnes laryngectomisées",
+  "description": "Expérience personnelle de la vie après une laryngectomie totale, conférences, formations et collaborations du point de vue du patient."
 }
 </script>

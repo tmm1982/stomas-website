@@ -1,8 +1,8 @@
 ---
-title: The story behind STOMAS
-description: Finding my feet, keeping my humour and sharing life after losing my voice
-  box.
+title: L’histoire de STOMAS
+description: Retrouver ses repères, garder son humour et partager la vie après la perte du larynx.
 layout: historien
-url: /my-story/
+url: /mon-histoire/
 danish_url: /historien/
+english_url: /my-story/
 ---

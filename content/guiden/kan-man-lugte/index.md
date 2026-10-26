@@ -1,44 +1,44 @@
 ---
-title: Can you smell after a laryngectomy?
-description: Why your sense of smell may change after total laryngectomy and where
-  to find support.
+title: Peut-on sentir les odeurs après une laryngectomie ?
+description: Pourquoi l’odorat peut changer après une laryngectomie totale et vers qui se tourner pour
+  être accompagné.
 date: 2026-08-05
 draft: false
-url: /guides/smell-after-laryngectomy/
-shortanswer: Often yes, although your sense of smell may be reduced. Your speech and
-  language therapist can advise you on techniques that may help.
+url: /guides/odorat-apres-laryngectomie/
+shortanswer: Souvent oui, même si l’odorat peut être diminué. Votre orthophoniste peut vous conseiller
+  des techniques adaptées.
 danish_url: /guiden/kan-man-lugte/
+english_url: /guides/smell-after-laryngectomy/
 ---
+La réponse en bref est : **oui, mais souvent différemment d’avant**.
 
-The short answer is **yes, but often differently from before**.
+Après une laryngectomie totale, vous respirez par le trachéostome et non par le nez. Beaucoup moins d’air passe donc dans le nez, ce qui modifie la perception des odeurs.
 
-After a total laryngectomy, you breathe through your neck stoma rather than your nose. Much less air passes through your nose, which affects how you detect smells.
+## Pourquoi l’odorat change-t-il ?
 
-## Why does your sense of smell change?
+Pour percevoir une odeur, les molécules odorantes doivent atteindre les récepteurs à l’intérieur du nez. Lorsque le passage d’air diminue, moins de molécules y parviennent. Beaucoup de personnes remarquent donc une baisse de l’odorat.
 
-Smell depends on scent particles reaching the receptors inside your nose. With less nasal airflow, fewer of these particles reach them. Many people therefore notice a weaker sense of smell.
+## L’odorat disparaît-il toujours complètement ?
 
-## Is your sense of smell always lost completely?
+Non. Les expériences varient. Certaines personnes continuent à percevoir des odeurs et peuvent constater une évolution au fil du temps.
 
-No. Experiences vary. Some people can still detect smells and may notice changes over time.
+## Le goût peut-il aussi changer ?
 
-## Can it affect taste?
+Oui. L’odorat participe à la perception des saveurs. Les aliments peuvent donc sembler avoir un goût différent après une laryngectomie.
 
-Yes. Smell contributes to the flavour of food, so food may taste different after laryngectomy.
+## Peut-on être accompagné ?
 
-## Can you get help?
+Votre orthophoniste peut vous enseigner des techniques qui favorisent le passage d’air dans le nez. Demandez à votre équipe ce qui peut vous convenir.
 
-Your speech and language therapist can teach techniques to encourage airflow through your nose. Ask your team what may be suitable for you.
+## À retenir
 
-## Remember
+Une modification de l’odorat ne signifie pas forcément qu’il a complètement disparu. N’hésitez pas à aborder ce sujet pendant votre rééducation.
 
-A change in your sense of smell does not necessarily mean it has disappeared completely. It is worth raising the subject during rehabilitation.
+## Pour en savoir plus
 
-## Further information
+[Macmillan Cancer Support : vivre avec un trachéostome après une laryngectomie (en anglais)](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-[Macmillan Cancer Support: living with a laryngectomy stoma](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
+## Autres guides
 
-## Related guides
-
-- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
-- [Life without a larynx](/guides/life-without-a-larynx/)
+- [Se doucher après une laryngectomie](/guides/douche-apres-laryngectomie/)
+- [Vivre sans larynx](/guides/vivre-sans-larynx/)

@@ -1,88 +1,88 @@
 ---
-title: 'Life without a larynx: what I wish someone had told me'
-description: A personal and honest account of life after total laryngectomy, including
-  breathing, family, exercise, identity and intimacy.
+title: 'Vivre sans larynx : ce que j’aurais aimé savoir'
+description: 'Un récit personnel et sincère de la vie après une laryngectomie totale : respiration, famille,
+  activité physique, identité et intimité.'
 date: 2026-07-31
 draft: false
-url: /guides/life-without-a-larynx/
-shortanswer: In my experience, life after laryngectomy can be good again. It takes
-  time, support and adjustments, and everyone’s experience is different.
+url: /guides/vivre-sans-larynx/
+shortanswer: D’après mon expérience, la vie peut redevenir belle après une laryngectomie. Il faut du temps,
+  du soutien et des adaptations, et chaque parcours est différent.
 danish_url: /guiden/livet-uden-en-strube/
-category: Life after laryngectomy
-summary: A good life is possible again.
+category: La vie après une laryngectomie
+summary: Une belle vie est à nouveau possible.
+english_url: /guides/life-without-a-larynx/
 ---
+> **Le jour où mon larynx a été retiré, j’ai perdu ma voix. Mais je ne me suis pas perdu moi-même.**
 
-> **The day my larynx was removed, I lost my voice. But I did not lose myself.**
+Si vous vous préparez à une laryngectomie totale, si un de vos proches doit être opéré ou si vous accompagnez des personnes laryngectomisées dans votre travail, j’espère que ce récit pourra vous aider.
 
-If you are facing a total laryngectomy, if someone close to you is preparing for surgery, or if you work with people who have had their larynx removed, I hope this article helps.
+J’écris en tant que personne vivant sans larynx. Ce sont mes expériences personnelles, que je partage pour vous aider à vous préparer à une vie qui peut être belle, tout en étant différente.
 
-I write as someone who lives without a larynx. These are my personal experiences, shared to help prepare you for a life that can be good, while also being different.
+## Que signifie une laryngectomie totale ?
 
-## What does a total laryngectomy mean?
+L’ensemble du larynx est retiré.
 
-The whole larynx, or voice box, is removed.
+- Vous ne respirez plus par le nez et la bouche.
+- Vous respirez par une ouverture permanente au niveau du cou, appelée trachéostome.
+- Votre voix d’origine disparaît.
+- Beaucoup de personnes utilisent une prothèse phonatoire, comme Provox, pour reparler. D’autres moyens de communication existent aussi.
 
-- You no longer breathe through your nose and mouth.
-- You breathe through a permanent stoma in your neck.
-- Your original voice is lost.
-- Many people use a voice prosthesis, such as Provox, to speak again. Other methods of communication are also available.
+Chaque expérience est différente.
 
-No two experiences are the same.
+## J’avais trouvé la présentation un peu trop rassurante
 
-## I felt the picture had been a little too rosy
+Avant l’opération, j’avais reçu des informations sur ce qui m’attendait. Ensuite, la réalité m’a semblé plus bouleversante que je ne l’avais imaginé.
 
-Before surgery, I received information about what to expect. Afterwards, the reality felt more far-reaching than I had imagined.
+L’espoir est important. Des attentes réalistes le sont aussi : elles peuvent aider à retrouver ses repères.
 
-Hope matters. So do realistic expectations, which can make it easier to find your feet.
+## Les premiers mois ont été difficiles
 
-## The first months were difficult
+Je n’avais pas le droit de parler pendant les deux premiers mois après l’opération. En même temps, j’avais quatre enfants, dont trois de moins de sept ans.
 
-I was not allowed to speak for the first two months after my operation. At the same time, I had four children, three of them under seven.
+Le mucus a été l’une des plus grandes difficultés. Après une laryngectomie, il doit sortir par le trachéostome. Au début, j’utilisais un aspirateur de mucosités portable plusieurs fois par jour. Plus tard, j’ai appris à l’évacuer moi-même en toussant.
 
-Mucus was one of the biggest challenges. After laryngectomy, it has to come out through the stoma. At first, I used a portable suction machine several times a day. Later, I learned to cough the mucus out myself.
+## La respiration
 
-## Breathing
+Pour moi, la respiration est la plus grande difficulté.
 
-For me, breathing is the biggest challenge.
+J’aime marcher. J’aime courir. Les deux sont devenus plus difficiles.
 
-I love walking. I love running. Both have become harder.
+Certains jours, je suis frustré. D’autres, je suis fier de continuer malgré tout. J’ai décidé que l’opération ne devait pas décider de ce dont j’ai le droit de rêver.
 
-Some days I feel frustrated. Other days I feel proud that I am still doing it. I have decided that the operation should not decide what I am allowed to dream about.
+## Les sujets dont on parle peu
 
-## The things we rarely discuss
+L’opération a aussi modifié ma vie sexuelle. Il y a la question du désir, mais la respiration peut également poser des limites.
 
-The operation has also affected my sex life. Desire is part of the picture, and breathing can be a limitation too.
+Je ne veux pas que quelqu’un se sente seul face à ces questions.
 
-I do not want anyone to feel alone with these questions.
+## La vie peut-elle redevenir belle ?
 
-## Can life be good again?
+Oui. La détermination, l’humour et l’espoir m’ont aidé. La vie est différente d’avant, mais elle peut encore être très belle.
 
-Yes. Determination, humour and hope have helped me. Life is different from before, but it can still be very good.
+## Questions fréquentes
 
-## Frequently asked questions
+### Peut-on parler ?
 
-### Can you speak?
+Beaucoup de personnes apprennent une autre façon de parler, notamment avec une prothèse phonatoire. Votre orthophoniste peut vous présenter les possibilités adaptées à votre situation.
 
-Many people learn another way to speak, including using a voice prosthesis. Your speech and language therapist can explain the options for you.
+### Peut-on manger normalement ?
 
-### Can you eat normally?
+Beaucoup de personnes le peuvent. D’autres doivent adapter ce qu’elles mangent ou leur façon de manger.
 
-Many people can. Others need to adapt what or how they eat.
+### Peut-on faire du sport ?
 
-### Can you exercise?
+Oui, beaucoup de personnes restent actives. Les possibilités et les adaptations dépendent de votre situation personnelle.
 
-Yes, many people remain active. What is possible and how to adapt will depend on your circumstances.
+### Peut-on nager ?
 
-### Can you swim?
+La natation nécessite des conseils spécialisés, un équipement adapté et un apprentissage. [Consultez le guide sur la natation](/guides/nager-apres-laryngectomie/).
 
-Swimming requires specialist advice, equipment and training. [Read the swimming guide](/guides/swimming-after-laryngectomy/).
+## À propos de l’auteur
 
-## About the author
+Thomas est pair-aidant auprès de personnes laryngectomisées, conférencier et fondateur de STOMAS. Il partage ses expériences pour aider les patients, leurs partenaires, leurs proches et les professionnels de santé.
 
-Thomas is a laryngectomy peer-support consultant, speaker and founder of STOMAS. He shares his experiences to help patients, partners and loved ones, and healthcare professionals.
+## Vous n’êtes pas seul
 
-## You are not alone
+Vous pouvez [contacter STOMAS](/contact/) pour poser une question ou proposer de futurs sujets.
 
-You are welcome to [contact STOMAS](/contact/) with questions or suggestions for future topics.
-
-**My voice. My story. Your insight.**
+**Ma voix. Mon histoire. Votre regard.**

@@ -1,7 +1,9 @@
 ---
-title: Press & media
-description: STOMAS in podcasts, interviews and other media about life after laryngectomy.
+title: Presse & médias
+description: STOMAS dans les podcasts, les interviews et les autres médias consacrés à la vie après une
+  laryngectomie.
 layout: medier
-url: /media/
+url: /medias/
 danish_url: /medier/
+english_url: /media/
 ---

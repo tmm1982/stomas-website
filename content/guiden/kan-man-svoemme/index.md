@@ -1,45 +1,44 @@
 ---
-title: Can you swim after a laryngectomy?
-description: Swimming after total laryngectomy requires specialist advice, suitable
-  equipment and training to protect the airway.
+title: Peut-on nager après une laryngectomie ?
+description: Après une laryngectomie totale, la natation nécessite un avis spécialisé, un équipement adapté
+  et un apprentissage pour protéger les voies respiratoires.
 date: 2026-08-05
 draft: false
-url: /guides/swimming-after-laryngectomy/
-shortanswer: Swimming needs specialist assessment, equipment and training. Do not
-  enter the water for swimming without an individual plan agreed with your laryngectomy
-  care team.
+url: /guides/nager-apres-laryngectomie/
+shortanswer: La natation nécessite une évaluation spécialisée, un équipement adapté et un apprentissage.
+  Ne vous mettez pas à nager sans un plan individuel établi avec votre équipe spécialisée en laryngectomie.
 danish_url: /guiden/kan-man-svoemme/
+english_url: /guides/swimming-after-laryngectomy/
 ---
+Certaines personnes reprennent la natation après une laryngectomie totale, mais cela nécessite un équipement spécialisé et un apprentissage adapté.
 
-Some people return to swimming after total laryngectomy, but it requires specialist equipment and training.
+Votre trachéostome est votre voie respiratoire. S’il passe sous l’eau, celle-ci peut entrer directement dans les poumons. Nager sans protection adaptée est dangereux.
 
-Your neck stoma is your breathing airway. If it goes under water, water can enter your lungs directly. Swimming without appropriate protection is dangerous.
+## La natation est-elle toujours impossible ?
 
-## Is swimming always impossible?
+Non. Des dispositifs spécialisés peuvent la rendre possible pour certaines personnes. Votre orthophoniste ou votre équipe spécialisée en laryngectomie peut vous expliquer si cela peut être envisagé dans votre situation.
 
-No. There are specialist arrangements that can make it possible for some people. Your speech and language therapist or laryngectomy care team can discuss whether this is an option for you.
+## Quel équipement faut-il ?
 
-## What equipment is needed?
+Les dispositifs pour la natation sont différents de ceux utilisés pour les soins quotidiens du trachéostome. Demandez des conseils et un apprentissage pratique à une équipe qualifiée avant d’essayer de nager.
 
-Specialist swimming equipment is different from everyday stoma care. Get advice and practical training from a qualified team before attempting to swim.
+## Et la plongée ?
 
-## What about diving?
+Ne plongez pas et n’immergez pas votre trachéostome en dehors d’un dispositif spécialisé et d’un cadre convenus avec votre équipe soignante.
 
-Do not dive or submerge your stoma outside a specialist arrangement agreed with your clinical team.
+## Puis-je quand même aller à la plage ou au bord de la piscine ?
 
-## Can I still enjoy the beach or poolside?
+Oui. Faites attention aux vagues, aux éclaboussures et aux chutes accidentelles dans l’eau. Prévoyez comment protéger votre voie respiratoire.
 
-Yes. Be aware of waves, splashing and accidental falls into the water. Plan how to keep your airway protected.
+## À retenir
 
-## Remember
+Une vie active peut rester possible. Si la natation compte pour vous, commencez par discuter de votre situation et des possibilités avec votre équipe spécialisée.
 
-An active life can still be possible. If swimming matters to you, start by discussing your circumstances and the available options with your specialist team.
+## Pour en savoir plus
 
-## Further information
+[Macmillan Cancer Support : vivre après une laryngectomie, y compris la natation (en anglais)](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
 
-[Macmillan Cancer Support: living with a laryngectomy stoma, including swimming](https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/living-with-a-laryngectomy-stoma).
+## Autres guides
 
-## Related guides
-
-- [Showering after laryngectomy](/guides/showering-after-laryngectomy/)
-- [Life without a larynx](/guides/life-without-a-larynx/)
+- [Se doucher après une laryngectomie](/guides/douche-apres-laryngectomie/)
+- [Vivre sans larynx](/guides/vivre-sans-larynx/)
