@@ -18,19 +18,10 @@
       <h2 class="mt-4 text-5xl font-bold">{{ T "text_STOMAS in the media" }}</h2>
     </div>
 
-    <div class="mt-16 grid gap-8 md:grid-cols-2">
-      <article class="rounded-3xl border border-slate-800 bg-slate-950 p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">{{ T "text_PODCAST · 28 AUGUST 2026 · IN DANISH" }}</p>
-        <h3 class="mt-4 text-3xl font-bold">Diagnoseklubben</h3>
-        <p class="mt-6 leading-8 text-slate-300">{{ T "text_Thomas joins the Danish podcast Diagnoseklubben for an open conversation about life after a total laryngectomy: voice, breathing, everyday life and everything that begins when treatment ends." }}</p>
-        <a href="https://pca.st/episode/9a05a190-0aea-48ba-a06f-7c4d95b0ec34" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-xl border border-cyan-400 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950">{{ T "text_Listen to the episode (Danish)" }}</a>
-      </article>
-
-      <article class="rounded-3xl border border-slate-800 bg-slate-950 p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">{{ T "text_MORE TO COME" }}</p>
-        <h3 class="mt-4 text-3xl font-bold">{{ T "text_More conversations" }}</h3>
-        <p class="mt-6 leading-8 text-slate-300">{{ T "text_This page will be updated with new podcasts, interviews and appearances." }}</p>
-      </article>
+    <div class="mt-16 grid gap-8">
+      {{ range sort hugo.Data.media.episodes "date" "desc" }}
+        {{ partial "media/episode-card.html" (dict "entry" . "surface" "media") }}
+      {{ end }}
     </div>
   </div>
 </section>
