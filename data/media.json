@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "id": "vandreklubben-22",
+      "date": "2026-10-27",
+      "title": "Vandreklubben",
+      "url": "https://open.spotify.com/episode/3v48Eopu3qJwn5x3w2amdW",
+      "label": "PODCAST · 27. OKTOBER 2026",
+      "summary": "Thomas og hans hustru Michelle fortæller om kærlighed, vandring og livet efter en total laryngektomi. Fra deres første date på en vandretur til lange distancer og Mammutmarsch handler samtalen om at finde nye veje, når kroppen sætter andre rammer. Michelle deler også sit perspektiv som medrørende.",
+      "linkLabel": "Hør afsnittet",
+      "translate": false
+    },
+    {
+      "id": "diagnoseklubben",
+      "date": "2026-08-28",
+      "title": "Diagnoseklubben",
+      "url": "https://pca.st/episode/9a05a190-0aea-48ba-a06f-7c4d95b0ec34",
+      "label": "PODCAST · 28. AUGUST 2026",
+      "summary": "Thomas medvirker i Diagnoseklubben til en åben samtale om livet efter en total laryngektomi – om stemmen, vejrtrækningen, hverdagen og alt det, der begynder, når behandlingen er slut.",
+      "linkLabel": "Hør afsnittet",
+      "translate": false
+    }
+  ]
+}
