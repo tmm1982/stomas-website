@@ -1,0 +1,15 @@
+{{- $entry := .entry -}}
+{{- $label := $entry.label -}}
+{{- $summary := $entry.summary -}}
+{{- $linkLabel := $entry.linkLabel -}}
+{{- if $entry.translate -}}
+  {{- $label = T $label -}}
+  {{- $summary = T $summary -}}
+  {{- $linkLabel = T $linkLabel -}}
+{{- end -}}
+<article aria-labelledby="media-{{ $entry.id }}" class="rounded-3xl border border-slate-800 {{ if eq .surface "home" }}bg-slate-900{{ else }}bg-slate-950{{ end }} p-10">
+  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400"><time datetime="{{ $entry.date }}">{{ $label }}</time></p>
+  <h3 id="media-{{ $entry.id }}" class="mt-4 text-3xl font-bold">{{ $entry.title }}</h3>
+  <p class="{{ if eq .surface "home" }}mt-5 max-w-3xl{{ else }}mt-6{{ end }} leading-8 text-slate-300">{{ $summary }}</p>
+  <a href="{{ $entry.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $linkLabel }}: {{ $entry.title }}" class="mt-8 inline-flex rounded-xl border border-cyan-400 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950">{{ $linkLabel }}</a>
+</article>

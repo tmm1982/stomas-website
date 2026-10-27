@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "id": "vandreklubben-22",
+      "date": "2026-10-27",
+      "title": "Vandreklubben",
+      "url": "https://open.spotify.com/episode/3v48Eopu3qJwn5x3w2amdW",
+      "label": "PODCAST · 27 OCTOBRE 2026 · EN DANOIS",
+      "summary": "Thomas et son épouse Michelle parlent d’amour, de randonnée et de la vie après une laryngectomie totale. De leur premier rendez-vous à pied aux longues distances et au Mammutmarsch, ils racontent comment trouver de nouvelles voies lorsque les capacités physiques changent. Michelle partage aussi son expérience en tant que conjointe et proche aidante.",
+      "linkLabel": "Écouter l’épisode (en danois)",
+      "translate": false
+    },
+    {
+      "id": "diagnoseklubben",
+      "date": "2026-08-28",
+      "title": "Diagnoseklubben",
+      "url": "https://pca.st/episode/9a05a190-0aea-48ba-a06f-7c4d95b0ec34",
+      "label": "PODCAST · 28 AOÛT 2026 · EN DANOIS",
+      "summary": "Dans le podcast danois Diagnoseklubben, Thomas parle ouvertement de la vie après une laryngectomie totale : la voix, la respiration, le quotidien et tout ce qui commence après les traitements.",
+      "linkLabel": "Écouter l’épisode (en danois)",
+      "translate": false
+    }
+  ]
+}
