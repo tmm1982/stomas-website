@@ -8,3 +8,6 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[params]
+  languageID = "da"

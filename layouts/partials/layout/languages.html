@@ -1,0 +1,19 @@
+{{ $links := partial "layout/language-urls.html" . }}
+{{ $current := .Site.Params.languageID | default .Site.Language.Lang }}
+{{ $labels := dict "da" "Sprog" "en" "Language" "de" "Sprache" "fr" "Langue" "pt-br" "Idioma" }}
+{{ $label := index $labels $current | default "Language" }}
+<details class="site-language-picker">
+  {{ range $links }}{{ if .current }}
+  <summary class="site-language-summary" aria-label="{{ $label }}: {{ .label }}">
+    <img src="/img/flags/{{ .flag }}.svg" width="24" height="18" alt="">
+    <span class="site-language-code">{{ .short }}</span><span aria-hidden="true">⌄</span>
+  </summary>
+  {{ end }}{{ end }}
+  <nav class="site-language-menu" aria-label="{{ $label }}">
+    {{ range $links }}
+    <a class="site-language-link" href="{{ .href }}" lang="{{ .locale }}" hreflang="{{ .locale }}"{{ if .current }} aria-current="true"{{ end }}>
+      <img src="/img/flags/{{ .flag }}.svg" width="24" height="18" alt=""><span>{{ .label }}</span>
+    </a>
+    {{ end }}
+  </nav>
+</details>

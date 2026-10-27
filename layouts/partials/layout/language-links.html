@@ -1,0 +1,3 @@
+{{ range partial "layout/language-urls.html" . }}
+<a class="site-language-link" href="{{ .href }}" lang="{{ .locale }}" hreflang="{{ .locale }}"{{ if .current }} aria-current="true"{{ end }}><img src="/img/flags/{{ .flag }}.svg" width="24" height="18" alt=""><span>{{ .label }}</span></a>
+{{ end }}

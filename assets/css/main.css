@@ -160,15 +160,15 @@
 .site-nav-desktop a:hover,
 .site-nav-desktop a:focus-visible { color:var(--color-cyan-400); }
 
-.site-nav-desktop a[href="/kontakt/"] {
+.site-nav-desktop a.site-nav-contact {
     padding:.5rem 1rem;
     border-radius:.5rem;
     background:var(--color-cyan-400);
     color:var(--color-slate-950);
 }
 
-.site-nav-desktop a[href="/kontakt/"]:hover,
-.site-nav-desktop a[href="/kontakt/"]:focus-visible {
+.site-nav-desktop a.site-nav-contact:hover,
+.site-nav-desktop a.site-nav-contact:focus-visible {
     background:var(--color-cyan-300);
     color:var(--color-slate-950);
 }
@@ -220,7 +220,7 @@
     background:var(--color-cyan-300);
 }
 
-@media (min-width:70rem) {
+@media (min-width:80rem) {
     .site-nav-desktop { display:flex; }
     .site-nav-mobile { display:none; }
 }
@@ -801,3 +801,25 @@
 @media (min-width:48rem) {
     .site-footer-links { justify-content:flex-end; }
 }
+
+/* Shared language navigation. Labels stay in each language's own spelling. */
+.site-header-actions { display:flex; align-items:center; gap:.75rem; }
+.site-language-picker { position:relative; flex-shrink:0; }
+.site-language-summary { display:flex; align-items:center; justify-content:center; gap:.4rem; min-height:2.75rem; padding:.5rem .65rem; border:1px solid #334155; border-radius:.6rem; color:#f8fafc; font-size:.8rem; font-weight:600; cursor:pointer; list-style:none; }
+.site-language-summary::-webkit-details-marker { display:none; }
+.site-language-summary img, .site-language-link img { display:block; width:24px; height:18px; flex-shrink:0; object-fit:cover; border-radius:2px; }
+.site-language-summary:focus-visible, .site-language-link:focus-visible { outline:2px solid #22d3ee; outline-offset:3px; }
+.site-language-menu { position:absolute; top:calc(100% + .75rem); right:0; width:min(18rem, calc(100vw - 3rem)); padding:.5rem; border:1px solid #1e293b; border-radius:1rem; background:#020617; box-shadow:0 25px 50px -12px rgb(0 0 0 / .5); }
+.site-language-link { display:inline-flex; align-items:center; gap:.55rem; padding:.55rem .65rem; border-radius:.45rem; white-space:nowrap; color:#cbd5e1; font-size:.875rem; }
+.site-language-menu .site-language-link { display:flex; }
+.site-language-link:hover, .site-language-link[aria-current="true"] { color:#22d3ee; background:#0f172a; }
+.site-footer-languages { display:flex; flex-wrap:wrap; justify-content:center; gap:.25rem .5rem; margin-top:1.5rem; }
+@media (max-width:29.99rem) {
+  #navbar > div { gap:.75rem; }
+  .site-language-code { display:none; }
+  .site-language-summary { padding:.5rem; gap:.2rem; }
+  .site-header-actions { gap:.5rem; }
+  .site-nav-toggle { padding:.5rem .75rem; }
+}
+@media (max-width:23.99rem) { #navbar .site-brand { font-size:1.5rem; } }
+@media (min-width:48rem) { .site-footer-languages { justify-content:flex-start; } }
