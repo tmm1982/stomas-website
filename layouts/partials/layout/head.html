@@ -14,13 +14,7 @@
 {{ end }}
 <meta name="theme-color" content="#020617">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="alternate" hreflang="de" href="{{ .Permalink }}">
-{{ if or .IsHome .Params.danish_url }}
-<link rel="alternate" hreflang="da" href="https://stomas.dk{{ .Params.danish_url | default "/" }}">
-{{ end }}
-{{ if or .IsHome .Params.english_url }}
-<link rel="alternate" hreflang="en" href="https://stomasguide.com{{ .Params.english_url | default "/" }}">
-{{ end }}
+{{ partial "layout/hreflangs.html" . }}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="STOMAS">
 <meta property="og:locale" content="de_DE">

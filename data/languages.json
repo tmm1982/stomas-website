@@ -1,0 +1,47 @@
+[
+  {
+    "id": "da",
+    "locale": "da",
+    "label": "Dansk",
+    "short": "DA",
+    "flag": "dk",
+    "origin": "https://stomas.dk",
+    "home": "/"
+  },
+  {
+    "id": "en",
+    "locale": "en",
+    "label": "English",
+    "short": "EN",
+    "flag": "gb",
+    "origin": "https://stomasguide.com",
+    "home": "/"
+  },
+  {
+    "id": "de",
+    "locale": "de",
+    "label": "Deutsch",
+    "short": "DE",
+    "flag": "de",
+    "origin": "https://stomas.de",
+    "home": "/"
+  },
+  {
+    "id": "fr",
+    "locale": "fr",
+    "label": "Français",
+    "short": "FR",
+    "flag": "fr",
+    "origin": "https://stomas.fr",
+    "home": "/"
+  },
+  {
+    "id": "pt-br",
+    "locale": "pt-BR",
+    "label": "Português (Brasil)",
+    "short": "PT",
+    "flag": "br",
+    "origin": "https://stomasguide.com",
+    "home": "/pt-br/"
+  }
+]
