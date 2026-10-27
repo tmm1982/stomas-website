@@ -1,0 +1,3 @@
+{{ range partial "layout/language-urls.html" . }}{{ if .equivalent }}
+<link rel="alternate" hreflang="{{ .locale }}" href="{{ .canonical }}">
+{{ end }}{{ end }}
