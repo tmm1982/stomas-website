@@ -4,10 +4,10 @@
   <div class="absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[140px]"></div>
   <div class="relative mx-auto max-w-7xl px-6 py-32">
     <div class="max-w-4xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">TALKS & TEACHING</p>
-      <h1 class="mt-6 text-6xl font-extrabold leading-tight md:text-7xl">The patient perspective<br>right there in the room.</h1>
-      <p class="mt-10 max-w-3xl text-xl leading-9 text-slate-300">I share what life after laryngectomy is really like: a different voice, a new way of breathing, lasting effects, work, family, exercise, medical devices, social situations and humour.</p>
-      <a href="/contact/" class="mt-12 inline-flex rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:scale-105">Talk to me about a session</a>
+      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">{{ T "text_TALKS & TEACHING" }}</p>
+      <h1 class="mt-6 text-6xl font-extrabold leading-tight md:text-7xl">{{ T "text_The patient perspective" }}<br>{{ T "text_right there in the room." }}</h1>
+      <p class="mt-10 max-w-3xl text-xl leading-9 text-slate-300">{{ T "text_I share what life after laryngectomy is really like: a different voice, a new way of breathing, lasting effects, work, family, exercise, medical devices, social situations and humour." }}</p>
+      <a href="{{ (site.GetPage "/kontakt").RelPermalink }}" class="mt-12 inline-flex rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:scale-105">{{ T "text_Talk to me about a session" }}</a>
     </div>
   </div>
 </section>
@@ -15,34 +15,34 @@
 <section class="bg-slate-900 py-28">
   <div class="mx-auto max-w-7xl px-6">
     <div class="max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">Two different formats</p>
-      <h2 class="mt-4 text-5xl font-bold">One story. Different perspectives.</h2>
+      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">{{ T "text_Two different formats" }}</p>
+      <h2 class="mt-4 text-5xl font-bold">{{ T "text_One story. Different perspectives." }}</h2>
     </div>
 
     <div class="mt-16 grid gap-8 lg:grid-cols-2">
       <article class="rounded-3xl border border-slate-800 bg-slate-950 p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">HEALTHCARE & EDUCATION</p>
-        <h3 class="mt-4 text-3xl font-bold">When treatment ends, the rest of life begins</h3>
-        <p class="mt-6 leading-8 text-slate-300">A talk from the patient perspective for healthcare professionals and students about the everyday life that begins after surgery.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">{{ T "text_HEALTHCARE & EDUCATION" }}</p>
+        <h3 class="mt-4 text-3xl font-bold">{{ T "text_When treatment ends, the rest of life begins" }}</h3>
+        <p class="mt-6 leading-8 text-slate-300">{{ T "text_A talk from the patient perspective for healthcare professionals and students about the everyday life that begins after surgery." }}</p>
         <ul class="mt-8 space-y-3 text-slate-400">
-          <li>✓ Communication and a different voice</li>
-          <li>✓ Breathing and medical devices</li>
-          <li>✓ Eating, exercise and work</li>
-          <li>✓ Family, identity and social situations</li>
-          <li>✓ What patients wish professionals understood</li>
+          <li>{{ T "text_✓ Communication and a different voice" }}</li>
+          <li>{{ T "text_✓ Breathing and medical devices" }}</li>
+          <li>{{ T "text_✓ Eating, exercise and work" }}</li>
+          <li>{{ T "text_✓ Family, identity and social situations" }}</li>
+          <li>{{ T "text_✓ What patients wish professionals understood" }}</li>
         </ul>
       </article>
 
       <article class="rounded-3xl border border-slate-800 bg-slate-950 p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">BUSINESSES & ORGANISATIONS</p>
-        <h3 class="mt-4 text-3xl font-bold">I lost my voice, but I still have plenty to say</h3>
-        <p class="mt-6 leading-8 text-slate-300">A broader personal talk about cancer, identity, hope, humour and finding a new everyday life when life changes direction.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">{{ T "text_BUSINESSES & ORGANISATIONS" }}</p>
+        <h3 class="mt-4 text-3xl font-bold">{{ T "text_I lost my voice, but I still have plenty to say" }}</h3>
+        <p class="mt-6 leading-8 text-slate-300">{{ T "text_A broader personal talk about cancer, identity, hope, humour and finding a new everyday life when life changes direction." }}</p>
         <ul class="mt-8 space-y-3 text-slate-400">
-          <li>✓ Hope and perspective</li>
-          <li>✓ Identity and change</li>
-          <li>✓ Work and everyday life</li>
-          <li>✓ Making room for humour in difficult times</li>
-          <li>✓ Conversation and questions</li>
+          <li>{{ T "text_✓ Hope and perspective" }}</li>
+          <li>{{ T "text_✓ Identity and change" }}</li>
+          <li>{{ T "text_✓ Work and everyday life" }}</li>
+          <li>{{ T "text_✓ Making room for humour in difficult times" }}</li>
+          <li>{{ T "text_✓ Conversation and questions" }}</li>
         </ul>
       </article>
     </div>
@@ -51,15 +51,15 @@
 
 <section class="teaching-case-teaser" aria-labelledby="rigshospitalet-case-heading">
   <div class="teaching-case-teaser__inner">
-    <a class="teaching-case-teaser__image" href="/talks/rigshospitalet/" aria-label="Read about the teaching session at Rigshospitalet">
-      <img src="/img/rigshospitalet-undervisning-thomas.webp" alt="Thomas Mølgaard teaching at Rigshospitalet and showing how he uses his voice prosthesis" width="1536" height="864" loading="lazy">
+    <a class="teaching-case-teaser__image" href="{{ (site.GetPage "/foredrag/rigshospitalet").RelPermalink }}" aria-label="{{ T "text_Read about the teaching session at Rigshospitalet" }}">
+      <img src="/img/rigshospitalet-undervisning-thomas.webp" alt="{{ T "text_Thomas Mølgaard teaching at Rigshospitalet and showing how he uses his voice prosthesis" }}" width="1536" height="864" loading="lazy">
     </a>
 
     <div class="teaching-case-teaser__content">
-      <p class="teaching-case-teaser__eyebrow">TEACHING IN PRACTICE · RIGSHOSPITALET</p>
-      <h2 id="rigshospitalet-case-heading">Bringing the patient perspective into the classroom</h2>
-      <p>At Rigshospitalet, medical students met the person living with the consequences of a diagnosis. I shared my cancer experience, demonstrated my Provox voice and answered questions about life after surgery.</p>
-      <a class="teaching-case-teaser__link" href="/talks/rigshospitalet/">Read the Rigshospitalet story <span aria-hidden="true">→</span></a>
+      <p class="teaching-case-teaser__eyebrow">{{ T "text_TEACHING IN PRACTICE · RIGSHOSPITALET" }}</p>
+      <h2 id="rigshospitalet-case-heading">{{ T "text_Bringing the patient perspective into the classroom" }}</h2>
+      <p>{{ T "text_At Rigshospitalet, medical students met the person living with the consequences of a diagnosis. I shared my cancer experience, demonstrated my Provox voice and answered questions about life after surgery." }}</p>
+      <a class="teaching-case-teaser__link" href="{{ (site.GetPage "/foredrag/rigshospitalet").RelPermalink }}">{{ T "text_Read the Rigshospitalet story" }} <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -67,18 +67,18 @@
 <section class="bg-slate-950 py-28">
   <div class="mx-auto max-w-6xl px-6">
     <div class="grid gap-10 md:grid-cols-3">
-      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">Tailored to your audience</h3><p class="mt-4 leading-8 text-slate-300">We agree on the content and focus to suit the participants and purpose.</p></div>
-      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">Room for conversation</h3><p class="mt-4 leading-8 text-slate-300">Sessions can include questions, conversation and practical demonstrations.</p></div>
-      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">Across Denmark</h3><p class="mt-4 leading-8 text-slate-300">The length and format are agreed to suit your needs.</p></div>
+      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">{{ T "text_Tailored to your audience" }}</h3><p class="mt-4 leading-8 text-slate-300">{{ T "text_We agree on the content and focus to suit the participants and purpose." }}</p></div>
+      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">{{ T "text_Room for conversation" }}</h3><p class="mt-4 leading-8 text-slate-300">{{ T "text_Sessions can include questions, conversation and practical demonstrations." }}</p></div>
+      <div class="rounded-3xl bg-slate-900 p-9"><h3 class="text-2xl font-bold text-cyan-400">{{ T "text_Across Denmark" }}</h3><p class="mt-4 leading-8 text-slate-300">{{ T "text_The length and format are agreed to suit your needs." }}</p></div>
     </div>
   </div>
 </section>
 
 <section class="bg-slate-900 py-32">
   <div class="mx-auto max-w-4xl px-6 text-center">
-    <h2 class="text-5xl font-bold">Shall we plan a session together?</h2>
-    <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">Tell me who will be taking part and what you would like them to take away.</p>
-    <a href="/contact/" class="mt-12 inline-flex rounded-xl bg-cyan-400 px-10 py-5 text-lg font-semibold text-slate-950 transition hover:scale-105">Contact STOMAS</a>
+    <h2 class="text-5xl font-bold">{{ T "text_Shall we plan a session together?" }}</h2>
+    <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">{{ T "text_Tell me who will be taking part and what you would like them to take away." }}</p>
+    <a href="{{ (site.GetPage "/kontakt").RelPermalink }}" class="mt-12 inline-flex rounded-xl bg-cyan-400 px-10 py-5 text-lg font-semibold text-slate-950 transition hover:scale-105">{{ T "text_Contact STOMAS" }}</a>
   </div>
 </section>
 {{ end }}

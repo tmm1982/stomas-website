@@ -1,0 +1,121 @@
+{
+  "home": {
+    "da": "/",
+    "en": "/",
+    "de": "/",
+    "fr": "/",
+    "pt-br": "/pt-br/"
+  },
+  "foredrag/_index.md": {
+    "en": "/talks/",
+    "da": "/foredrag/",
+    "de": "/vortraege/",
+    "fr": "/conferences/",
+    "pt-br": "/pt-br/palestras/"
+  },
+  "foredrag/rigshospitalet.md": {
+    "en": "/talks/rigshospitalet/",
+    "da": "/foredrag/rigshospitalet/",
+    "de": "/vortraege/rigshospitalet/",
+    "fr": "/conferences/rigshospitalet/",
+    "pt-br": "/pt-br/palestras/rigshospitalet/"
+  },
+  "guiden/_index.md": {
+    "en": "/guides/",
+    "da": "/guiden/",
+    "de": "/ratgeber/",
+    "fr": "/guides/",
+    "pt-br": "/pt-br/guias/"
+  },
+  "guiden/kan-man-bade/index.md": {
+    "en": "/guides/showering-after-laryngectomy/",
+    "da": "/guiden/kan-man-bade/",
+    "de": "/ratgeber/duschen-nach-kehlkopfentfernung/",
+    "fr": "/guides/douche-apres-laryngectomie/",
+    "pt-br": "/pt-br/guias/banho-apos-laringectomia/"
+  },
+  "guiden/kan-man-lugte/index.md": {
+    "en": "/guides/smell-after-laryngectomy/",
+    "da": "/guiden/kan-man-lugte/",
+    "de": "/ratgeber/riechen-nach-kehlkopfentfernung/",
+    "fr": "/guides/odorat-apres-laryngectomie/",
+    "pt-br": "/pt-br/guias/olfato-apos-laringectomia/"
+  },
+  "guiden/kan-man-svoemme/index.md": {
+    "en": "/guides/swimming-after-laryngectomy/",
+    "da": "/guiden/kan-man-svoemme/",
+    "de": "/ratgeber/schwimmen-nach-kehlkopfentfernung/",
+    "fr": "/guides/nager-apres-laryngectomie/",
+    "pt-br": "/pt-br/guias/natacao-apos-laringectomia/"
+  },
+  "guiden/livet-uden-en-strube/index.md": {
+    "en": "/guides/life-without-a-larynx/",
+    "da": "/guiden/livet-uden-en-strube/",
+    "de": "/ratgeber/leben-ohne-kehlkopf/",
+    "fr": "/guides/vivre-sans-larynx/",
+    "pt-br": "/pt-br/guias/vida-sem-laringe/"
+  },
+  "guiden/provox-rengoering/index.md": {
+    "en": "/guides/cleaning-your-voice-prosthesis/",
+    "da": "/guiden/provox-rengoering/",
+    "de": "/ratgeber/stimmprothese-reinigen/",
+    "fr": "/guides/nettoyer-prothese-phonatoire/",
+    "pt-br": "/pt-br/guias/limpeza-da-protese-vocal/"
+  },
+  "guiden/provox_laekker/index.md": {
+    "en": "/guides/leaking-voice-prosthesis/",
+    "da": "/guiden/provox_laekker/",
+    "de": "/ratgeber/undichte-stimmprothese/",
+    "fr": "/guides/fuite-prothese-phonatoire/",
+    "pt-br": "/pt-br/guias/vazamento-na-protese-vocal/"
+  },
+  "historien/_index.md": {
+    "en": "/my-story/",
+    "da": "/historien/",
+    "de": "/meine-geschichte/",
+    "fr": "/mon-histoire/",
+    "pt-br": "/pt-br/minha-historia/"
+  },
+  "kontakt/_index.md": {
+    "en": "/contact/",
+    "da": "/kontakt/",
+    "de": "/kontakt/",
+    "fr": "/contact/",
+    "pt-br": "/pt-br/contato/"
+  },
+  "medier/_index.md": {
+    "en": "/media/",
+    "da": "/medier/",
+    "de": "/medien/",
+    "fr": "/medias/",
+    "pt-br": "/pt-br/midia/"
+  },
+  "samarbejde/_index.md": {
+    "en": "/collaboration/",
+    "da": "/samarbejde/",
+    "de": "/zusammenarbeit/",
+    "fr": "/collaborations/",
+    "pt-br": "/pt-br/parcerias/"
+  },
+  "signature/_index.md": {
+    "en": "/signature/",
+    "da": "/signature/",
+    "de": "/signature/",
+    "fr": "/signature/",
+    "pt-br": "/pt-br/assinatura/"
+  },
+  "ui/_index.md": {
+    "en": "/ui/",
+    "da": "/ui/",
+    "de": "/ui/",
+    "fr": "/ui/",
+    "pt-br": "/pt-br/ui/"
+  },
+  "vaerksted/_index.md": {
+    "en": "/workshop/",
+    "da": "/vaerksted/",
+    "de": "/werkstatt/",
+    "fr": "/atelier/",
+    "pt-br": "/pt-br/oficina/"
+  }
+}

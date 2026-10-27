@@ -1,11 +1,11 @@
 {{ define "main" }}
 <section class="mx-auto max-w-5xl px-6 py-32">
   <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">404</p>
-  <h1 class="mt-6 text-5xl font-bold">This page could not be found.</h1>
-  <p class="mt-8 text-xl leading-9 text-slate-300">You can explore the guides or return to the STOMAS homepage.</p>
+  <h1 class="mt-6 text-5xl font-bold">{{ T "text_This page could not be found." }}</h1>
+  <p class="mt-8 text-xl leading-9 text-slate-300">{{ T "text_You can explore the guides or return to the STOMAS homepage." }}</p>
   <div class="mt-12 flex flex-wrap gap-4">
-    <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950" href="/">Back to home</a>
-    <a class="rounded-xl border border-slate-700 px-8 py-4" href="/guides/">Explore the guides</a>
+    <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950" href="{{ site.Home.RelPermalink }}">{{ T "text_Back to home" }}</a>
+    <a class="rounded-xl border border-slate-700 px-8 py-4" href="{{ (site.GetPage "/guiden").RelPermalink }}">{{ T "text_Explore the guides" }}</a>
   </div>
 </section>
 {{ end }}

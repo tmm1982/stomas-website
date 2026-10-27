@@ -1,6 +1,7 @@
 baseURL = "https://stomasguide.com/"
 locale = "en-GB"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 title = "STOMAS Guide"
 
 enableRobotsTXT = true
@@ -14,3 +15,15 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[languages]
+  [languages.en]
+    label = "English"
+    locale = "en-GB"
+    title = "STOMAS Guide"
+    weight = 1
+  [languages.pt-br]
+    label = "Português (Brasil)"
+    locale = "pt-BR"
+    title = "Guia STOMAS"
+    weight = 2

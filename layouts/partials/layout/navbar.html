@@ -1,26 +1,29 @@
 <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-slate-950/90 backdrop-blur transition-all duration-500">
   <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-    <a href="/" class="text-3xl font-extrabold tracking-wide">STOMAS</a>
+    <a href="{{ site.Home.RelPermalink }}" class="site-brand text-3xl font-extrabold tracking-wide">STOMAS</a>
 
-    <nav class="site-nav-desktop" aria-label="Main navigation">
-      <a class="transition hover:text-cyan-400" href="/#historie">About STOMAS</a>
-      <a class="transition hover:text-cyan-400" href="/talks/">Talks & teaching</a>
-      <a class="transition hover:text-cyan-400" href="/collaboration/">Collaboration</a>
-      <a class="transition hover:text-cyan-400" href="/media/">Media</a>
-      <a class="transition hover:text-cyan-400" href="/guides/">Guides</a>
-      <a class="rounded-lg bg-cyan-400 px-4 py-2 text-slate-950 transition hover:bg-cyan-300" href="/contact/">Contact</a>
+    <div class="site-header-actions">
+    <nav class="site-nav-desktop" aria-label="{{ T "text_Main navigation" }}">
+      <a class="transition hover:text-cyan-400" href="{{ site.Home.RelPermalink }}#historie">{{ T "text_About STOMAS" }}</a>
+      <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/foredrag").RelPermalink }}">{{ T "text_Talks & teaching" }}</a>
+      <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/samarbejde").RelPermalink }}">{{ T "text_Collaboration" }}</a>
+      <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/medier").RelPermalink }}">{{ T "text_Media" }}</a>
+      <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/guiden").RelPermalink }}">{{ T "text_Guides" }}</a>
+      <a class="site-nav-contact rounded-lg bg-cyan-400 px-4 py-2 text-slate-950 transition hover:bg-cyan-300" href="{{ (site.GetPage "/kontakt").RelPermalink }}">{{ T "text_Contact" }}</a>
     </nav>
 
     <details class="site-nav-mobile">
-      <summary class="site-nav-toggle"><span aria-hidden="true">☰</span> Menu</summary>
-      <nav class="site-nav-mobile-links" aria-label="Mobile navigation">
-        <a href="/#historie">About STOMAS</a>
-        <a href="/talks/">Talks & teaching</a>
-        <a href="/collaboration/">Collaboration</a>
-        <a href="/media/">Press & media</a>
-        <a href="/guides/">Guides</a>
-        <a class="site-nav-mobile-contact" href="/contact/">Contact STOMAS</a>
+      <summary class="site-nav-toggle"><span aria-hidden="true">☰</span> {{ T "text_Menu" }}</summary>
+      <nav class="site-nav-mobile-links" aria-label="{{ T "text_Mobile navigation" }}">
+        <a href="{{ site.Home.RelPermalink }}#historie">{{ T "text_About STOMAS" }}</a>
+        <a href="{{ (site.GetPage "/foredrag").RelPermalink }}">{{ T "text_Talks & teaching" }}</a>
+        <a href="{{ (site.GetPage "/samarbejde").RelPermalink }}">{{ T "text_Collaboration" }}</a>
+        <a href="{{ (site.GetPage "/medier").RelPermalink }}">{{ T "text_Press & media" }}</a>
+        <a href="{{ (site.GetPage "/guiden").RelPermalink }}">{{ T "text_Guides" }}</a>
+        <a class="site-nav-mobile-contact" href="{{ (site.GetPage "/kontakt").RelPermalink }}">{{ T "text_Contact STOMAS" }}</a>
       </nav>
     </details>
+    {{ partial "layout/languages.html" . }}
+    </div>
   </div>
 </header>

@@ -1,9 +1,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{ $description := .Description | default "Life after total laryngectomy, shared by Thomas Mølgaard: practical guides, personal experiences, talks, teaching and collaboration." }}
+{{ $description := .Description | default (T "text_Life after total laryngectomy, shared by Thomas Mølgaard: practical guides, personal experiences, talks, teaching and collaboration.") }}
+{{ $pageTitle := .Title }}
+{{ if in (slice "Categories" "Tags" "404 Page not found") .Title }}{{ $pageTitle = T (printf "text_%s" .Title) }}{{ end }}
 {{ $image := "/img/thomas.png" | absURL }}
 {{ with .Params.image }}{{ $image = . | absURL }}{{ end }}
-<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<title>{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}</title>
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="Thomas Mølgaard">
 {{ if in (slice "signature" "ui") .Section }}
@@ -13,19 +15,16 @@
 {{ end }}
 <meta name="theme-color" content="#020617">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="alternate" hreflang="en" href="{{ .Permalink }}">
-{{ if or .IsHome .Params.danish_url }}
-<link rel="alternate" hreflang="da" href="https://stomas.dk{{ .Params.danish_url | default "/" }}">
-{{ end }}
+{{ partial "layout/hreflangs.html" . }}
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="STOMAS Guide">
-<meta property="og:locale" content="en_GB">
-<meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+<meta property="og:title" content="{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ $image }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta name="twitter:title" content="{{ if not .IsHome }}{{ $pageTitle }} | {{ end }}{{ .Site.Title }}">
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $image }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,16 +32,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css?v={{ readFile "static/css/main.css" | md5 }}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Thomas Mølgaard",
-  "url": "https://stomasguide.com/",
-  "sameAs": ["https://stomas.dk/"],
-  "email": "info@stomas.dk",
-  "telephone": "+4521907305",
-  "jobTitle": "Speaker and laryngectomy peer-support consultant",
-  "description": "Personal experiences of life after total laryngectomy, talks, teaching and patient collaboration."
-}
-</script>
+{{ $person := dict "@context" "https://schema.org" "@type" "Person" "name" "Thomas Mølgaard" "url" .Site.Home.Permalink "sameAs" (slice "https://stomas.dk/" "https://stomas.de/" "https://stomas.fr/") "email" "info@stomas.dk" "telephone" "+4521907305" "jobTitle" (T "text_Speaker and laryngectomy peer-support consultant") "description" (T "text_Personal experiences of life after total laryngectomy, talks, teaching and patient collaboration.") }}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>

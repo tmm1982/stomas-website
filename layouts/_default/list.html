@@ -4,7 +4,7 @@
 
     <h1 class="mb-12 text-5xl font-black">
 
-        {{ .Title }}
+        {{ if in (slice "Categories" "Tags") .Title }}{{ T (printf "text_%s" .Title) }}{{ else }}{{ .Title }}{{ end }}
 
     </h1>
 

@@ -1,0 +1,25 @@
+{{- $page := . -}}
+{{- $current := .Site.Params.languageID | default .Site.Language.Lang -}}
+{{- $key := "home" -}}
+{{- if not .IsHome -}}
+  {{- $key = "unmapped" -}}
+  {{- with .File -}}{{- $key = replaceRE `\.pt-br\.md$` ".md" .Path -}}{{- end -}}
+{{- end -}}
+{{- $routes := index hugo.Data.language_routes $key | default dict -}}
+{{- $links := slice -}}
+{{- range hugo.Data.languages -}}
+  {{- $language := . -}}
+  {{- $path := index $routes .id | default .home -}}
+  {{- $equivalent := isset $routes .id -}}
+  {{- if $page.IsTranslated -}}
+    {{- range $page.AllTranslations -}}
+      {{- if eq .Language.Lang $language.id -}}{{- $path = .RelPermalink -}}{{- $equivalent = true -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq .id $current -}}{{- $path = $page.RelPermalink -}}{{- $equivalent = true -}}{{- end -}}
+  {{- $canonical := printf "%s%s" .origin $path -}}
+  {{- $href := $canonical -}}
+  {{- if hasPrefix $page.Site.BaseURL (printf "%s/" .origin) -}}{{- $href = $path -}}{{- end -}}
+  {{- $links = $links | append (merge . (dict "href" $href "canonical" $canonical "current" (eq .id $current) "equivalent" $equivalent)) -}}
+{{- end -}}
+{{- return $links -}}

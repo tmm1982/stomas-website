@@ -2,18 +2,18 @@
   <div class="mx-auto max-w-7xl px-6">
     <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
       <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">Press & media</p>
-        <h2 class="mt-4 text-5xl font-bold">STOMAS in conversation.</h2>
-        <p class="mt-8 text-xl leading-9 text-slate-300">The story of life after laryngectomy is also being shared beyond my own channels.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">{{ T "text_Press & media" }}</p>
+        <h2 class="mt-4 text-5xl font-bold">{{ T "text_STOMAS in conversation." }}</h2>
+        <p class="mt-8 text-xl leading-9 text-slate-300">{{ T "text_The story of life after laryngectomy is also being shared beyond my own channels." }}</p>
       </div>
-      <a href="/media/" class="inline-flex rounded-xl border border-slate-700 px-7 py-4 font-semibold transition hover:border-cyan-400">Explore press & media</a>
+      <a href="{{ (site.GetPage "/medier").RelPermalink }}" class="inline-flex rounded-xl border border-slate-700 px-7 py-4 font-semibold transition hover:border-cyan-400">{{ T "text_Explore press & media" }}</a>
     </div>
 
     <div class="mt-14 rounded-3xl border border-slate-800 bg-slate-900 p-10">
-      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">PODCAST · 28 AUGUST 2026 · IN DANISH</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">{{ T "text_PODCAST · 28 AUGUST 2026 · IN DANISH" }}</p>
       <h3 class="mt-4 text-3xl font-bold">Diagnoseklubben</h3>
-      <p class="mt-5 max-w-3xl leading-8 text-slate-300">Thomas joins the Danish podcast Diagnoseklubben for an open conversation about life after a total laryngectomy: voice, breathing, everyday life and everything that begins when treatment ends.</p>
-      <a href="https://pca.st/episode/9a05a190-0aea-48ba-a06f-7c4d95b0ec34" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-xl border border-cyan-400 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950">Listen to the episode (Danish)</a>
+      <p class="mt-5 max-w-3xl leading-8 text-slate-300">{{ T "text_Thomas joins the Danish podcast Diagnoseklubben for an open conversation about life after a total laryngectomy: voice, breathing, everyday life and everything that begins when treatment ends." }}</p>
+      <a href="https://pca.st/episode/9a05a190-0aea-48ba-a06f-7c4d95b0ec34" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-xl border border-cyan-400 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950">{{ T "text_Listen to the episode (Danish)" }}</a>
     </div>
   </div>
 </section>
