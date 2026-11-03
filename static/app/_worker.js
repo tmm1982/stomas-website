@@ -63,7 +63,28 @@ async function session(env,u){const token=b64(random(32));await env.FORUM_DB.pre
 const cookie = token => `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_LIFETIME_MS/1000}; HttpOnly; Secure; SameSite=Strict`;
 const endCookie = `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Strict`;
 function metaThread(row){const cats=categoriesOf(row);return {id:row.id,category:row.category,title:row.title,body:row.body,author:row.nickname,authorId:row.author_id,authorCategory:cats[0]||null,authorCategories:cats,status:row.status,createdAt:row.created_at,updatedAt:row.updated_at,replies:Number(row.reply_count||0)};}
-async function routes(req, env, path){
+async function deliverRegistrationNotice(env, id) {
+ let row;
+ try {
+   row=await env.FORUM_DB.prepare('SELECT id,sent_at FROM forum_registration_notifications WHERE id=?').bind(id).first();
+   if(!row || row.sent_at)return true;
+   if(!env.FORUM_MAILER)throw Error('Mailtjenesten er ikke tilsluttet');
+   const res=await env.FORUM_MAILER.fetch('https://mailer.internal/internal/registration',{
+     method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})
+   });
+   if(!res.ok)throw Error('Mailtjenesten svarede med status '+res.status);
+   await env.FORUM_DB.prepare('UPDATE forum_registration_notifications SET sent_at=?,attempts=attempts+1,last_error=NULL WHERE id=? AND sent_at IS NULL').bind(iso(),id).run();
+   return true;
+ } catch(e) {
+   const shortError=String(e?.message||'Ukendt fejl').slice(0,150);
+   console.error('STOMAS registration notice:',shortError);
+   try {
+     await env.FORUM_DB.prepare('UPDATE forum_registration_notifications SET attempts=attempts+1,last_error=? WHERE id=? AND sent_at IS NULL').bind(shortError,id).run();
+   } catch(error) {console.error('STOMAS notice log:',String(error?.message||error).slice(0,120))}
+   return false;
+ }
+}
+async function routes(req, env, path, ctx){
  const method=req.method;
  if(!env.FORUM_DB)return err('Forummet er ved at blive klargjort. Prøv senere.',503);
  if(method!=='GET'&&method!=='HEAD'){
@@ -99,6 +120,12 @@ async function routes(req, env, path){
       env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,member_category,member_categories,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'member\',?,?,?,?,?)').bind(id,email,nickname,requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),salt,hash,iso()),
       env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=?,used_at=? WHERE token_hash=? AND used_at IS NULL').bind(id,registered,invHash)
    ]);if((updates[1]?.meta?.changes||0)!==1){await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(id).run();return err('Invitationskoden er allerede brugt.',403)}}catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409);}
+   // Persist the notification separately. Email failures never block registration.
+   try {
+     const notificationId=crypto.randomUUID();
+     await env.FORUM_DB.prepare('INSERT INTO forum_registration_notifications(id,user_id,created_at) VALUES(?,?,?)').bind(notificationId,id,iso()).run();
+     if(ctx?.waitUntil)ctx.waitUntil(deliverRegistrationNotice(env,notificationId));
+   } catch(e) {console.error('Could not queue registration notice:',String(e?.message||e).slice(0,120))}
    return api({ok:true,viewer:{id,nickname,role:'member',memberCategory:requestedCategories(b)[0],memberCategories:requestedCategories(b)}},201,{'Set-Cookie':cookie(await session(env,{id}))});
  }
  if(method==='POST'&&path==='/api/forum/login'){
@@ -182,6 +209,20 @@ async function routes(req, env, path){
    try{await env.FORUM_DB.prepare('INSERT INTO reports(id,target_type,target_id,reason,reporter_id,created_at) VALUES(?,?,?,?,?,?)').bind(crypto.randomUUID(),kind,id,reason,u.id,iso()).run();}catch(_){return err('Du har allerede anmeldt dette indhold.',409);}
    return api({ok:true,message:'Tak. Anmeldelsen er sendt til moderation.'},201);
  }
+ if(method==='GET'&&path==='/api/forum/notifications'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   const result=await env.FORUM_DB.prepare("SELECT SUM(CASE WHEN sent_at IS NULL THEN 1 ELSE 0 END) AS pending,SUM(CASE WHEN sent_at IS NOT NULL THEN 1 ELSE 0 END) AS sent,MAX(attempts) AS attempts FROM forum_registration_notifications").first();
+   const latest=await env.FORUM_DB.prepare("SELECT last_error FROM forum_registration_notifications WHERE sent_at IS NULL AND last_error IS NOT NULL ORDER BY created_at DESC LIMIT 1").first();
+   return api({to:'info@stomas.dk',pending:result?.pending||0,sent:result?.sent||0,lastError:latest?.last_error||null});
+ }
+ if(method==='POST'&&path==='/api/forum/notifications/retry'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   if(!await limited(env,req,'notification-retry',5,3600000))return err('For mange genforsøg. Prøv igen senere.',429);
+   const rows=await env.FORUM_DB.prepare("SELECT id FROM forum_registration_notifications WHERE sent_at IS NULL ORDER BY created_at ASC LIMIT 5").all();
+   let succeeded=0;
+   for(const item of rows.results||[])if(await deliverRegistrationNotice(env,item.id))succeeded++;
+   return api({ok:true,attempted:(rows.results||[]).length,succeeded,failed:(rows.results||[]).length-succeeded});
+ }
  if(method==='GET'&&path==='/api/forum/moderation'){
    if(requiredAdmin(u))return requiredAdmin(u);
    const [threads,replies,reports]=await Promise.all([
@@ -233,9 +274,9 @@ async function routes(req, env, path){
  return err('Ukendt forumfunktion.',404);
 }
 export default {
- async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/forum'))return env.ASSETS.fetch(request);
+ async fetch(request,env,ctx){const url=new URL(request.url);if(!url.pathname.startsWith('/api/forum'))return env.ASSETS.fetch(request);
    if(!['GET','POST'].includes(request.method))return err('Metoden er ikke tilladt.',405);
-   try {return await routes(request,env,url.pathname.replace(/\/$/,'')||'/');}
+   try {return await routes(request,env,url.pathname.replace(/\/$/,'')||'/',ctx);}
    catch(e) {if(['TYPE','SIZE','BODY','SyntaxError'].includes(e?.message)||e instanceof SyntaxError)return err('Ugyldigt indhold i anmodningen.'); console.error('Forum API:',String(e?.message||e));return err('Der opstod en serverfejl. Prøv igen senere.',500);}
  }
 };
