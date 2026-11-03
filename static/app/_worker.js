@@ -69,12 +69,12 @@ async function routes(req, env, path){
    if(!await limited(env,req,'register',5,3600000))return err('For mange forsøg. Prøv igen senere.',429);
    const b=await jsonBody(req),email=String(b.email||'').toLowerCase().trim(),nickname=nameClean(b.nickname),inv=String(b.invite||'').trim(),pass=b.password;
    if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||inv.length<20 || b.adultConsent!==true || b.privacyConsent!==true)return err('Udfyld alle felter, og bekræft at du er voksen og accepterer reglerne.');
-   const invHash=await digest(inv),registered=now();const invitation=await env.FORUM_DB.prepare('SELECT token_hash FROM invites WHERE token_hash=? AND redeemed_by IS NULL AND expires_at>?').bind(invHash,registered).first();if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
+   const invHash=await digest(inv),registered=now();const invitation=await env.FORUM_DB.prepare('SELECT token_hash FROM invites WHERE token_hash=? AND used_at IS NULL AND expires_at>?').bind(invHash,registered).first();if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
    const id=crypto.randomUUID(),salt=b64(random(16)),hash=await pbkdf(pass,salt);
-   try{await env.FORUM_DB.batch([
+   try{const updates=await env.FORUM_DB.batch([
       env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'member\',?,?,?)').bind(id,email,nickname,salt,hash,iso()),
-      env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=? WHERE token_hash=? AND redeemed_by IS NULL').bind(id,invHash)
-   ]);}catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409);}
+      env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=?,used_at=? WHERE token_hash=? AND used_at IS NULL').bind(id,registered,invHash)
+   ]);if((updates[1]?.meta?.changes||0)!==1){await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(id).run();return err('Invitationskoden er allerede brugt.',403)}}catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409);}
    return api({ok:true,viewer:{id,nickname,role:'member'}},201,{'Set-Cookie':cookie(await session(env,{id}))});
  }
  if(method==='POST'&&path==='/api/forum/login'){
@@ -101,7 +101,7 @@ async function routes(req, env, path){
  }
  if(method==='GET'&&path==='/api/forum/invites'){
    if(requiredAdmin(u))return requiredAdmin(u);
-   const r=await env.FORUM_DB.prepare('SELECT created_at,expires_at,redeemed_by IS NOT NULL AS used FROM invites ORDER BY created_at DESC LIMIT 30').all();return api({invites:r.results||[]});
+   const r=await env.FORUM_DB.prepare('SELECT created_at,expires_at,used_at IS NOT NULL AS used FROM invites ORDER BY created_at DESC LIMIT 30').all();return api({invites:r.results||[]});
  }
  if(method==='POST'&&path==='/api/forum/invites'){
    if(requiredAdmin(u))return requiredAdmin(u);
@@ -182,7 +182,7 @@ async function routes(req, env, path){
    if(!await limited(env,req,'delete',5,3600000))return err('For mange forsøg.',429);
    const b=await jsonBody(req),row=await env.FORUM_DB.prepare('SELECT pass_salt,pass_hash FROM users WHERE id=?').bind(u.id).first();
    if(typeof b.password!=='string'||!constantEqual(await pbkdf(b.password,row.pass_salt),row.pass_hash))return err('Forkert adgangskode.',403);
-   await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(u.id).run();return api({ok:true},200,{'Set-Cookie':endCookie});
+   await env.FORUM_DB.batch([env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=NULL WHERE redeemed_by=?').bind(u.id),env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(u.id)]);return api({ok:true},200,{'Set-Cookie':endCookie});
  }
  return err('Ukendt forumfunktion.',404);
 }
