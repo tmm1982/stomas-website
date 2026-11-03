@@ -62,7 +62,7 @@ const requiredAdmin=(u)=>u?.role==='admin'?null:err('Du har ikke adgang til mode
 async function session(env,u){const token=b64(random(32));await env.FORUM_DB.prepare('INSERT INTO sessions(token_hash,user_id,created_at,expires_at) VALUES(?,?,?,?)').bind(await digest(token),u.id,now(),now()+SESSION_LIFETIME_MS).run();return token;}
 const cookie = token => `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_LIFETIME_MS/1000}; HttpOnly; Secure; SameSite=Strict`;
 const endCookie = `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Strict`;
-function metaThread(row){const cats=categoriesOf(row);return {id:row.id,category:row.category,title:row.title,body:row.body,author:row.nickname,authorId:row.author_id,authorCategory:cats[0]||null,authorCategories:cats,status:row.status,createdAt:row.created_at,updatedAt:row.updated_at,replies:Number(row.reply_count||0)};}
+function metaThread(row){const cats=categoriesOf(row);return {id:row.id,category:row.category,title:row.title,body:row.body,author:row.nickname,authorId:row.author_id,authorCategory:cats[0]||null,authorCategories:cats,status:row.status,createdAt:row.created_at,updatedAt:row.updated_at,pinned:!!row.pinned_at,pinnedAt:row.pinned_at||null,replies:Number(row.reply_count||0)};}
 async function deliverRegistrationNotice(env, id) {
  let row;
  try {
@@ -168,14 +168,33 @@ async function routes(req, env, path, ctx){
    const token=b64(random(24));await env.FORUM_DB.prepare('INSERT INTO invites(token_hash,created_by,created_at,expires_at) VALUES(?,?,?,?)').bind(await digest(token),u.id,now(),now()+14*86400000).run();
    return api({invite:token,expiresInDays:14},201);
  }
+ if(method==='GET'&&path==='/api/forum/pinned'){
+   const result=await env.FORUM_DB.prepare("SELECT t.id,t.category,t.title,t.body,t.author_id,t.status,t.created_at,t.updated_at,t.pinned_at,v.nickname,v.member_category,v.member_categories,(SELECT COUNT(*) FROM replies r WHERE r.thread_id=t.id AND r.status='approved') AS reply_count FROM threads t JOIN users v ON v.id=t.author_id WHERE t.status='approved' AND v.banned=0 AND t.pinned_at IS NOT NULL ORDER BY t.pinned_at DESC LIMIT 8").all();
+   return api({threads:(result.results||[]).map(metaThread)});
+ }
+ if(method==='POST'&&path==='/api/forum/pin'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   if(!await limited(env,req,'pin',35,3600000))return err('For mange ændringer. Prøv igen senere.',429);
+   const body=await jsonBody(req),id=String(body.id||''),pinned=body.pinned;
+   if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id)||typeof pinned!=='boolean')return err('Ugyldig anmodning.',400);
+   const row=await env.FORUM_DB.prepare('SELECT id,status,pinned_at FROM threads WHERE id=?').bind(id).first();
+   if(!row||row.status!=='approved')return err('Kun offentliggjorte indlæg kan fastgøres.',404);
+   if(pinned&&!row.pinned_at){
+      const count=await env.FORUM_DB.prepare('SELECT COUNT(*) AS total FROM threads WHERE pinned_at IS NOT NULL').first();
+      if((count?.total||0)>=8)return err('Du kan højst have otte fastgjorte indlæg.',400);
+   }
+   const stamp=pinned?iso():null;
+   await env.FORUM_DB.prepare('UPDATE threads SET pinned_at=? WHERE id=? AND status=\'approved\'').bind(stamp,id).run();
+   return api({ok:true,id,pinned});
+ }
  if(method==='GET'&&path==='/api/forum/threads'){
    const url=new URL(req.url),category=url.searchParams.get('category')||'',q=(url.searchParams.get('q')||'').slice(0,80),offset=Math.min(200,Math.max(0,Number(url.searchParams.get('offset'))||0));
    const clause=u?.role==='admin'?'(t.status IN (\'approved\',\'pending\'))':u?'(t.status=\'approved\' OR t.author_id=?)':'t.status=\'approved\'';
    const bindings=u&&u.role!=='admin'?[u.id]:[];
-   let sql=`SELECT t.id,t.category,t.title,t.body,t.author_id,t.status,t.created_at,t.updated_at,v.nickname,v.member_category,v.member_categories,(SELECT COUNT(*) FROM replies r WHERE r.thread_id=t.id AND r.status='approved') AS reply_count FROM threads t JOIN users v ON v.id=t.author_id WHERE ${clause} AND v.banned=0`;
+   let sql=`SELECT t.id,t.category,t.title,t.body,t.author_id,t.status,t.created_at,t.updated_at,t.pinned_at,v.nickname,v.member_category,v.member_categories,(SELECT COUNT(*) FROM replies r WHERE r.thread_id=t.id AND r.status='approved') AS reply_count FROM threads t JOIN users v ON v.id=t.author_id WHERE ${clause} AND v.banned=0`;
    if(category){if(!CATEGORIES.includes(category))return err('Ukendt kategori.');sql+=' AND t.category=?';bindings.push(category);}
    if(q){sql+=' AND (t.title LIKE ? OR t.body LIKE ?)';bindings.push('%'+q+'%','%'+q+'%');}
-   sql+=' ORDER BY t.created_at DESC LIMIT 21 OFFSET ?';bindings.push(offset);
+   sql+=' ORDER BY CASE WHEN t.pinned_at IS NULL THEN 1 ELSE 0 END, t.pinned_at DESC, t.created_at DESC LIMIT 21 OFFSET ?';bindings.push(offset);
    const result=await env.FORUM_DB.prepare(sql).bind(...bindings).all();return api({threads:(result.results||[]).slice(0,20).map(metaThread),hasMore:(result.results||[]).length>20});
  }
  if(method==='POST'&&path==='/api/forum/threads'){
@@ -240,7 +259,8 @@ async function routes(req, env, path, ctx){
      await env.FORUM_DB.prepare("UPDATE reports SET status='closed' WHERE id=?").bind(id).run();
    }else{
      if(action==='close')return err('Ugyldig handling.');
-     await env.FORUM_DB.prepare(`UPDATE ${kind==='thread'?'threads':'replies'} SET status=? WHERE id=?`).bind(action==='approve'?'approved':'rejected',id).run();
+     if(kind==='thread')await env.FORUM_DB.prepare('UPDATE threads SET status=?,pinned_at=CASE WHEN ?=\'rejected\' THEN NULL ELSE pinned_at END WHERE id=?').bind(action==='approve'?'approved':'rejected',action==='approve'?'approved':'rejected',id).run();
+     else await env.FORUM_DB.prepare('UPDATE replies SET status=? WHERE id=?').bind(action==='approve'?'approved':'rejected',id).run();
    }
    return api({ok:true});
  }
