@@ -1,0 +1,4 @@
+// STOMAS PWA: network-first. Health information and forum data are never cached.
+self.addEventListener('install',()=>self.skipWaiting());
+self.addEventListener('activate',event=>event.waitUntil(self.clients.claim()));
+self.addEventListener('fetch',event=>{if(event.request.mode!=='navigate'||event.request.method!=='GET')return;event.respondWith(fetch(event.request).catch(()=>new Response('<!doctype html><html lang="da"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STOMAS offline</title><body style="font:18px system-ui;background:#081521;color:white;padding:8vw"><h1>STOMAS er offline</h1><p>Opret forbindelse til internettet og prøv igen for at hente opdateret information.</p><button onclick="location.reload()">Prøv igen</button></body></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}})))});
