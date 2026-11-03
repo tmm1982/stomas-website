@@ -6,6 +6,21 @@ const CATEGORIES = ["Hverdagen", "Tale og udstyr", "Nyopereret", "Motion og frit
 // Self-declared profile categories: none of these constitutes a verified professional credential.
 const MEMBER_CATEGORIES = ['Opereret','Medrørende','Fagprofessionel'];
 const validMemberCategory = value => typeof value==='string' && MEMBER_CATEGORIES.includes(value);
+const validMemberCategories = values => Array.isArray(values) && values.length>=1 && values.length<=MEMBER_CATEGORIES.length
+ && new Set(values).size===values.length && values.every(validMemberCategory);
+function categoriesOf(row){
+ let parsed=[];
+ try{parsed=JSON.parse(row?.member_categories||'[]')}catch(_){}
+ if(Array.isArray(parsed)){
+   const selected=[...new Set(parsed.filter(validMemberCategory))];
+   if(selected.length)return selected;
+ }
+ return validMemberCategory(row?.member_category)?[row.member_category]:[];
+}
+function requestedCategories(body){
+ return Array.isArray(body.memberCategories)?body.memberCategories:
+   validMemberCategory(body.memberCategory)?[body.memberCategory]:[];
+}
 const SESSION_COOKIE = '__Host-stomas_forum';
 const SESSION_LIFETIME_MS = 14 * 24 * 60 * 60 * 1000;
 const encoder = new TextEncoder();
@@ -32,8 +47,8 @@ function nameClean(name){return String(name||'').trim().replace(/\s+/g,' ');}
 const validName = n => n.length>=2 && n.length<=32 && !/[<>\r\n]/.test(n);
 const validPassword = p => typeof p==='string' && p.length>=12 && p.length<=128;
 function cookieValue(req){ const c=req.headers.get('Cookie')||'';const m=c.match(/(?:^|;\s*)__Host-stomas_forum=([^;]+)/);return m?.[1]||'';}
-async function viewer(env,req){const token=cookieValue(req);if(!/^[A-Za-z0-9_-]{40,50}$/.test(token))return null;const hash=await digest(token);const user=await env.FORUM_DB.prepare('SELECT u.id,u.nickname,u.email,u.role,u.member_category,u.banned FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(hash,now()).first();return user&&!user.banned?user:null;}
-function publicUser(u){if(!u)return null;return {id:u.id,nickname:u.nickname,role:u.role,memberCategory:u.member_category||null};}
+async function viewer(env,req){const token=cookieValue(req);if(!/^[A-Za-z0-9_-]{40,50}$/.test(token))return null;const hash=await digest(token);const user=await env.FORUM_DB.prepare('SELECT u.id,u.nickname,u.email,u.role,u.member_category,u.member_categories,u.banned FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(hash,now()).first();return user&&!user.banned?user:null;}
+function publicUser(u){if(!u)return null;const cats=categoriesOf(u);return {id:u.id,nickname:u.nickname,role:u.role,memberCategory:cats[0]||null,memberCategories:cats};}
 async function jsonBody(req,max=12000){ if(!((req.headers.get('Content-Type')||'').toLowerCase().startsWith('application/json')))throw Error('TYPE');const text=await req.text();if(text.length>max)throw Error('SIZE');const data=JSON.parse(text);if(!data||Array.isArray(data)||typeof data!=='object')throw Error('BODY');return data; }
 async function limited(env,req,action,limit=6,window=600000){
  const ip=req.headers.get('CF-Connecting-IP')||'local';
@@ -47,7 +62,7 @@ const requiredAdmin=(u)=>u?.role==='admin'?null:err('Du har ikke adgang til mode
 async function session(env,u){const token=b64(random(32));await env.FORUM_DB.prepare('INSERT INTO sessions(token_hash,user_id,created_at,expires_at) VALUES(?,?,?,?)').bind(await digest(token),u.id,now(),now()+SESSION_LIFETIME_MS).run();return token;}
 const cookie = token => `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_LIFETIME_MS/1000}; HttpOnly; Secure; SameSite=Strict`;
 const endCookie = `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Strict`;
-function metaThread(row){return {id:row.id,category:row.category,title:row.title,body:row.body,author:row.nickname,authorId:row.author_id,authorCategory:row.member_category||null,status:row.status,createdAt:row.created_at,updatedAt:row.updated_at,replies:Number(row.reply_count||0)};}
+function metaThread(row){const cats=categoriesOf(row);return {id:row.id,category:row.category,title:row.title,body:row.body,author:row.nickname,authorId:row.author_id,authorCategory:cats[0]||null,authorCategories:cats,status:row.status,createdAt:row.created_at,updatedAt:row.updated_at,replies:Number(row.reply_count||0)};}
 async function routes(req, env, path){
  const method=req.method;
  if(!env.FORUM_DB)return err('Forummet er ved at blive klargjort. Prøv senere.',503);
@@ -77,14 +92,14 @@ async function routes(req, env, path){
  if(method==='POST'&&path==='/api/forum/register'){
    if(!await limited(env,req,'register',5,3600000))return err('For mange forsøg. Prøv igen senere.',429);
    const b=await jsonBody(req),email=String(b.email||'').toLowerCase().trim(),nickname=nameClean(b.nickname),inv=String(b.invite||'').trim(),pass=b.password;
-   if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategory(b.memberCategory)||inv.length<20 || b.adultConsent!==true || b.privacyConsent!==true)return err('Udfyld alle felter, og bekræft at du er voksen og accepterer reglerne.');
+   if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategories(requestedCategories(b))||inv.length<20 || b.adultConsent!==true || b.privacyConsent!==true)return err('Udfyld alle felter, og bekræft at du er voksen og accepterer reglerne.');
    const invHash=await digest(inv),registered=now();const invitation=await env.FORUM_DB.prepare('SELECT token_hash FROM invites WHERE token_hash=? AND used_at IS NULL AND expires_at>?').bind(invHash,registered).first();if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
    const id=crypto.randomUUID(),salt=b64(random(16)),hash=await pbkdf(pass,salt);
    try{const updates=await env.FORUM_DB.batch([
-      env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,member_category,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'member\',?,?,?,?)').bind(id,email,nickname,b.memberCategory,salt,hash,iso()),
+      env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,member_category,member_categories,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'member\',?,?,?,?,?)').bind(id,email,nickname,requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),salt,hash,iso()),
       env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=?,used_at=? WHERE token_hash=? AND used_at IS NULL').bind(id,registered,invHash)
    ]);if((updates[1]?.meta?.changes||0)!==1){await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(id).run();return err('Invitationskoden er allerede brugt.',403)}}catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409);}
-   return api({ok:true,viewer:{id,nickname,role:'member',memberCategory:b.memberCategory}},201,{'Set-Cookie':cookie(await session(env,{id}))});
+   return api({ok:true,viewer:{id,nickname,role:'member',memberCategory:requestedCategories(b)[0],memberCategories:requestedCategories(b)}},201,{'Set-Cookie':cookie(await session(env,{id}))});
  }
  if(method==='POST'&&path==='/api/forum/login'){
    if(!await limited(env,req,'login',8,600000))return err('For mange loginforsøg. Prøv igen senere.',429);
@@ -112,9 +127,9 @@ async function routes(req, env, path){
    if(requiredUser(u))return requiredUser(u);
    if(!await limited(env,req,'member-category',20,3600000))return err('For mange profilændringer. Prøv lidt senere.',429);
    const b=await jsonBody(req);
-   if(!validMemberCategory(b.memberCategory))return err('Vælg Opereret, Medrørende eller Fagprofessionel.',400);
-   await env.FORUM_DB.prepare('UPDATE users SET member_category=? WHERE id=?').bind(b.memberCategory,u.id).run();
-   return api({ok:true,viewer:{...publicUser(u),memberCategory:b.memberCategory}});
+   if(!validMemberCategories(requestedCategories(b)))return err('Vælg mindst én af de tre brugerkategorier.',400);
+   await env.FORUM_DB.prepare('UPDATE users SET member_category=?,member_categories=? WHERE id=?').bind(requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),u.id).run();
+   return api({ok:true,viewer:{...publicUser(u),memberCategory:requestedCategories(b)[0],memberCategories:requestedCategories(b)}});
  }
  if(method==='GET'&&path==='/api/forum/invites'){
    if(requiredAdmin(u))return requiredAdmin(u);
@@ -130,7 +145,7 @@ async function routes(req, env, path){
    const url=new URL(req.url),category=url.searchParams.get('category')||'',q=(url.searchParams.get('q')||'').slice(0,80),offset=Math.min(200,Math.max(0,Number(url.searchParams.get('offset'))||0));
    const clause=u?.role==='admin'?'(t.status IN (\'approved\',\'pending\'))':u?'(t.status=\'approved\' OR t.author_id=?)':'t.status=\'approved\'';
    const bindings=u&&u.role!=='admin'?[u.id]:[];
-   let sql=`SELECT t.id,t.category,t.title,t.body,t.author_id,t.status,t.created_at,t.updated_at,v.nickname,v.member_category,(SELECT COUNT(*) FROM replies r WHERE r.thread_id=t.id AND r.status='approved') AS reply_count FROM threads t JOIN users v ON v.id=t.author_id WHERE ${clause} AND v.banned=0`;
+   let sql=`SELECT t.id,t.category,t.title,t.body,t.author_id,t.status,t.created_at,t.updated_at,v.nickname,v.member_category,v.member_categories,(SELECT COUNT(*) FROM replies r WHERE r.thread_id=t.id AND r.status='approved') AS reply_count FROM threads t JOIN users v ON v.id=t.author_id WHERE ${clause} AND v.banned=0`;
    if(category){if(!CATEGORIES.includes(category))return err('Ukendt kategori.');sql+=' AND t.category=?';bindings.push(category);}
    if(q){sql+=' AND (t.title LIKE ? OR t.body LIKE ?)';bindings.push('%'+q+'%','%'+q+'%');}
    sql+=' ORDER BY t.created_at DESC LIMIT 21 OFFSET ?';bindings.push(offset);
@@ -145,11 +160,11 @@ async function routes(req, env, path){
  }
  const threadMatch=path.match(/^\/api\/forum\/threads\/([a-f0-9-]{36})$/);
  if(method==='GET'&&threadMatch){
-   const id=threadMatch[1];const t=await env.FORUM_DB.prepare('SELECT t.*,v.nickname,v.member_category,v.banned FROM threads t JOIN users v ON v.id=t.author_id WHERE t.id=?').bind(id).first();
+   const id=threadMatch[1];const t=await env.FORUM_DB.prepare('SELECT t.*,v.nickname,v.member_category,v.member_categories,v.banned FROM threads t JOIN users v ON v.id=t.author_id WHERE t.id=?').bind(id).first();
    if(!t||t.banned||!(t.status==='approved'||u&&(u.role==='admin'||u.id===t.author_id)))return err('Tråden findes ikke.',404);
    const viewAll=u?.role==='admin';const own=u?.id||'';
-   const result=await env.FORUM_DB.prepare("SELECT r.id,r.author_id,r.body,r.status,r.created_at,v.nickname,v.member_category FROM replies r JOIN users v ON v.id=r.author_id WHERE r.thread_id=? AND v.banned=0 AND (r.status='approved' OR r.author_id=? OR ?=1) ORDER BY r.created_at LIMIT 150").bind(id,own,viewAll?1:0).all();
-   return api({thread:metaThread(t),replies:(result.results||[]).map(r=>({id:r.id,body:r.body,author:r.nickname,authorId:r.author_id,authorCategory:r.member_category||null,status:r.status,createdAt:r.created_at}))});
+   const result=await env.FORUM_DB.prepare("SELECT r.id,r.author_id,r.body,r.status,r.created_at,v.nickname,v.member_category,v.member_categories FROM replies r JOIN users v ON v.id=r.author_id WHERE r.thread_id=? AND v.banned=0 AND (r.status='approved' OR r.author_id=? OR ?=1) ORDER BY r.created_at LIMIT 150").bind(id,own,viewAll?1:0).all();
+   return api({thread:metaThread(t),replies:(result.results||[]).map(r=>({id:r.id,body:r.body,author:r.nickname,authorId:r.author_id,authorCategory:categoriesOf(r)[0]||null,authorCategories:categoriesOf(r),status:r.status,createdAt:r.created_at}))});
  }
  if(method==='POST'&&/^\/api\/forum\/threads\/[a-f0-9-]{36}\/replies$/.test(path)){
    if(requiredUser(u))return requiredUser(u);
@@ -170,8 +185,8 @@ async function routes(req, env, path){
  if(method==='GET'&&path==='/api/forum/moderation'){
    if(requiredAdmin(u))return requiredAdmin(u);
    const [threads,replies,reports]=await Promise.all([
-     env.FORUM_DB.prepare("SELECT t.id,t.category,t.title,t.body,t.created_at,v.nickname,v.member_category FROM threads t JOIN users v ON v.id=t.author_id WHERE t.status='pending' ORDER BY t.created_at LIMIT 100").all(),
-     env.FORUM_DB.prepare("SELECT r.id,r.body,r.created_at,v.nickname,v.member_category,t.title AS thread_title FROM replies r JOIN users v ON v.id=r.author_id JOIN threads t ON t.id=r.thread_id WHERE r.status='pending' ORDER BY r.created_at LIMIT 100").all(),
+     env.FORUM_DB.prepare("SELECT t.id,t.category,t.title,t.body,t.created_at,v.nickname,v.member_category,v.member_categories FROM threads t JOIN users v ON v.id=t.author_id WHERE t.status='pending' ORDER BY t.created_at LIMIT 100").all(),
+     env.FORUM_DB.prepare("SELECT r.id,r.body,r.created_at,v.nickname,v.member_category,v.member_categories,t.title AS thread_title FROM replies r JOIN users v ON v.id=r.author_id JOIN threads t ON t.id=r.thread_id WHERE r.status='pending' ORDER BY r.created_at LIMIT 100").all(),
      env.FORUM_DB.prepare("SELECT a.id,a.target_type,a.target_id,a.reason,a.created_at,v.nickname,COALESCE((SELECT title || ' — ' || substr(body,1,180) FROM threads WHERE id=a.target_id AND a.target_type='thread'),(SELECT substr(body,1,180) FROM replies WHERE id=a.target_id AND a.target_type='reply'),'Indholdet er slettet') AS target_preview FROM reports a JOIN users v ON v.id=a.reporter_id WHERE a.status='open' ORDER BY a.created_at LIMIT 100").all()
    ]);return api({threads:threads.results||[],replies:replies.results||[],reports:reports.results||[]});
  }
@@ -190,8 +205,8 @@ async function routes(req, env, path){
  }
  if(method==='GET'&&path==='/api/forum/members'){
    if(requiredAdmin(u))return requiredAdmin(u);
-   const list=await env.FORUM_DB.prepare("SELECT id,nickname,email,role,member_category,banned,created_at FROM users ORDER BY created_at DESC LIMIT 100").all();
-   return api({members:list.results||[]});
+   const list=await env.FORUM_DB.prepare("SELECT id,nickname,email,role,member_category,member_categories,banned,created_at FROM users ORDER BY created_at DESC LIMIT 100").all();
+   return api({members:(list.results||[]).map(x=>({...x,memberCategories:categoriesOf(x)}))});
  }
  if(method==='POST'&&path==='/api/forum/members'){
    if(requiredAdmin(u))return requiredAdmin(u);
@@ -205,7 +220,7 @@ async function routes(req, env, path){
  if(method==='GET'&&path==='/api/forum/export'){
    if(requiredUser(u))return requiredUser(u);
    const [t,r]=await Promise.all([env.FORUM_DB.prepare('SELECT category,title,body,status,created_at FROM threads WHERE author_id=?').bind(u.id).all(),env.FORUM_DB.prepare('SELECT thread_id,body,status,created_at FROM replies WHERE author_id=?').bind(u.id).all()]);
-   return api({profile:{email:u.email,nickname:u.nickname,role:u.role,memberCategory:u.member_category||null},threads:t.results||[],replies:r.results||[]});
+   return api({profile:{email:u.email,nickname:u.nickname,role:u.role,memberCategory:categoriesOf(u)[0]||null,memberCategories:categoriesOf(u)},threads:t.results||[],replies:r.results||[]});
  }
  if(method==='POST'&&path==='/api/forum/delete-account'){
    if(requiredUser(u))return requiredUser(u);
