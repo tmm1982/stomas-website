@@ -155,7 +155,7 @@ async function routes(req, env, path){
    const [threads,replies,reports]=await Promise.all([
      env.FORUM_DB.prepare("SELECT t.id,t.category,t.title,t.body,t.created_at,v.nickname FROM threads t JOIN users v ON v.id=t.author_id WHERE t.status='pending' ORDER BY t.created_at LIMIT 100").all(),
      env.FORUM_DB.prepare("SELECT r.id,r.body,r.created_at,v.nickname,t.title AS thread_title FROM replies r JOIN users v ON v.id=r.author_id JOIN threads t ON t.id=r.thread_id WHERE r.status='pending' ORDER BY r.created_at LIMIT 100").all(),
-     env.FORUM_DB.prepare("SELECT a.id,a.target_type,a.target_id,a.reason,a.created_at,v.nickname FROM reports a JOIN users v ON v.id=a.reporter_id WHERE a.status='open' ORDER BY a.created_at LIMIT 100").all()
+     env.FORUM_DB.prepare("SELECT a.id,a.target_type,a.target_id,a.reason,a.created_at,v.nickname,COALESCE((SELECT title || ' — ' || substr(body,1,180) FROM threads WHERE id=a.target_id AND a.target_type='thread'),(SELECT substr(body,1,180) FROM replies WHERE id=a.target_id AND a.target_type='reply'),'Indholdet er slettet') AS target_preview FROM reports a JOIN users v ON v.id=a.reporter_id WHERE a.status='open' ORDER BY a.created_at LIMIT 100").all()
    ]);return api({threads:threads.results||[],replies:replies.results||[],reports:reports.results||[]});
  }
  if(method==='POST'&&path==='/api/forum/moderation'){
@@ -169,6 +169,20 @@ async function routes(req, env, path){
      if(action==='close')return err('Ugyldig handling.');
      await env.FORUM_DB.prepare(`UPDATE ${kind==='thread'?'threads':'replies'} SET status=? WHERE id=?`).bind(action==='approve'?'approved':'rejected',id).run();
    }
+   return api({ok:true});
+ }
+ if(method==='GET'&&path==='/api/forum/members'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   const list=await env.FORUM_DB.prepare("SELECT id,nickname,email,role,banned,created_at FROM users ORDER BY created_at DESC LIMIT 100").all();
+   return api({members:list.results||[]});
+ }
+ if(method==='POST'&&path==='/api/forum/members'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   const b=await jsonBody(req);
+   if(!/^[a-f0-9-]{36}$/.test(String(b.id||''))||typeof b.banned!=='boolean'||b.id===u.id)return err('Ugyldig medlemsændring.');
+   const target=await env.FORUM_DB.prepare('SELECT role FROM users WHERE id=?').bind(b.id).first();
+   if(!target||target.role==='admin')return err('Kan ikke ændre ejerkonto.',403);
+   await env.FORUM_DB.prepare('UPDATE users SET banned=? WHERE id=?').bind(b.banned?1:0,b.id).run();
    return api({ok:true});
  }
  if(method==='GET'&&path==='/api/forum/export'){
