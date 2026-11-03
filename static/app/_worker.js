@@ -53,17 +53,6 @@ async function routes(req, env, path){
    if(origin!==myOrigin)return err('Anmodningen blev afvist af sikkerhedshensyn.',403);
  }
 
- if(method==='GET' && path==='/api/forum/__internal_check') {
-   if(req.headers.get('X-Forum-Diagnostic')!=='kUzbmFvdQykxARo_8FdNhE1qhkPzewR6')return err('Ikke fundet.',404);
-   const steps={};
-   try{const salt=b64(random(16));const hash=await pbkdf('TemporaryVerificationPassword123456',salt);steps.passwordHash=hash.length>10?'ok':'empty';}
-   catch(e){steps.passwordHash=String(e?.name||'Error')+': '+String(e?.message||'').slice(0,180);}
-   try{const check=await env.FORUM_DB.prepare('SELECT COUNT(*) AS users FROM users').first();steps.db=typeof check?.users==='number'?'ok':'unexpected';}
-   catch(e){steps.db=String(e?.name||'Error')+': '+String(e?.message||'').slice(0,180);}
-   try{const bytes=random(32);steps.random=bytes.length===32?'ok':'empty';steps.digest=(await digest('test-digest')).length>10?'ok':'empty';}
-   catch(e){steps.random=String(e?.name||'Error')+': '+String(e?.message||'').slice(0,180);}
-   return api({diagnostic:steps});
- }
  const u=await viewer(env,req);
  if(method==='GET'&&path==='/api/forum'){
    const owner=await env.FORUM_DB.prepare('SELECT 1 AS ok FROM users WHERE role=\'admin\' LIMIT 1').first();
