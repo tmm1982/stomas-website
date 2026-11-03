@@ -5,6 +5,9 @@
 <meta property="og:title" content="STOMAS App – Demo">
 <meta property="og:description" content="Udforsk STOMAS-appen med spørgsmål, guides, hjælp til nyopererede og medrørende.">
 <meta property="og:type" content="website"><meta name="theme-color" content="#091725">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="/icons/stomas-192.png"><link rel="apple-touch-icon" href="/icons/stomas-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="STOMAS">
+<link rel="stylesheet" href="/pwa-install.css">
 <meta name="description" content="STOMAS – Hjælp til nyopererede, 60 spørgsmål og 26 guides om livet efter total laryngektomi. Demoversion med indhold under faglig kvalitetssikring.">
 <style>
 :root{color-scheme:dark;--bg:#081521;--bg2:#0c2030;--panel:#122638;--panel2:#162f43;--line:#2c4c60;--ink:#f2f8fd;--muted:#a9bdcb;--cyan:#54d5db;--blue:#388df0;--shadow:0 25px 90px #0309117a;--radius:21px}
@@ -722,4 +725,5 @@ document.addEventListener('change',e=>{const relItem=e.target.closest('[data-rel
 $('emergency-button').onclick=()=>jump('emergency');$('font-button').onclick=()=>{large=!large;document.body.classList.toggle('large-text',large);$('font-button').textContent=large?'A− Tekst':'A+ Tekst'};
 render();})();
 </script>
+<script defer src="/pwa-install.js"></script>
 </body></html>
