@@ -13,8 +13,13 @@ const b64 = bytes => btoa(String.fromCharCode(...new Uint8Array(bytes))).replace
 const unb64 = text => Uint8Array.from(atob(text.replace(/-/g,'+').replace(/_/g,'/') + '='.repeat((4-text.length%4)%4)), c => c.charCodeAt(0));
 const digest = async value => b64(await crypto.subtle.digest('SHA-256', encoder.encode(value)));
 async function pbkdf(password, salt) {
+ // Cloudflare Workers supports at most 100,000 PBKDF2 iterations per deriveBits call.
+ // Two sequential derivations with the same unique per-user salt strengthen the stored password verifier.
+ const randomSalt = unb64(salt);
  const key = await crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveBits']);
- return b64(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:unb64(salt),iterations:150000},key,256));
+ const first = await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:randomSalt,iterations:100000},key,256);
+ const secondKey = await crypto.subtle.importKey('raw', first, 'PBKDF2', false, ['deriveBits']);
+ return b64(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:randomSalt,iterations:100000},secondKey,256));
 }
 function constantEqual(a,b) {if(typeof a!=='string'||typeof b!=='string') return false;let n=a.length^b.length;for(let i=0;i<Math.max(a.length,b.length);i++)n|=(a.charCodeAt(i)||0)^(b.charCodeAt(i)||0);return n===0;}
 function api(data,status=200,extra={}) {return new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Frame-Options':'DENY',...extra}});}
