@@ -1,5 +1,5 @@
 /* STOMAS Fællesskab – Cloudflare Pages Advanced Mode Worker, 2026-11.
-   A restricted, moderated community beta; all member posts require moderation.
+   A moderated community; all member posts require moderation.
    Only deployed as part of the static/app Pages output directory.
 */
 const CATEGORIES = ["Hverdagen", "Tale og udstyr", "Nyopereret", "Motion og fritid", "Medrørende", "Forslag til STOMAS"];
@@ -137,7 +137,7 @@ async function routes(req, env, path, ctx){
    if(!await limited(env,req,'register',4,3600000))return err('For mange forsøg. Prøv igen senere.',429);
    const b=await jsonBody(req),email=String(b.email||'').toLowerCase().trim(),nickname=nameClean(b.nickname),inv=String(b.invite||'').trim(),pass=b.password;
    const hasInvite=inv.length>=20;
-   if(!hasInvite&&!OPEN_SIGNUP(env))return err('Tilmelding er midlertidigt kun med invitation, mens vi klargør e-mailbekræftelse.',403);
+   if(!hasInvite&&!OPEN_SIGNUP(env))return err('Tilmelding er i øjeblikket kun mulig med invitation.',403);
    if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategories(requestedCategories(b))||b.adultConsent!==true||b.privacyConsent!==true)
      return err('Udfyld felterne korrekt, vælg en kategori, og bekræft at du er voksen og accepterer reglerne.');
    // Honeypot: genuine registration forms leave this invisible field blank.
@@ -386,7 +386,7 @@ async function routes(req, env, path, ctx){
  }
  if(method==='POST'&&path==='/api/forum/delete-account'){
    if(requiredUser(u))return requiredUser(u);
-   if(u.role==='admin')return err('Ejerkontoen kan ikke slettes fra betaforummet. Kontakt administratoren.',403);
+   if(u.role==='admin')return err('Ejerkontoen kan ikke slettes fra forummet. Kontakt administratoren.',403);
    if(!await limited(env,req,'delete',5,3600000))return err('For mange forsøg.',429);
    const b=await jsonBody(req),row=await env.FORUM_DB.prepare('SELECT pass_salt,pass_hash FROM users WHERE id=?').bind(u.id).first();
    if(typeof b.password!=='string'||!constantEqual(await pbkdf(b.password,row.pass_salt),row.pass_hash))return err('Forkert adgangskode.',403);
