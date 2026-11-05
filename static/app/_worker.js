@@ -47,8 +47,6 @@ function nameClean(name){return String(name||'').trim().replace(/\s+/g,' ');}
 const validName = n => n.length>=2 && n.length<=32 && !/[<>\r\n]/.test(n);
 const validPassword = p => typeof p==='string' && p.length>=12 && p.length<=128;
 const OPEN_SIGNUP = env => String(env?.FORUM_REGISTRATION_OPEN||'').toLowerCase()==='true';
-// Temporary admin-only live verification test; remove after the end-to-end check.
-const FORUM_TEST_EMAIL = 'info+stomas-forumtest-20261105@stomas.dk';
 const VERIFICATION_LIFETIME_MS=24*60*60*1000;
 const VERIFY_TOKEN_PATTERN=/^[A-Za-z0-9_-]{43}$/;
 function cookieValue(req){ const c=req.headers.get('Cookie')||'';const m=c.match(/(?:^|;\s*)__Host-stomas_forum=([^;]+)/);return m?.[1]||'';}
@@ -139,7 +137,7 @@ async function routes(req, env, path, ctx){
    if(!await limited(env,req,'register',4,3600000))return err('For mange forsøg. Prøv igen senere.',429);
    const b=await jsonBody(req),email=String(b.email||'').toLowerCase().trim(),nickname=nameClean(b.nickname),inv=String(b.invite||'').trim(),pass=b.password;
    const hasInvite=inv.length>=20;
-   if(!hasInvite&&!OPEN_SIGNUP(env)&&!(u?.role==='admin'&&email===FORUM_TEST_EMAIL))return err('Tilmelding er midlertidigt kun med invitation, mens vi klargør e-mailbekræftelse.',403);
+   if(!hasInvite&&!OPEN_SIGNUP(env))return err('Tilmelding er midlertidigt kun med invitation, mens vi klargør e-mailbekræftelse.',403);
    if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategories(requestedCategories(b))||b.adultConsent!==true||b.privacyConsent!==true)
      return err('Udfyld felterne korrekt, vælg en kategori, og bekræft at du er voksen og accepterer reglerne.');
    // Honeypot: genuine registration forms leave this invisible field blank.
@@ -200,7 +198,7 @@ async function routes(req, env, path, ctx){
  }
  if(method==='POST'&&path==='/api/forum/resend-verification'){
    const b=await jsonBody(req),email=String(b.email||'').trim().toLowerCase();
-   if(!OPEN_SIGNUP(env)&&!(u?.role==='admin'&&email===FORUM_TEST_EMAIL))return err('Åben tilmelding er ikke aktiveret endnu.',503);
+   if(!OPEN_SIGNUP(env))return err('Åben tilmelding er ikke aktiveret endnu.',503);
    if(!await limited(env,req,'resend-verification',3,3600000))return err('For mange forsøg. Prøv senere.',429);
    if(!validEmail(email))return err('Angiv en gyldig e-mail.',400);
    if(!await limitedEmail(env,'resend-email',email,2,3600000))return err('Prøv igen senere.',429);
