@@ -317,6 +317,24 @@ async function routes(req, env, path, ctx){
    const latest=await env.FORUM_DB.prepare("SELECT last_error FROM forum_registration_notifications WHERE sent_at IS NULL AND last_error IS NOT NULL ORDER BY created_at DESC LIMIT 1").first();
    return api({to:'info@stomas.dk',pending:result?.pending||0,sent:result?.sent||0,lastError:latest?.last_error||null});
  }
+ if(method==='POST'&&path==='/api/forum/notifications/test'){
+   if(requiredAdmin(u))return requiredAdmin(u);
+   if(!await limited(env,req,'notification-test',3,3600000))return err('For mange testmails. Prøv igen senere.',429);
+   if(!env.FORUM_MAILER)return err('Mailtjenesten er ikke tilsluttet.',503);
+   try {
+     const response=await env.FORUM_MAILER.fetch('https://mailer.internal/internal/test',{
+       method:'POST',headers:{'Content-Type':'application/json'},body:'{}'
+     });
+     if(!response.ok){
+       console.error('STOMAS test email, HTTP',response.status);
+       return err('Testmailen kunne ikke sendes. Tjek Resend og prøv igen.',502);
+     }
+     return api({ok:true,message:'Resend har accepteret testmailen til info@stomas.dk. Kontrollér din indbakke.'});
+   }catch(error){
+     console.error('STOMAS test email',String(error?.message||error).slice(0,120));
+     return err('Der opstod en fejl ved afsendelse af testmailen.',502);
+   }
+ }
  if(method==='POST'&&path==='/api/forum/notifications/retry'){
    if(requiredAdmin(u))return requiredAdmin(u);
    if(!await limited(env,req,'notification-retry',5,3600000))return err('For mange genforsøg. Prøv igen senere.',429);
