@@ -174,7 +174,7 @@ async function safeAction(fn,form=null){
    if(button?.isConnected){button.disabled=false;button.textContent=original;}
  }
 }
-document.addEventListener('click',ev=>{const el=ev.target.closest('[data-pin],[data-page],[data-topic],[data-thread],[data-logout],[data-invite],[data-moderate],[data-copy-invite],[data-report],[data-export],[data-clear-search],[data-load-more],[data-ban],[data-notify-retry]');if(!el)return;
+document.addEventListener('click',ev=>{const el=ev.target.closest('[data-pin],[data-page],[data-topic],[data-thread],[data-logout],[data-invite],[data-moderate],[data-copy-invite],[data-report],[data-export],[data-clear-search],[data-load-more],[data-ban],[data-notify-retry],[data-notify-test]');if(!el)return;
  if(el.dataset.pin){
     safeAction(async()=>{
       const shouldPin=el.dataset.setPinned==='1';
