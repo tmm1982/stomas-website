@@ -46,10 +46,33 @@ function validEmail(email){return typeof email==='string'&&email.length<=254&&/^
 function nameClean(name){return String(name||'').trim().replace(/\s+/g,' ');}
 const validName = n => n.length>=2 && n.length<=32 && !/[<>\r\n]/.test(n);
 const validPassword = p => typeof p==='string' && p.length>=12 && p.length<=128;
+const OPEN_SIGNUP = env => String(env?.FORUM_REGISTRATION_OPEN||'').toLowerCase()==='true';
+const VERIFICATION_LIFETIME_MS=24*60*60*1000;
+const VERIFY_TOKEN_PATTERN=/^[A-Za-z0-9_-]{43}$/;
 function cookieValue(req){ const c=req.headers.get('Cookie')||'';const m=c.match(/(?:^|;\s*)__Host-stomas_forum=([^;]+)/);return m?.[1]||'';}
-async function viewer(env,req){const token=cookieValue(req);if(!/^[A-Za-z0-9_-]{40,50}$/.test(token))return null;const hash=await digest(token);const user=await env.FORUM_DB.prepare('SELECT u.id,u.nickname,u.email,u.role,u.member_category,u.member_categories,u.banned FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(hash,now()).first();return user&&!user.banned?user:null;}
+async function viewer(env,req){const token=cookieValue(req);if(!/^[A-Za-z0-9_-]{40,50}$/.test(token))return null;const hash=await digest(token);const user=await env.FORUM_DB.prepare('SELECT u.id,u.nickname,u.email,u.role,u.member_category,u.member_categories,u.email_verified_at,u.banned FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(hash,now()).first();return user&&!user.banned&&!!user.email_verified_at?user:null;}
 function publicUser(u){if(!u)return null;const cats=categoriesOf(u);return {id:u.id,nickname:u.nickname,role:u.role,memberCategory:cats[0]||null,memberCategories:cats};}
 async function jsonBody(req,max=12000){ if(!((req.headers.get('Content-Type')||'').toLowerCase().startsWith('application/json')))throw Error('TYPE');const text=await req.text();if(text.length>max)throw Error('SIZE');const data=JSON.parse(text);if(!data||Array.isArray(data)||typeof data!=='object')throw Error('BODY');return data; }
+async function limitedEmail(env, action, email, limit=2, window=3600000){
+ const key=await digest((env.FORUM_RATE_SECRET||'forum')+'|'+action+'|'+email);
+ const start=now(),old=start-window;
+ await env.FORUM_DB.prepare('INSERT INTO rate_limits(key_hash,window_start,attempts) VALUES(?,?,1) ON CONFLICT(key_hash) DO UPDATE SET attempts=CASE WHEN window_start<? THEN 1 ELSE attempts+1 END, window_start=CASE WHEN window_start<? THEN ? ELSE window_start END').bind(key,start,old,old,start).run();
+ const row=await env.FORUM_DB.prepare('SELECT attempts FROM rate_limits WHERE key_hash=?').bind(key).first();
+ return (row?.attempts||0)<=limit;
+}
+async function sendVerificationEmail(env,email,token){
+ if(!env.FORUM_MAILER)throw Error('Mailer service is missing');
+ const res=await env.FORUM_MAILER.fetch('https://mailer.internal/internal/verification',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,token})});
+ if(!res.ok){console.error('Verification sending rejected, HTTP',res.status);throw Error('MAIL_SEND_FAILED')}
+ return true;
+}
+async function queueRegistrationNotice(env,ctx,userId){
+ try{
+   const id=crypto.randomUUID();
+   await env.FORUM_DB.prepare('INSERT INTO forum_registration_notifications(id,user_id,created_at) VALUES(?,?,?)').bind(id,userId,iso()).run();
+   if(ctx?.waitUntil)ctx.waitUntil(deliverRegistrationNotice(env,id));
+ }catch(e){console.error('Registration notice queue:',String(e?.message||e).slice(0,120))}
+}
 async function limited(env,req,action,limit=6,window=600000){
  const ip=req.headers.get('CF-Connecting-IP')||'local';
  const k=await digest((env.FORUM_RATE_SECRET||'forum')+'|'+action+'|'+ip);
@@ -96,7 +119,7 @@ async function routes(req, env, path, ctx){
  if(method==='GET'&&path==='/api/forum'){
    const owner=await env.FORUM_DB.prepare('SELECT 1 AS ok FROM users WHERE role=\'admin\' LIMIT 1').first();
    const stats=await env.FORUM_DB.prepare('SELECT COUNT(*) AS total FROM threads WHERE status=\'approved\'').first();
-   return api({ok:true,setupRequired:!owner,mode:'invite-only',moderated:true,categories:CATEGORIES,threads:stats?.total||0,viewer:publicUser(u)});
+   return api({ok:true,setupRequired:!owner,mode:OPEN_SIGNUP(env)?'open-email-verification':'invite-only',registrationOpen:OPEN_SIGNUP(env),moderated:true,categories:CATEGORIES,threads:stats?.total||0,viewer:publicUser(u)});
  }
  if(method==='GET'&&path==='/api/forum/me')return api({viewer:publicUser(u)});
  if(method==='POST'&&path==='/api/forum/setup'){
@@ -111,27 +134,87 @@ async function routes(req, env, path, ctx){
    return api({ok:true,viewer:{id,nickname,role:'admin'}},201,{'Set-Cookie':cookie(await session(env,{id}))});
  }
  if(method==='POST'&&path==='/api/forum/register'){
-   if(!await limited(env,req,'register',5,3600000))return err('For mange forsøg. Prøv igen senere.',429);
+   if(!await limited(env,req,'register',4,3600000))return err('For mange forsøg. Prøv igen senere.',429);
    const b=await jsonBody(req),email=String(b.email||'').toLowerCase().trim(),nickname=nameClean(b.nickname),inv=String(b.invite||'').trim(),pass=b.password;
-   if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategories(requestedCategories(b))||inv.length<20 || b.adultConsent!==true || b.privacyConsent!==true)return err('Udfyld alle felter, og bekræft at du er voksen og accepterer reglerne.');
-   const invHash=await digest(inv),registered=now();const invitation=await env.FORUM_DB.prepare('SELECT token_hash FROM invites WHERE token_hash=? AND used_at IS NULL AND expires_at>?').bind(invHash,registered).first();if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
+   const hasInvite=inv.length>=20;
+   if(!hasInvite&&!OPEN_SIGNUP(env))return err('Tilmelding er midlertidigt kun med invitation, mens vi klargør e-mailbekræftelse.',403);
+   if(!validEmail(email)||!validName(nickname)||!validPassword(pass)||!validMemberCategories(requestedCategories(b))||b.adultConsent!==true||b.privacyConsent!==true)
+     return err('Udfyld felterne korrekt, vælg en kategori, og bekræft at du er voksen og accepterer reglerne.');
+   // Honeypot: genuine registration forms leave this invisible field blank.
+   if(typeof b.website==='string'&&b.website.trim())return api({ok:true,verificationRequired:!hasInvite},202);
+   if(!await limitedEmail(env,'register-email',email,3,3600000))return err('For mange forsøg. Prøv igen senere.',429);
+   let inviteHash=null,registered=now();
+   if(hasInvite){
+     inviteHash=await digest(inv);
+     const invitation=await env.FORUM_DB.prepare('SELECT token_hash FROM invites WHERE token_hash=? AND used_at IS NULL AND expires_at>?').bind(inviteHash,registered).first();
+     if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
+   }
+   // Expired, unverified registrations have never been allowed to sign in or post.
+   if(!hasInvite)await env.FORUM_DB.prepare("DELETE FROM users WHERE email=? AND email_verified_at IS NULL AND created_at<?").bind(email,new Date(now()-7*86400000).toISOString()).run();
+   const existing=await env.FORUM_DB.prepare('SELECT id FROM users WHERE email=?').bind(email).first();
+   if(existing)return hasInvite?err('E-mailen er allerede i brug.',409):api({ok:true,verificationRequired:true,message:'Hvis adressen kan bruges, modtager du en bekræftelsesmail. Tjek også spam, eller prøv at logge ind.'},202);
    const id=crypto.randomUUID(),salt=b64(random(16)),hash=await pbkdf(pass,salt);
-   try{const updates=await env.FORUM_DB.batch([
-      env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,member_category,member_categories,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'member\',?,?,?,?,?)').bind(id,email,nickname,requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),salt,hash,iso()),
-      env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=?,used_at=? WHERE token_hash=? AND used_at IS NULL').bind(id,registered,invHash)
-   ]);if((updates[1]?.meta?.changes||0)!==1){await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(id).run();return err('Invitationskoden er allerede brugt.',403)}}catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409);}
-   // Persist the notification separately. Email failures never block registration.
-   try {
-     const notificationId=crypto.randomUUID();
-     await env.FORUM_DB.prepare('INSERT INTO forum_registration_notifications(id,user_id,created_at) VALUES(?,?,?)').bind(notificationId,id,iso()).run();
-     if(ctx?.waitUntil)ctx.waitUntil(deliverRegistrationNotice(env,notificationId));
-   } catch(e) {console.error('Could not queue registration notice:',String(e?.message||e).slice(0,120))}
-   return api({ok:true,viewer:{id,nickname,role:'member',memberCategory:requestedCategories(b)[0],memberCategories:requestedCategories(b)}},201,{'Set-Cookie':cookie(await session(env,{id}))});
+   if(hasInvite){
+     try{
+       const updates=await env.FORUM_DB.batch([
+         env.FORUM_DB.prepare("INSERT INTO users(id,email,nickname,role,member_category,member_categories,pass_salt,pass_hash,created_at,email_verified_at) VALUES(?,?,?,'member',?,?,?,?,?,?)").bind(id,email,nickname,requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),salt,hash,iso(),iso()),
+         env.FORUM_DB.prepare('UPDATE invites SET redeemed_by=?,used_at=? WHERE token_hash=? AND used_at IS NULL').bind(id,registered,inviteHash)
+       ]);
+       if((updates[1]?.meta?.changes||0)!==1){await env.FORUM_DB.prepare('DELETE FROM users WHERE id=?').bind(id).run();return err('Invitationskoden er allerede brugt.',403)}
+     }catch(_){return err('E-mailen er i brug, eller invitationskoden er anvendt.',409)}
+     await queueRegistrationNotice(env,ctx,id);
+     return api({ok:true,viewer:{id,nickname,role:'member',memberCategory:requestedCategories(b)[0],memberCategories:requestedCategories(b)}},201,{'Set-Cookie':cookie(await session(env,{id}))});
+   }
+   const token=b64(random(32));
+   try{
+     await env.FORUM_DB.batch([
+       env.FORUM_DB.prepare("INSERT INTO users(id,email,nickname,role,member_category,member_categories,pass_salt,pass_hash,created_at) VALUES(?,?,?,'member',?,?,?, ?,?)").bind(id,email,nickname,requestedCategories(b)[0],JSON.stringify(requestedCategories(b)),salt,hash,iso()),
+       env.FORUM_DB.prepare('INSERT INTO forum_email_verifications(user_id,token_hash,created_at,expires_at,last_sent_at) VALUES(?,?,?,?,?)').bind(id,await digest(token),now(),now()+VERIFICATION_LIFETIME_MS,now())
+     ]);
+   }catch(e){
+     console.error('Public registration database:',String(e?.message||e).slice(0,150));
+     return err('Kontoen kunne ikke oprettes. Prøv igen senere.',503);
+   }
+   try{await sendVerificationEmail(env,email,token);}
+   catch(e){
+     console.error('Public registration email:',String(e?.message||e).slice(0,120));
+     await env.FORUM_DB.prepare('DELETE FROM users WHERE id=? AND email_verified_at IS NULL').bind(id).run();
+     return err('Vi kan ikke sende bekræftelsesmail lige nu. Kontoen er ikke oprettet. Prøv igen senere.',503);
+   }
+   return api({ok:true,verificationRequired:true,message:'Vi har sendt et bekræftelseslink til din e-mail. Det gælder i 24 timer.'},202);
+ }
+ if(method==='POST'&&path==='/api/forum/verify-email'){
+   if(!await limited(env,req,'verify-email',12,3600000))return err('For mange forsøg. Prøv senere.',429);
+   const b=await jsonBody(req),token=String(b.token||'');
+   if(!VERIFY_TOKEN_PATTERN.test(token))return err('Bekræftelseslinket er ugyldigt eller udløbet.',400);
+   const verification=await env.FORUM_DB.prepare('SELECT e.user_id,e.expires_at,u.email_verified_at,u.banned FROM forum_email_verifications e JOIN users u ON u.id=e.user_id WHERE e.token_hash=?').bind(await digest(token)).first();
+   if(!verification||verification.expires_at<=now()||verification.email_verified_at||verification.banned)return err('Bekræftelseslinket er ugyldigt eller udløbet. Bed om en ny mail.',400);
+   const result=await env.FORUM_DB.prepare('UPDATE users SET email_verified_at=? WHERE id=? AND email_verified_at IS NULL').bind(iso(),verification.user_id).run();
+   if((result?.meta?.changes||0)!==1)return err('Linket er allerede brugt.',409);
+   await env.FORUM_DB.prepare('DELETE FROM forum_email_verifications WHERE user_id=?').bind(verification.user_id).run();
+   const active=await env.FORUM_DB.prepare('SELECT * FROM users WHERE id=?').bind(verification.user_id).first();
+   await queueRegistrationNotice(env,ctx,verification.user_id);
+   return api({ok:true,verified:true,viewer:publicUser(active)},200,{'Set-Cookie':cookie(await session(env,active))});
+ }
+ if(method==='POST'&&path==='/api/forum/resend-verification'){
+   if(!OPEN_SIGNUP(env))return err('Åben tilmelding er ikke aktiveret endnu.',503);
+   if(!await limited(env,req,'resend-verification',3,3600000))return err('For mange forsøg. Prøv senere.',429);
+   const b=await jsonBody(req),email=String(b.email||'').trim().toLowerCase();
+   if(!validEmail(email))return err('Angiv en gyldig e-mail.',400);
+   if(!await limitedEmail(env,'resend-email',email,2,3600000))return err('Prøv igen senere.',429);
+   const user=await env.FORUM_DB.prepare('SELECT id,email_verified_at,banned FROM users WHERE email=?').bind(email).first();
+   if(!user||user.email_verified_at||user.banned)return api({ok:true,message:'Hvis din konto afventer bekræftelse, sender vi et nyt link.'});
+   const token=b64(random(32));
+   await env.FORUM_DB.prepare('INSERT INTO forum_email_verifications(user_id,token_hash,created_at,expires_at,last_sent_at) VALUES(?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET token_hash=excluded.token_hash,created_at=excluded.created_at,expires_at=excluded.expires_at,last_sent_at=excluded.last_sent_at').bind(user.id,await digest(token),now(),now()+VERIFICATION_LIFETIME_MS,now()).run();
+   try{await sendVerificationEmail(env,email,token)}
+   catch(e){console.error('Verification resend failure:',String(e?.message||e).slice(0,130));return err('Vi kunne ikke sende mailen lige nu. Prøv senere.',503)}
+   return api({ok:true,message:'Hvis din konto afventer bekræftelse, sender vi et nyt link.'});
  }
  if(method==='POST'&&path==='/api/forum/login'){
    if(!await limited(env,req,'login',8,600000))return err('For mange loginforsøg. Prøv igen senere.',429);
    const b=await jsonBody(req);const email=String(b.email||'').toLowerCase().trim();const user=validEmail(email)?await env.FORUM_DB.prepare('SELECT * FROM users WHERE email=?').bind(email).first():null;
    if(!user||user.banned||typeof b.password!=='string'||!constantEqual(await pbkdf(b.password,user.pass_salt),user.pass_hash))return err('Ugyldig e-mail eller adgangskode.',401);
+   if(!user.email_verified_at)return err('Bekræft først din e-mail via det link, vi har sendt. Du kan også bede om et nyt link.',403);
    return api({ok:true,viewer:publicUser(user)},200,{'Set-Cookie':cookie(await session(env,user))});
  }
  if(method==='POST'&&path==='/api/forum/logout'){
@@ -266,7 +349,7 @@ async function routes(req, env, path, ctx){
  }
  if(method==='GET'&&path==='/api/forum/members'){
    if(requiredAdmin(u))return requiredAdmin(u);
-   const list=await env.FORUM_DB.prepare("SELECT id,nickname,email,role,member_category,member_categories,banned,created_at FROM users ORDER BY created_at DESC LIMIT 100").all();
+   const list=await env.FORUM_DB.prepare("SELECT id,nickname,email,role,member_category,member_categories,email_verified_at,banned,created_at FROM users ORDER BY created_at DESC LIMIT 100").all();
    return api({members:(list.results||[]).map(x=>({...x,memberCategories:categoriesOf(x)}))});
  }
  if(method==='POST'&&path==='/api/forum/members'){
