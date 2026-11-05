@@ -129,7 +129,7 @@ async function routes(req, env, path, ctx){
    if(!validEmail(email)||!validName(nickname)||!validPassword(b.password))return err('Angiv gyldig e-mail, visningsnavn og adgangskode på mindst 12 tegn.');
    if(!env.FORUM_SETUP_TOKEN || !constantEqual(await digest(String(b.setupCode||'')),await digest(env.FORUM_SETUP_TOKEN)))return err('Forkert oprettelseskode.',403);
    const id=crypto.randomUUID(),salt=b64(random(16)),hash=await pbkdf(b.password,salt);
-   try{await env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,pass_salt,pass_hash,created_at) VALUES(?,?,?,\'admin\',?,?,?)').bind(id,email,nickname,salt,hash,iso()).run();}
+   try{await env.FORUM_DB.prepare('INSERT INTO users(id,email,nickname,role,pass_salt,pass_hash,created_at,email_verified_at) VALUES(?,?,?,\'admin\',?,?,?,?)').bind(id,email,nickname,salt,hash,iso(),iso()).run();}
    catch(_){return err('Ejerkontoen er allerede oprettet eller e-mailen er i brug.',409);}
    return api({ok:true,viewer:{id,nickname,role:'admin'}},201,{'Set-Cookie':cookie(await session(env,{id}))});
  }
