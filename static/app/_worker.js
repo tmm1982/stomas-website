@@ -150,7 +150,7 @@ async function routes(req, env, path, ctx){
      if(!invitation)return err('Invitationskoden er ugyldig eller allerede brugt.',403);
    }
    // Expired, unverified registrations have never been allowed to sign in or post.
-   if(!hasInvite)await env.FORUM_DB.prepare("DELETE FROM users WHERE email=? AND email_verified_at IS NULL AND created_at<?").bind(email,new Date(now()-7*86400000).toISOString()).run();
+   if(!hasInvite)await env.FORUM_DB.prepare("DELETE FROM users WHERE email_verified_at IS NULL AND created_at<?").bind(new Date(now()-7*86400000).toISOString()).run();
    const existing=await env.FORUM_DB.prepare('SELECT id FROM users WHERE email=?').bind(email).first();
    if(existing)return hasInvite?err('E-mailen er allerede i brug.',409):api({ok:true,verificationRequired:true,message:'Hvis adressen kan bruges, modtager du en bekræftelsesmail. Tjek også spam, eller prøv at logge ind.'},202);
    const id=crypto.randomUUID(),salt=b64(random(16)),hash=await pbkdf(pass,salt);
