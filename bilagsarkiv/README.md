@@ -95,3 +95,11 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Rettet ved at dobbelt-escape `\\\\n` i Workerens HTML-template. Regex-filendelser er også dobbelt-escapede, så `\\.` bevares som bogstaveligt punktum i browseren.
 - Deploy via Cloudflare API lykkedes. Cloudflare-efterkontrol bekræfter filvalgs-handler, AI-endpoint, upload, papirkurv, gendan, og 1 eksisterende aktivt bilag.
 - Endelig browser-/AI-kvitteringstest kræver brugerens login og er endnu ikke bekræftet.
+
+## Opdatering 2026-11-10 – automatiske noter fra bilag
+- AI-udtræk udvidet med `invoice_number`, `customer_number`, `order_number`, `supplier_cvr` og op til 15 `items` (varenavne/ydelser). Ingen gæt; manglende felter udelades.
+- AI genererer nu et læsevenligt `notes`-forslag: Fakturanummer, Kundenummer, Ordrenummer, Leverandør-CVR og en punktopstillet liste over varer/ydelser.
+- Uploadformular sætter forslaget i notatfeltet (bevarer allerede manuelt skrevne noter; genaflæsning erstatter tidligere maskin-genereret blok hvis den er uændret). Brugeren skal stadig selv godkende ved at gemme.
+- Øget notatgrænse fra 500 til 2.000 tegn både i UI og i serverens uploadhåndtering. D1-feltet var allerede TEXT og krævede ingen migration.
+- Prompt instruerer AI i at undgå personnumre, fulde kortnumre, bankkonti og adgangskoder. AI kan tage fejl, så bilagsnoter skal altid kontrolleres.
+- Cloudflare Worker er deployed og efterkontrolleret. Historiske bilag og data er ikke ændret; browser-test på rigtig kvittering afventer bruger.
