@@ -44,3 +44,13 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - **Status:** Opsat, men ikke end-to-end-testet i brugerens browser endnu
 - **Før rigtige bilag:** foretag dummy-upload, downloadtest og verificer backup/restore-plan
 - Bemærk: CSV-eksport er kun metadata, ikke en fuld ZIP-backup af originale bilag.
+
+
+## Opdatering 2026-11-10 – backup og regnskabsreference
+- Privat backup-bucket `stomas-bilag-backup` oprettet i samme Cloudflare-konto.
+- Separat Worker `stomas-bilag-backup` med daglig cron `15 2 * * *` (UTC). Den kopierer originalfiler til `originals/` og gemmer tidsstemplet JSON-snapshot af D1-bilagsregisteret under `snapshots/`.
+- Backup-workerens public subdomain og previews er deaktiveret; backupen forventes først kørt næste planlagte tidspunkt. **Endnu ikke restore-testet**.
+- D1 `receipts` har ny kolonne `posting_ref`, og bilagsportalens visning har handlingen **Tilknyt** til regnskabspostering samt feltet i CSV-eksport.
+- Koblingen er på nuværende tidspunkt en manuel postering-reference; der er **ingen automatisk synkronisering med Dinero eller Excel**.
+- En kopi i samme Cloudflare-konto beskytter mod visse utilsigtede ændringer, men er ikke en uafhængig disaster-recovery-backup. Planlæg periodisk offline/off-account eksport og gendannelsestest.
+- Alle bilag og øvrige data forbliver uden for dette offentlige GitHub-repository.
