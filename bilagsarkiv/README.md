@@ -75,3 +75,16 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Kontrol ved deployment: Worker succesfuldt deployed, schema og ruter verificeret; 1 aktivt bilag og 0 slettede pr. kontrollen.
 - **End-to-end-test i brugerens browser af Slet/Gendan endnu ikke gennemført.**
 - Ingen permanent sletning eller automatisk tømning af papirkurv: regnskabsbilag kan være underlagt opbevaringspligt.
+
+## Opdatering 2026-11-10 – Automatisk bilagsaflæsning (AI)
+- Produktions-Worker `stomas-bilag` udvidet med Workers AI binding (Cloudflare AI), uden at ændre hverken eksisterende originale bilag eller R2.
+- Ny Access/JWT- og Origin-beskyttet endpoint: `POST /bilag/api/analyze`, som accepterer PDF, PNG og JPEG i særligt AI-upload (maks. 3,5 MB). Den gemmer **intet** og bogfører **intet**.
+- Uploadformular forsøger automatisk AI-aflæsning ved filvalg, og tilbyder `Aflæs igen (AI)`.
+- Bilder: @cf/qwen/qwen3.8-27b vision; PDF: env.AI.toMarkdown til tekstudtræk efterfulgt af Qwen-modellen. For scannede PDF'er uden tekst kan aflæsning fejle; upload og manuel indtastning fungerer fortsat.
+- Klienten forsøger at nedskalere store billeder til JPEG **kun til AI-analyse**. Originalen der gemmes ved `Gem originalbilag` forbliver uændret.
+- AI foreslår leverandør, bilagsdato, bruttobeløb og kategori. Der er streng dato-/beløbsvalidering, og udenlandsk valuta giver advarsel i stedet for automatisk kursomregning.
+- Alle AI-oplysninger er forslag i redigerbare felter, der kræver almindeligt gem-klik; ingen automatisk bogføring eller tilladelse til at ændre historiske Dinero-posteringer.
+- Modelkald kan være forbrugsafregnede hos Cloudflare; det fremgår af formularen.
+- Adgang er fortsat begrænset til ejerens Cloudflare Access-identitet, og public Workers-domæne/previews er stadig deaktiveret.
+- Efter deployment verificeret fra Cloudflare, at begge AI-pipelines samt eksisterende bilagsfunktioner fortsat er installerede, og at 1 aktivt bilag er bevaret.
+- **Brugertest af AI-aflæsning på rigtig kvittering/PDF mangler.** Verificér resultaterne før regnskabsbrug.
