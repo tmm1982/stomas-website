@@ -64,3 +64,14 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Nuværende historiske importer er en statisk kopi, ikke en levende forbindelse til Dinero.
 - Posteringerne vises kun til valg for bilag. Det er **ikke** en ændring af virksomhedens bogførte saldo eller et automatisk bilagsmatch.
 - Backup-Workerens natlige kørsel og restore-test er endnu ikke dokumenteret som fuldført.
+
+## Opdatering 2026-11-10 – Slet bilag / papirkurv
+- Tilføjet `Slet`-handling ved bilag, som viser bekræftelse og oplyser hvis bilaget er koblet til Dinero.
+- Sletning er **blød sletning**: originalfilen i privat R2 og metadata bevares, men skjules fra normal oversigt, almindelig download og CSV-eksport.
+- `Papirkurv` viser de blødt slettede bilag, og `Gendan` genaktiverer dem med tidligere regnskabskobling.
+- D1 `receipts`: `deleted_at`, `deleted_by`; `receipt_events` er separat revisionslog over handlinger.
+- API: `POST /bilag/api/delete`, `POST /bilag/api/restore` med eksisterende verificeret Access JWT og origin-beskyttelse.
+- Sletning påvirker **ikke** den særskilt importerede Dinero-historik eller originalfilen i R2.
+- Kontrol ved deployment: Worker succesfuldt deployed, schema og ruter verificeret; 1 aktivt bilag og 0 slettede pr. kontrollen.
+- **End-to-end-test i brugerens browser af Slet/Gendan endnu ikke gennemført.**
+- Ingen permanent sletning eller automatisk tømning af papirkurv: regnskabsbilag kan være underlagt opbevaringspligt.
