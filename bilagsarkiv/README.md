@@ -31,3 +31,16 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 7. Tilføj mobilvenlig bilagsoversigt med kategorier og regnskabseksport.
 
 **Ingen realdata før fase 1 er bestået.**
+
+
+## Implementeret 2026-11-10
+- Cloudflare R2 privat bucket: `stomas-bilag` (WEUR)
+- Cloudflare D1: `stomas_bilag`
+- Cloudflare Access: STOMAS Bilag (privat); ejeridentitet begrænset til Cloudflare-kontoens mailadresse
+- Worker: `stomas-bilag`, upload, liste, hent fil og CSV-eksport
+- Routet til `stomas.dk/bilag*`; `workers.dev` og previews slået fra
+- Worker verificerer Access JWT, email, audience og signatur samt forventet hostname
+- Ikke-autoriserede kald afvises; data ikke i GitHub
+- **Status:** Opsat, men ikke end-to-end-testet i brugerens browser endnu
+- **Før rigtige bilag:** foretag dummy-upload, downloadtest og verificer backup/restore-plan
+- Bemærk: CSV-eksport er kun metadata, ikke en fuld ZIP-backup af originale bilag.
