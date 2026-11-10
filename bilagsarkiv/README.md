@@ -111,3 +111,17 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Dato valideres efter konvertering af `DD.MM.YYYY`, `DD-MM-YYYY` og `DD/MM/YYYY` til ISO. Beløb understøtter både `1.234,50`, `1234.50`, `1.234` osv.; udenlandsk valuta konverteres ikke automatisk.
 - Upload, notater, papirkurv og eksisterende gemte originalfiler er bevaret.
 - Cloudflare-API bekræfter deployment og endpoint-kode; en fuld test med brugerens egne bilag skal gennemføres via browseren.
+
+## STOMAS Regnskab – første version (2026-11-10)
+- **Produktionsside:** `https://stomas.dk/bilag/regnskab`; adgang via eksisterende Cloudflare Access + serverside verificering af JWT.
+- Oprettet D1-tabeller `stomas_accounts`, `stomas_journal`, `stomas_journal_lines`, `stomas_journal_audit`; unikt bilagslink og skrivebeskyttende D1-triggere. Ingen eksisterende Dinero-linjer er ændret.
+- Importeret historik (38 Dinero-bogføringslinjer) anvendes som **grundlag**, ikke som nye transaktioner. Nye posteringer tillades fra 2026-10-20 for at undgå overlap.
+- Regnskabstyper: modtaget indtægt på bank, udgift fra bank, privat betalt udgift, privat erhvervskørsel, privat indskud og privat hævning.
+- Dobbelt bogholderi på kontoplanen; hver postering bogføres med to linjer, der summerer til nul. D1 batch sikrer at posteringslinjer, revisionsspor og bilagskobling indgår sammen i en transaktion.
+- Gamle poster er uforanderlige. POST /bilag/api/accounting/reverse opretter en særskilt tilbageførsel og bevarer originalen.
+- Oversigt GET /bilag/api/accounting/overview?year=YYYY beregner årlig omsætning, udgifter, resultat samt bankbeholdning på tværs af alle år. Eksport GET /bilag/api/accounting/export.csv inkluderer både gamle Dinero-linjer og nye STOMAS-linjer.
+- Link fra bilagsarkivet til regnskabet. Vælger man et frit bilag, foreslås beløb, dato og beskrivelse; alt kontrolleres inden bogføring.
+- Backup-Worker `stomas-bilag-backup` udvidet med JSON-snapshot af `receipts`, `receipt_events`, `dinero_lines` samt alle fire nye regnskabstabeller. Daglig cron er fortsat aktiv.
+- Verificeret på produktionsdata uden at skabe testposteringer: historisk omsætning 5.829,16 kr., udgifter 5.456,16 kr., resultat 373,00 kr., bank 302,16 kr. pr. den importerede historiks slutdato 2026-10-19.
+- **Begrænsninger:** Første version er ikke et registreret bogføringssystem. Automatisk bankafstemning, faktura-PDF/EAN-elektronisk fakturering, momsændringer, visse tilgodehavender og årsafslutning er ikke færdigbygget. Egentlig bruger-ende-til-ende-test af nye posteringer, eksport og gendannelse fra backup mangler. Brugeren bør kontrollere tallene mod Dinero og Nordea inden at stoppe det gamle værktøj.
+- PMV's relevante omsætningstærskel for moms er **50.000 kr.**, særskilt fra lovens 300.000 kr. digital-bogføringsgrænse. Se skat.dk og Erhvervsstyrelsens vejledning.
