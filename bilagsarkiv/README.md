@@ -88,3 +88,10 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Adgang er fortsat begrænset til ejerens Cloudflare Access-identitet, og public Workers-domæne/previews er stadig deaktiveret.
 - Efter deployment verificeret fra Cloudflare, at begge AI-pipelines samt eksisterende bilagsfunktioner fortsat er installerede, og at 1 aktivt bilag er bevaret.
 - **Brugertest af AI-aflæsning på rigtig kvittering/PDF mangler.** Verificér resultaterne før regnskabsbrug.
+
+## Rettelse 2026-11-10 – filvalg udløste ikke AI-aflæsning
+- Bruger rapporterede, at ingen synlig handling skete, når der blev valgt en fil.
+- Årsag: HTML-template string i Worker indeholdt JavaScript-tekst med enkelt-escaped `\\n` i papirkurvens bekræftelsesbesked. Under rendering blev det til faktiske linjeskift inde i en JavaScript-streng, så hele inline-scriptet fik syntaksfejl.
+- Rettet ved at dobbelt-escape `\\\\n` i Workerens HTML-template. Regex-filendelser er også dobbelt-escapede, så `\\.` bevares som bogstaveligt punktum i browseren.
+- Deploy via Cloudflare API lykkedes. Cloudflare-efterkontrol bekræfter filvalgs-handler, AI-endpoint, upload, papirkurv, gendan, og 1 eksisterende aktivt bilag.
+- Endelig browser-/AI-kvitteringstest kræver brugerens login og er endnu ikke bekræftet.
