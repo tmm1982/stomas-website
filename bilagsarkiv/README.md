@@ -103,3 +103,11 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Øget notatgrænse fra 500 til 2.000 tegn både i UI og i serverens uploadhåndtering. D1-feltet var allerede TEXT og krævede ingen migration.
 - Prompt instruerer AI i at undgå personnumre, fulde kortnumre, bankkonti og adgangskoder. AI kan tage fejl, så bilagsnoter skal altid kontrolleres.
 - Cloudflare Worker er deployed og efterkontrolleret. Historiske bilag og data er ikke ændret; browser-test på rigtig kvittering afventer bruger.
+
+## Fejlrettelse – AI finder for få oplysninger (2026-11-10)
+- Prompt prioriterer nu sikre hovedoplysninger: forhandler, dato og samlet beløb. Ekstra felter må mangle uden at de andre nulstilles.
+- AI-kald til `@cf/qwen/qwen3.8-27b` anvender `reasoning_effort: "low"` og øget `max_tokens` fra 900 til 1600, da lange svar med varer/reasoning ellers kan blive ufuldstændige.
+- Svar kan nu have alternative feltnavne (merchant/supplier, invoice_no, customer_no, products) og numeriske beløb.
+- Dato valideres efter konvertering af `DD.MM.YYYY`, `DD-MM-YYYY` og `DD/MM/YYYY` til ISO. Beløb understøtter både `1.234,50`, `1234.50`, `1.234` osv.; udenlandsk valuta konverteres ikke automatisk.
+- Upload, notater, papirkurv og eksisterende gemte originalfiler er bevaret.
+- Cloudflare-API bekræfter deployment og endpoint-kode; en fuld test med brugerens egne bilag skal gennemføres via browseren.
