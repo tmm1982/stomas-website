@@ -54,3 +54,13 @@ Status: Forberedt, **IKKE idriftsat**. Ingen bilag må uploades til GitHub eller
 - Koblingen er på nuværende tidspunkt en manuel postering-reference; der er **ingen automatisk synkronisering med Dinero eller Excel**.
 - En kopi i samme Cloudflare-konto beskytter mod visse utilsigtede ændringer, men er ikke en uafhængig disaster-recovery-backup. Planlæg periodisk offline/off-account eksport og gendannelsestest.
 - Alle bilag og øvrige data forbliver uden for dette offentlige GitHub-repository.
+
+
+## Opdatering – Dinero-import og valgliste 2026-11-10
+- Importeret brugerens Dinero-CSV `Posteringer.csv`: **38 bogføringslinjer** fordelt på **16 bilagsnumre** fra 2026-07-01 til 2026-10-19.
+- Importerede linjer er gemt uændret i særskilt D1-tabel `dinero_lines` med kildeidentifikator og beløb i øre; de balancerer samlet til 0.
+- Ny beskyttet API `GET /bilag/api/postings` returnerer grupperede Dinero-bilag til valglisten.
+- "Tilknyt" i bilagsoversigten åbner nu valgliste i stedet for fri tekst. Koblingen gemmes i `receipts.posting_ref` som `DINERO:2026:<bilagsnummer>`.
+- Nuværende historiske importer er en statisk kopi, ikke en levende forbindelse til Dinero.
+- Posteringerne vises kun til valg for bilag. Det er **ikke** en ændring af virksomhedens bogførte saldo eller et automatisk bilagsmatch.
+- Backup-Workerens natlige kørsel og restore-test er endnu ikke dokumenteret som fuldført.
