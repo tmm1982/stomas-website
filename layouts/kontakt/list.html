@@ -42,7 +42,8 @@
       <form action="https://formsubmit.co/info@stomas.dk" method="POST" class="mt-10 space-y-6">
         <input type="hidden" name="_subject" value="Nouvelle demande via stomas.fr">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        {{/* FormSubmit reCAPTCHA is enabled by default; do not disable it. */}}
+        <input type="hidden" name="_blacklist" value="onpartage.online,probox.my.id">
         <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
 
         <div>
