@@ -8,7 +8,8 @@
       "label": "PODCAST · 27. OKTOBER 2026 · AUF DÄNISCH",
       "summary": "Thomas und seine Frau Michelle sprechen über Liebe, Wandern und das Leben nach einer vollständigen Kehlkopfentfernung. Von ihrem ersten Date beim Wandern bis zu langen Strecken und dem Mammutmarsch geht es darum, unter veränderten körperlichen Voraussetzungen neue Wege zu finden. Michelle erzählt auch, wie sie diese Veränderungen als Partnerin erlebt.",
       "linkLabel": "Folge anhören (Dänisch)",
-      "translate": false
+      "translate": false,
+      "language": "da"
     },
     {
       "id": "diagnoseklubben",
@@ -18,6 +19,26 @@
       "label": "PODCAST · 28. AUGUST 2026 · AUF DÄNISCH",
       "summary": "Im dänischen Podcast Diagnoseklubben spricht Thomas offen über das Leben nach einer vollständigen Kehlkopfentfernung: Stimme, Atmung, Alltag und alles, was nach der Behandlung beginnt.",
       "linkLabel": "Folge anhören (Dänisch)",
+      "translate": false,
+      "language": "da"
+    },
+    {
+      "id": "cancer-interviews-196",
+      "date": "2026-11-13",
+      "language": "en",
+      "title": "Cancer Interviews",
+      "label": "PODCAST · 13. NOVEMBER 2026 · AUF ENGLISCH",
+      "summary": "In einem englischsprachigen Interview mit Jim Foster spricht Thomas über sein seltenes Kehlkopfsarkom, die vollständige Kehlkopfentfernung, das Leben mit einem permanenten Halsstoma und einer Stimmprothese sowie darüber, wie er nach der Krebserkrankung in den Alltag und zu körperlicher Aktivität zurückgefunden hat.",
+      "links": [
+        {
+          "url": "https://open.spotify.com/episode/0L2ZNYUPK4CU3KukWd87eK?utm_source=openai&utm_medium=chatgpt&go=1&nap_web=1&request_id=db0cf511-f966-45a4-93de-f78bd8fa6520",
+          "label": "Auf Spotify anhören"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vdpafx2aXcI",
+          "label": "Auf YouTube ansehen"
+        }
+      ],
       "translate": false
     }
   ]

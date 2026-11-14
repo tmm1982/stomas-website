@@ -10,7 +10,11 @@
     </div>
 
     <div class="mt-14 grid gap-8">
-      {{ range sort hugo.Data.media.episodes "date" "desc" }}
+      {{ $episodes := sort hugo.Data.media.episodes "date" "desc" }}
+      {{ range where $episodes "language" "en" }}
+        {{ partial "media/episode-card.html" (dict "entry" . "surface" "home") }}
+      {{ end }}
+      {{ range where $episodes "language" "ne" "en" }}
         {{ partial "media/episode-card.html" (dict "entry" . "surface" "home") }}
       {{ end }}
     </div>
