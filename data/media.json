@@ -8,7 +8,8 @@
       "label": "text_PODCAST · 27 OCTOBER 2026 · IN DANISH",
       "summary": "text_Thomas and his wife Michelle talk about love, hiking and life after a total laryngectomy. From their first walking date to long-distance hikes and Mammutmarsch, the conversation explores finding new ways forward when the body sets different limits. Michelle also shares her perspective as a partner and close supporter.",
       "linkLabel": "text_Listen to the episode (Danish)",
-      "translate": true
+      "translate": true,
+      "language": "da"
     },
     {
       "id": "diagnoseklubben",
@@ -18,6 +19,26 @@
       "label": "text_PODCAST · 28 AUGUST 2026 · IN DANISH",
       "summary": "text_Thomas joins the Danish podcast Diagnoseklubben for an open conversation about life after a total laryngectomy: voice, breathing, everyday life and everything that begins when treatment ends.",
       "linkLabel": "text_Listen to the episode (Danish)",
+      "translate": true,
+      "language": "da"
+    },
+    {
+      "id": "cancer-interviews-196",
+      "date": "2026-11-13",
+      "language": "en",
+      "title": "Cancer Interviews",
+      "label": "text_PODCAST · 13 NOVEMBER 2026 · IN ENGLISH",
+      "summary": "text_In an English-language interview with Jim Foster, Thomas talks about his rare laryngeal sarcoma, total laryngectomy, life with a permanent neck stoma and voice prosthesis, and rebuilding everyday life and physical activity after cancer.",
+      "links": [
+        {
+          "url": "https://open.spotify.com/episode/0L2ZNYUPK4CU3KukWd87eK?utm_source=openai&utm_medium=chatgpt&go=1&nap_web=1&request_id=db0cf511-f966-45a4-93de-f78bd8fa6520",
+          "label": "text_Listen on Spotify"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vdpafx2aXcI",
+          "label": "text_Watch on YouTube"
+        }
+      ],
       "translate": true
     }
   ]
