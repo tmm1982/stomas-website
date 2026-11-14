@@ -8,7 +8,8 @@
       "label": "PODCAST · 27. OKTOBER 2026",
       "summary": "Thomas og hans hustru Michelle fortæller om kærlighed, vandring og livet efter en total laryngektomi. Fra deres første date på en vandretur til lange distancer og Mammutmarsch handler samtalen om at finde nye veje, når kroppen sætter andre rammer. Michelle deler også sit perspektiv som medrørende.",
       "linkLabel": "Hør afsnittet",
-      "translate": false
+      "translate": false,
+      "language": "da"
     },
     {
       "id": "diagnoseklubben",
@@ -18,6 +19,26 @@
       "label": "PODCAST · 28. AUGUST 2026",
       "summary": "Thomas medvirker i Diagnoseklubben til en åben samtale om livet efter en total laryngektomi – om stemmen, vejrtrækningen, hverdagen og alt det, der begynder, når behandlingen er slut.",
       "linkLabel": "Hør afsnittet",
+      "translate": false,
+      "language": "da"
+    },
+    {
+      "id": "cancer-interviews-196",
+      "date": "2026-11-13",
+      "language": "en",
+      "title": "Cancer Interviews",
+      "label": "PODCAST · 13. NOVEMBER 2026 · PÅ ENGELSK",
+      "summary": "I et engelsksproget interview med Jim Foster fortæller Thomas om sit sjældne sarkom i struben, den totale laryngektomi, livet med permanent halsstoma og taleprotese samt om at genfinde hverdagen og være fysisk aktiv efter kræft.",
+      "links": [
+        {
+          "url": "https://open.spotify.com/episode/0L2ZNYUPK4CU3KukWd87eK?utm_source=openai&utm_medium=chatgpt&go=1&nap_web=1&request_id=db0cf511-f966-45a4-93de-f78bd8fa6520",
+          "label": "Hør på Spotify"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vdpafx2aXcI",
+          "label": "Se på YouTube"
+        }
+      ],
       "translate": false
     }
   ]
