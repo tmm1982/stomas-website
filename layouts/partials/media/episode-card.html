@@ -9,8 +9,10 @@
   {{- $linkLabel = T $linkLabel -}}
 {{- end -}}
 {{- $links := $entry.links -}}
+{{- $translateLinkLabels := $shouldTranslate -}}
 {{- if not $links -}}
   {{- $links = slice (dict "url" $entry.url "label" $linkLabel) -}}
+  {{- $translateLinkLabels = false -}}
 {{- end -}}
 <article aria-labelledby="media-{{ $entry.id }}" class="rounded-3xl border border-slate-800 {{ if eq .surface "home" }}bg-slate-900{{ else }}bg-slate-950{{ end }} p-10">
   <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400"><time datetime="{{ $entry.date }}">{{ $label }}</time></p>
@@ -19,7 +21,7 @@
   <div class="mt-8 flex flex-wrap gap-4">
     {{ range $links }}
       {{- $buttonLabel := .label -}}
-      {{- if $shouldTranslate -}}
+      {{- if $translateLinkLabels -}}
         {{- $buttonLabel = T $buttonLabel -}}
       {{- end -}}
       <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $buttonLabel }}: {{ $entry.title }}" class="inline-flex rounded-xl border border-cyan-400 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950">{{ $buttonLabel }}</a>
