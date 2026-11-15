@@ -117,5 +117,12 @@
     "de": "/werkstatt/",
     "fr": "/atelier/",
     "pt-br": "/pt-br/oficina/"
+  },
+  "team-stomas/_index.md": {
+    "da": "/team-stomas/",
+    "en": "/team-stomas/",
+    "de": "/team-stomas/",
+    "fr": "/team-stomas/",
+    "pt-br": "/pt-br/team-stomas/"
   }
 }
