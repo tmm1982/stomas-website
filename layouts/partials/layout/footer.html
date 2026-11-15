@@ -12,6 +12,7 @@
       <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/medier").RelPermalink }}">{{ T "text_Media" }}</a>
       <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/vaerksted").RelPermalink }}">{{ T "text_STOMAS Workshop" }}</a>
       <a class="transition hover:text-cyan-400" href="{{ (site.GetPage "/kontakt").RelPermalink }}">{{ T "text_Contact" }}</a>
+      {{ with .Site.GetPage "/team-stomas" }}<a class="transition hover:text-cyan-400" href="{{ .RelPermalink }}">Team STOMAS 2027</a>{{ end }}
     </div>
   </div>
   <div class="site-footer-languages mx-auto max-w-7xl px-6">{{ partial "layout/language-links.html" . }}</div>
