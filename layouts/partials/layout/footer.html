@@ -14,6 +14,7 @@
       <a class="transition hover:text-cyan-400" href="/medias/">Médias</a>
       <a class="transition hover:text-cyan-400" href="/atelier/">L’atelier STOMAS</a>
       <a class="transition hover:text-cyan-400" href="/contact/">Contact</a>
+      {{ with .Site.GetPage "/team-stomas" }}<a class="transition hover:text-cyan-400" href="{{ .RelPermalink }}">Team STOMAS 2027</a>{{ end }}
     </div>
   </div>
   <div class="site-footer-languages mx-auto max-w-7xl px-6">{{ partial "layout/language-links.html" . }}</div>
