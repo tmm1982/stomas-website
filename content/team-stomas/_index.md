@@ -18,7 +18,38 @@ sponsor_title = "Bliv sponsor for Team STOMAS"
 sponsor_intro = "Vi søger lokale virksomheder, som vil støtte indsamlingen, fællesskabet og oplysningen om livet med og efter kræft. Sponsorater aftales individuelt, og alle kontante donationer skal gå via de officielle indsamlingskanaler."
 sponsor_contact = "Kontakt os om sponsorat"
 official_info = "Stafet For Livet Esbjerg"
-prelaunch_notice = "Team STOMAS er under forberedelse. Dato og officiel holdtilmelding for Esbjerg 2027 er endnu ikke bekræftet på arrangørernes hjemmeside."
+prelaunch_notice = "Team STOMAS er under forberedelse. Stafet For Livet Esbjerg finder sted 28.–29. august 2027. Den generelle tilmelding åbner 15. december 2026; vi deler et direkte link til Team STOMAS, når holdet er oprettet."
+interest_kicker = "Vær med fra starten"
+interest_title = "Vil du med på Team STOMAS?"
+interest_intro = "Meld din interesse, og fortæl os din foreløbige T-shirt-størrelse. Vi bruger oplysningerne til at planlægge holdet. Du skal også tilmelde dig officielt hos Kræftens Bekæmpelse, når holdet er oprettet."
+step_one = "TRIN 1 · NU"
+interest_step_title = "Meld din interesse hos STOMAS"
+interest_step_desc = "Udfyld felterne herunder, og send den mail, der åbner i din mailapp. Det giver os et overblik over interesserede og T-shirt-størrelser – men er ikke den officielle tilmelding."
+step_two = "TRIN 2 · FRA 15. DECEMBER 2026"
+official_step_title = "Tilmeld dig officielt"
+official_step_desc = "Stafet For Livets tilmelding til 2027 åbner den 15. december 2026. Når Team STOMAS er oprettet på arrangørens hjemmeside, skal du selv tilmelde dig holdet dér."
+official_page_cta = "Se den officielle Stafet For Livet-side for Esbjerg"
+official_warning_title = "Vigtigt: To forskellige ting"
+official_warning = "At sende en interessetilkendegivelse til STOMAS er ikke en officiel tilmelding eller en reservation af en T-shirt. Den officielle holdtilmelding og eventuelle deltagergebyrer håndteres af Kræftens Bekæmpelse. Esbjerg-stafetten afholdes 28.–29. august 2027."
+interest_form_title = "Skriv dig på interesselisten"
+interest_form_intro = "Det tager kun et øjeblik. Formularen åbner en mail, som du selv skal trykke Send på. Vi registrerer ikke automatisk en tilmelding på hjemmesiden."
+form_name_label = "Dit navn (kontaktperson)"
+form_email_label = "Din e-mail"
+form_size_label = "Ønsket T-shirt-størrelse (foreløbig)"
+form_size_prompt = "Vælg størrelse"
+form_adult_group = "Voksne · Bahrain"
+form_child_group = "Børn · Bahrain"
+form_size_unsure = "Jeg ved det ikke endnu"
+form_size_info = "Voksne: S–4XL. Børn: 4, 8, 12 eller 16. Størrelserne er foreløbige og bekræftes før bestilling."
+form_extra_label = "Andre T-shirt-størrelser i familien eller gruppen (valgfrit)"
+form_extra_placeholder = "Fx 1 voksen M og 2 børn i størrelse 8 og 12"
+form_minor_note = "For børn: Brug en voksens kontaktoplysninger, og skriv kun ønskede størrelser – ikke børnenes navne."
+form_consent = "Jeg ønsker at blive kontaktet af Team STOMAS om holdet og forstår, at jeg også selv skal tilmelde mig på Stafet For Livets officielle hjemmeside."
+form_privacy = "Vi bruger oplysningerne til at kontakte dig om Team STOMAS og planlægge T-shirts. Skriv ikke helbredsoplysninger. Du kan altid bede os slette dine oplysninger ved at skrive til teamstomas@stomas.dk."
+interest_submit = "Åbn mail med min interesse"
+email_handoff_message = "Din mailapp åbner nu. Husk at trykke Send i mailappen – ellers modtager vi ikke oplysningerne."
+interest_email_fallback = "Åbner mailappen ikke? Skriv direkte til"
+interest_not_registered = "Dette er kun en uforpligtende interessetilkendegivelse. Dit navn kommer først på den officielle deltagerliste, når du har tilmeldt dig via Kræftens Bekæmpelse."
 layout = "team-stomas"
 +++
 
@@ -46,7 +77,7 @@ STOMAS er skabt med udgangspunkt i personlige erfaringer med livet efter kræft 
 
 **Støt eller sponsorer:** Virksomheder og privatpersoner er velkomne til at kontakte os. Donationer åbnes via arrangørernes officielle indsamlingssystem, når holdet er oprettet.
 
-**Vil du høre mere allerede nu?** Skriv til [info@stomas.dk](mailto:info@stomas.dk?subject=Team%20STOMAS%202027%20-%20Deltagelse), så kan vi holde kontakten frem mod tilmeldingen. Du behøver ikke fortælle os noget om dit helbred.
+**Vil du være med?** [Meld din interesse her](#interesse) med navn, e-mail og foreløbig T-shirt-størrelse. Du skal også **tilmelde dig officielt** hos Kræftens Bekæmpelse, når Team STOMAS er oprettet efter åbningen den 15. december 2026. Du behøver ikke oplyse noget om dit helbred.
 
 ## Sponsormuligheder
 
