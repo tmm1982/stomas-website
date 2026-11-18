@@ -830,3 +830,51 @@ h1, h2, h3 { overflow-wrap:anywhere; hyphens:auto; }
 }
 @media (max-width:23.99rem) { #navbar .site-brand { font-size:1.5rem; } }
 @media (min-width:48rem) { .site-footer-languages { justify-content:flex-start; } }
+
+/* Team STOMAS interest registration: explicit, responsive styles for the
+   two-stage form. Compiled stylesheet is synced with this CSS entry point. */
+#interesse { scroll-margin-top: 7rem; background: #0f172a; padding: 5.75rem 0; }
+#interesse > div { width: 100%; max-width: 64rem; margin-inline: auto; padding-inline: 1.5rem; }
+#interesse > div > p:first-child { font-size: .8rem; font-weight: 750; letter-spacing: .22em; text-transform: uppercase; color: #67e8f9; }
+#interesse > div > h2 { margin-top: 1.1rem; font-size: clamp(2rem, 4.4vw, 3.15rem); font-weight: 800; line-height: 1.15; color: #fff; }
+#interesse > div > h2 + p { max-width: 48rem; margin-top: 1.25rem; color: #cbd5e1; font-size: 1.1rem; line-height: 1.7; }
+#interesse > div > div:nth-of-type(1) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem; margin-top: 2.25rem; }
+#interesse > div > div:nth-of-type(1) > div { min-width: 0; padding: 1.65rem; border: 1px solid #334155; border-radius: 1rem; background: #020617; }
+#interesse > div > div:nth-of-type(1) > div:first-child { border-color: #155e75; }
+#interesse > div > div:nth-of-type(1) > div > span { font-size: .78rem; font-weight: 750; letter-spacing: .08em; color: #67e8f9; }
+#interesse > div > div:nth-of-type(1) h3 { margin-top: .8rem; color: #fff; font-size: 1.42rem; line-height: 1.3; font-weight: 750; }
+#interesse > div > div:nth-of-type(1) p { margin-top: .8rem; color: #cbd5e1; line-height: 1.7; }
+#interesse > div > div:nth-of-type(1) a { display: inline-block; margin-top: 1rem; color: #67e8f9; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+#interesse > div > div:nth-of-type(2) { margin-top: 2rem; padding: 1.4rem 1.65rem; border: 1px solid #92400e; border-radius: 1rem; background: #020617; color: #e2e8f0; }
+#interesse > div > div:nth-of-type(2) strong { display: block; color: #fff; font-size: 1.05rem; }
+#interesse > div > div:nth-of-type(2) p { margin-top: .65rem; line-height: 1.7; }
+#interesse > div > div:nth-of-type(3) { margin-top: 2.5rem; padding: clamp(1.4rem, 3.6vw, 2.5rem); border: 1px solid #334155; border-radius: 1.5rem; background: #020617; box-shadow: 0 18px 50px rgb(0 0 0 / .15); }
+#interesse > div > div:nth-of-type(3) > h3 { color: #fff; font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.25; font-weight: 750; }
+#interesse > div > div:nth-of-type(3) > h3 + p { margin-top: .8rem; color: #cbd5e1; line-height: 1.7; }
+#interesse form { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+#interesse form > div:first-child { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+#interesse form > div:first-child > div { min-width: 0; }
+#interesse form label:not(:has(input[type="checkbox"])) { display: block; margin-bottom: .5rem; color: #e2e8f0; font-size: .95rem; font-weight: 650; }
+#interesse form input:not([type="checkbox"]), #interesse form select, #interesse form textarea { display: block; width: 100%; min-height: 3.15rem; padding: .8rem 1rem; border: 1px solid #475569; border-radius: .75rem; outline: none; background: #0f172a; color: #f8fafc; font: inherit; }
+#interesse form select { cursor: pointer; }
+#interesse form textarea { resize: vertical; min-height: 6.5rem; }
+#interesse form :is(input:not([type="checkbox"]), select, textarea):focus-visible { border-color: #67e8f9; outline: 2px solid #22d3ee; outline-offset: 1px; }
+#interesse form :is(input, textarea)::placeholder { color: #94a3b8; }
+#interesse form option, #interesse form optgroup { color: #f8fafc; background: #0f172a; }
+#interesse form div > p, #interesse form > p { margin-top: .45rem; color: #94a3b8; font-size: .875rem; line-height: 1.55; }
+#interesse form label:has(input[type="checkbox"]) { display: flex; align-items: flex-start; gap: .8rem; margin: 0; color: #e2e8f0; font-size: .93rem; line-height: 1.6; cursor: pointer; }
+#interesse form input[type="checkbox"] { flex: none; width: 1.2rem; height: 1.2rem; margin-top: .25rem; accent-color: #22d3ee; }
+#interesse form button[type="submit"] { align-self: flex-start; max-width: 100%; padding: .95rem 1.5rem; border: 0; border-radius: .75rem; background: #22d3ee; color: #082f49; font-size: 1rem; font-weight: 750; cursor: pointer; transition: background-color .18s ease; }
+#interesse form button[type="submit"]:hover, #interesse form button[type="submit"]:focus-visible { background: #67e8f9; }
+#interesse form #team-stomas-email-note:not([hidden]) { padding: .8rem 1rem; border: 1px solid #155e75; border-radius: .65rem; background: #164e63; color: #e0f2fe; }
+#interesse form > p a { color: #67e8f9; text-decoration: underline; text-underline-offset: 3px; }
+#interesse > div > div:nth-of-type(3) > p:last-child { margin-top: 1.75rem; padding-top: 1.4rem; border-top: 1px solid #334155; color: #cbd5e1; font-size: .91rem; line-height: 1.65; }
+@media (max-width: 767px) {
+  #interesse { padding-block: 4rem; scroll-margin-top: 5.5rem; }
+  #interesse > div { padding-inline: 1.1rem; }
+  #interesse > div > div:nth-of-type(1), #interesse form > div:first-child { grid-template-columns: minmax(0, 1fr); }
+  #interesse > div > div:nth-of-type(1) > div { padding: 1.3rem; }
+  #interesse > div > div:nth-of-type(3) { padding: 1.3rem; }
+  #interesse form button[type="submit"] { width: 100%; }
+}
+
