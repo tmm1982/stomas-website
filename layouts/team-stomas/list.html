@@ -8,7 +8,7 @@
       <h2 class="mt-6 text-3xl font-bold text-white md:text-5xl">{{ .Params.hero_title }}</h2>
       <p class="mt-10 max-w-xl text-lg leading-8 text-slate-300">{{ .Params.hero_intro }}</p>
       <div class="mt-12 flex flex-wrap gap-4">
-        <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:bg-cyan-300" href="mailto:info@stomas.dk?subject=Team%20STOMAS%202027%20-%20Deltagelse">{{ .Params.join_button }}</a>
+        <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:bg-cyan-300" href="#interesse">{{ .Params.join_button }}</a>
         <a class="rounded-xl border border-slate-700 px-8 py-4 transition hover:border-cyan-400" href="#stotte">{{ .Params.sponsor_button }}</a>
       </div>
       <p class="mt-12 max-w-xl border-l-2 border-cyan-400 pl-6 text-xl font-semibold leading-8 text-white">{{ .Params.tagline }}</p>
@@ -35,13 +35,82 @@
     <article class="guide-content">{{ .Content }}</article>
   </div>
 </section>
+<section id="interesse" class="bg-slate-900 py-24">
+  <div class="mx-auto max-w-5xl px-6">
+    <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">{{ .Params.interest_kicker }}</p>
+    <h2 class="mt-5 text-4xl font-extrabold text-white md:text-5xl">{{ .Params.interest_title }}</h2>
+    <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{{ .Params.interest_intro }}</p>
+    <div class="mt-9 grid gap-5 md:grid-cols-2">
+      <div class="rounded-2xl border border-cyan-600/50 bg-slate-950 p-6">
+        <span class="text-sm font-bold text-cyan-300">{{ .Params.step_one }}</span>
+        <h3 class="mt-3 text-2xl font-bold text-white">{{ .Params.interest_step_title }}</h3>
+        <p class="mt-3 leading-7 text-slate-300">{{ .Params.interest_step_desc }}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-700 bg-slate-950 p-6">
+        <span class="text-sm font-bold text-cyan-300">{{ .Params.step_two }}</span>
+        <h3 class="mt-3 text-2xl font-bold text-white">{{ .Params.official_step_title }}</h3>
+        <p class="mt-3 leading-7 text-slate-300">{{ .Params.official_step_desc }}</p>
+        <a href="https://www.cancer.dk/stafetforlivet/stafetter/esbjerg/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block font-semibold text-cyan-300 underline underline-offset-4 hover:text-white">{{ .Params.official_page_cta }}</a>
+      </div>
+    </div>
+    <div class="mt-8 rounded-2xl border border-amber-500/40 bg-slate-950 p-5 text-slate-200">
+      <strong class="text-white">{{ .Params.official_warning_title }}</strong>
+      <p class="mt-2 leading-7">{{ .Params.official_warning }}</p>
+    </div>
+    <div class="mt-10 rounded-3xl border border-slate-700 bg-slate-950 p-6 shadow-xl md:p-10">
+      <h3 class="text-3xl font-bold text-white">{{ .Params.interest_form_title }}</h3>
+      <p class="mt-3 text-slate-300">{{ .Params.interest_form_intro }}</p>
+      <form data-team-stomas-interest data-email-message="{{ .Params.email_handoff_message }}" action="mailto:teamstomas@stomas.dk?subject=Team%20STOMAS%202027%20-%20Interesse" method="post" enctype="text/plain" class="mt-8 space-y-6">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <label for="team-stomas-name" class="mb-2 block font-semibold text-slate-200">{{ .Params.form_name_label }}</label>
+            <input id="team-stomas-name" name="contact_name" type="text" autocomplete="name" maxlength="80" required class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-300">
+          </div>
+          <div>
+            <label for="team-stomas-email" class="mb-2 block font-semibold text-slate-200">{{ .Params.form_email_label }}</label>
+            <input id="team-stomas-email" name="email" type="email" autocomplete="email" maxlength="120" required class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-300">
+          </div>
+        </div>
+        <div>
+          <label for="team-stomas-shirt" class="mb-2 block font-semibold text-slate-200">{{ .Params.form_size_label }}</label>
+          <select id="team-stomas-shirt" name="shirt_size" required class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-300">
+            <option value="">{{ .Params.form_size_prompt }}</option>
+            <optgroup label="{{ .Params.form_adult_group }}">
+              {{ range (slice "S" "M" "L" "XL" "2XL" "3XL" "4XL") }}<option value="adult-{{ . }}">{{ . }}</option>{{ end }}
+            </optgroup>
+            <optgroup label="{{ .Params.form_child_group }}">
+              {{ range (slice "4" "8" "12" "16") }}<option value="child-{{ . }}">{{ . }}</option>{{ end }}
+            </optgroup>
+            <option value="unsure">{{ .Params.form_size_unsure }}</option>
+          </select>
+          <p class="mt-2 text-sm text-slate-400">{{ .Params.form_size_info }}</p>
+        </div>
+        <div>
+          <label for="team-stomas-extra" class="mb-2 block font-semibold text-slate-200">{{ .Params.form_extra_label }}</label>
+          <textarea id="team-stomas-extra" name="more_sizes" maxlength="350" rows="3" placeholder="{{ .Params.form_extra_placeholder }}" class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-300"></textarea>
+          <p class="mt-2 text-sm text-slate-400">{{ .Params.form_minor_note }}</p>
+        </div>
+        <label class="flex items-start gap-3 text-sm leading-6 text-slate-200">
+          <input name="consent" type="checkbox" required class="mt-1 h-5 w-5 shrink-0 accent-cyan-400">
+          <span>{{ .Params.form_consent }}</span>
+        </label>
+        <p class="text-sm leading-6 text-slate-400">{{ .Params.form_privacy }}</p>
+        <button type="submit" class="w-full rounded-xl bg-cyan-400 px-6 py-4 text-lg font-bold text-slate-950 transition hover:bg-cyan-300 md:w-auto">{{ .Params.interest_submit }}</button>
+        <p id="team-stomas-email-note" role="status" hidden class="rounded-lg border border-cyan-500/40 p-3 text-sm text-cyan-100"></p>
+        <p class="text-sm text-slate-400">{{ .Params.interest_email_fallback }} <a class="font-semibold text-cyan-300 underline" href="mailto:teamstomas@stomas.dk?subject=Team%20STOMAS%202027%20-%20Interesse">teamstomas@stomas.dk</a></p>
+      </form>
+      <p class="mt-7 border-t border-slate-800 pt-6 text-sm leading-6 text-slate-300">{{ .Params.interest_not_registered }}</p>
+    </div>
+  </div>
+</section>
+<script src="/team-stomas/interesse.js" defer></script>
 <section id="stotte" class="bg-slate-900 py-28">
   <div class="mx-auto max-w-5xl px-6 text-center">
     <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">{{ .Params.sponsor_kicker }}</p>
     <h2 class="mt-6 text-5xl font-bold text-white">{{ .Params.sponsor_title }}</h2>
     <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">{{ .Params.sponsor_intro }}</p>
     <div class="mt-12 flex flex-wrap justify-center gap-4">
-      <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:bg-cyan-300" href="mailto:info@stomas.dk?subject=Team%20STOMAS%202027%20-%20Sponsor">{{ .Params.sponsor_contact }}</a>
+      <a class="rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-slate-950 transition hover:bg-cyan-300" href="mailto:teamstomas@stomas.dk?subject=Team%20STOMAS%202027%20-%20Sponsor">{{ .Params.sponsor_contact }}</a>
       <a class="rounded-xl border border-slate-700 px-8 py-4 transition hover:border-cyan-400" href="https://www.cancer.dk/stafetforlivet/stafetter/esbjerg/" rel="noopener noreferrer">{{ .Params.official_info }}</a>
     </div>
     <p class="mt-12 text-sm text-slate-400">{{ .Params.prelaunch_notice }}</p>
