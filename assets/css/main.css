@@ -871,3 +871,9 @@
   #interesse form button[type="submit"] { width: 100%; }
 }
 
+/* Team STOMAS: supplier-approved T-shirt size guide in the interest form */
+#interesse .team-stomas-size-guide {margin-top:.9rem;padding:1rem 1.1rem;border:1px solid #334155;border-radius:.8rem;background:#0f172a;color:#cbd5e1;}
+#interesse .team-stomas-size-guide summary {color:#67e8f9;font-weight:700;cursor:pointer;line-height:1.5;list-style:disclosure-closed;}
+#interesse .team-stomas-size-guide[open] summary {list-style:disclosure-open;}
+#interesse .team-stomas-size-guide summary:focus-visible {outline:2px solid #67e8f9;outline-offset:3px;}
+#interesse .team-stomas-size-guide p {margin-top:.75rem;font-size:.875rem;line-height:1.65;color:#cbd5e1;}
