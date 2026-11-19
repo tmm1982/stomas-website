@@ -15,7 +15,7 @@
       "adult-XL": "Voksen XL", "adult-2XL": "Voksen 2XL",
       "adult-3XL": "Voksen 3XL", "adult-4XL": "Voksen 4XL",
       "child-4": "Barn 4", "child-8": "Barn 8",
-      "child-12": "Barn 12", "child-16": "Barn 16",
+      "child-12": "Barn 12",
       "unsure": "Ved det ikke endnu"
     };
     const size = sizeValues[text("shirt_size")] || "Ikke oplyst";
