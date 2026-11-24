@@ -43,5 +43,14 @@
     "flag": "br",
     "origin": "https://stomasguide.com",
     "home": "/pt-br/"
+  },
+  {
+    "id": "uk",
+    "locale": "uk-UA",
+    "label": "Українська",
+    "short": "UK",
+    "flag": "ua",
+    "origin": "https://stomasguide.com",
+    "home": "/uk/"
   }
 ]

@@ -1,6 +1,6 @@
 {{ $links := partial "layout/language-urls.html" . }}
 {{ $current := .Site.Params.languageID | default .Site.Language.Lang }}
-{{ $labels := dict "da" "Sprog" "en" "Language" "de" "Sprache" "fr" "Langue" "pt-br" "Idioma" }}
+{{ $labels := dict "da" "Sprog" "en" "Language" "de" "Sprache" "fr" "Langue" "pt-br" "Idioma" "uk" "Мова" }}
 {{ $label := index $labels $current | default "Language" }}
 <details class="site-language-picker">
   {{ range $links }}{{ if .current }}

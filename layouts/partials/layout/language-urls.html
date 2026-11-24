@@ -3,7 +3,7 @@
 {{- $key := "home" -}}
 {{- if not .IsHome -}}
   {{- $key = "unmapped" -}}
-  {{- with .File -}}{{- $key = replaceRE `\.pt-br\.md$` ".md" .Path -}}{{- end -}}
+  {{- with .File -}}{{- $key = replaceRE `\.(pt-br|uk)\.md$` ".md" .Path -}}{{- end -}}
 {{- end -}}
 {{- $routes := index hugo.Data.language_routes $key | default dict -}}
 {{- $links := slice -}}

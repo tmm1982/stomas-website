@@ -27,3 +27,8 @@ enableRobotsTXT = true
     locale = "pt-BR"
     title = "Guia STOMAS"
     weight = 2
+  [languages.uk]
+    label = "Українська"
+    locale = "uk-UA"
+    title = "Посібник STOMAS"
+    weight = 3

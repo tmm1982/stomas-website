@@ -4,98 +4,112 @@
     "en": "/",
     "de": "/",
     "fr": "/",
-    "pt-br": "/pt-br/"
+    "pt-br": "/pt-br/",
+    "uk": "/uk/"
   },
   "foredrag/_index.md": {
     "en": "/talks/",
     "da": "/foredrag/",
     "de": "/vortraege/",
     "fr": "/conferences/",
-    "pt-br": "/pt-br/palestras/"
+    "pt-br": "/pt-br/palestras/",
+    "uk": "/uk/vystupy-ta-navchannia/"
   },
   "foredrag/rigshospitalet.md": {
     "en": "/talks/rigshospitalet/",
     "da": "/foredrag/rigshospitalet/",
     "de": "/vortraege/rigshospitalet/",
     "fr": "/conferences/rigshospitalet/",
-    "pt-br": "/pt-br/palestras/rigshospitalet/"
+    "pt-br": "/pt-br/palestras/rigshospitalet/",
+    "uk": "/uk/vystupy-ta-navchannia/rigshospitalet/"
   },
   "guiden/_index.md": {
     "en": "/guides/",
     "da": "/guiden/",
     "de": "/ratgeber/",
     "fr": "/guides/",
-    "pt-br": "/pt-br/guias/"
+    "pt-br": "/pt-br/guias/",
+    "uk": "/uk/posibnyky/"
   },
   "guiden/kan-man-bade/index.md": {
     "en": "/guides/showering-after-laryngectomy/",
     "da": "/guiden/kan-man-bade/",
     "de": "/ratgeber/duschen-nach-kehlkopfentfernung/",
     "fr": "/guides/douche-apres-laryngectomie/",
-    "pt-br": "/pt-br/guias/banho-apos-laringectomia/"
+    "pt-br": "/pt-br/guias/banho-apos-laringectomia/",
+    "uk": "/uk/posibnyky/dush-pislia-laryngektomii/"
   },
   "guiden/kan-man-lugte/index.md": {
     "en": "/guides/smell-after-laryngectomy/",
     "da": "/guiden/kan-man-lugte/",
     "de": "/ratgeber/riechen-nach-kehlkopfentfernung/",
     "fr": "/guides/odorat-apres-laryngectomie/",
-    "pt-br": "/pt-br/guias/olfato-apos-laringectomia/"
+    "pt-br": "/pt-br/guias/olfato-apos-laringectomia/",
+    "uk": "/uk/posibnyky/niukh-pislia-laryngektomii/"
   },
   "guiden/kan-man-svoemme/index.md": {
     "en": "/guides/swimming-after-laryngectomy/",
     "da": "/guiden/kan-man-svoemme/",
     "de": "/ratgeber/schwimmen-nach-kehlkopfentfernung/",
     "fr": "/guides/nager-apres-laryngectomie/",
-    "pt-br": "/pt-br/guias/natacao-apos-laringectomia/"
+    "pt-br": "/pt-br/guias/natacao-apos-laringectomia/",
+    "uk": "/uk/posibnyky/plavannia-pislia-laryngektomii/"
   },
   "guiden/livet-uden-en-strube/index.md": {
     "en": "/guides/life-without-a-larynx/",
     "da": "/guiden/livet-uden-en-strube/",
     "de": "/ratgeber/leben-ohne-kehlkopf/",
     "fr": "/guides/vivre-sans-larynx/",
-    "pt-br": "/pt-br/guias/vida-sem-laringe/"
+    "pt-br": "/pt-br/guias/vida-sem-laringe/",
+    "uk": "/uk/posibnyky/zhyttia-bez-hortani/"
   },
   "guiden/provox-rengoering/index.md": {
     "en": "/guides/cleaning-your-voice-prosthesis/",
     "da": "/guiden/provox-rengoering/",
     "de": "/ratgeber/stimmprothese-reinigen/",
     "fr": "/guides/nettoyer-prothese-phonatoire/",
-    "pt-br": "/pt-br/guias/limpeza-da-protese-vocal/"
+    "pt-br": "/pt-br/guias/limpeza-da-protese-vocal/",
+    "uk": "/uk/posibnyky/ochyshchennia-holosovoho-proteza/"
   },
   "guiden/provox_laekker/index.md": {
     "en": "/guides/leaking-voice-prosthesis/",
     "da": "/guiden/provox_laekker/",
     "de": "/ratgeber/undichte-stimmprothese/",
     "fr": "/guides/fuite-prothese-phonatoire/",
-    "pt-br": "/pt-br/guias/vazamento-na-protese-vocal/"
+    "pt-br": "/pt-br/guias/vazamento-na-protese-vocal/",
+    "uk": "/uk/posibnyky/protikannia-holosovoho-proteza/"
   },
   "historien/_index.md": {
     "en": "/my-story/",
     "da": "/historien/",
     "de": "/meine-geschichte/",
     "fr": "/mon-histoire/",
-    "pt-br": "/pt-br/minha-historia/"
+    "pt-br": "/pt-br/minha-historia/",
+    "uk": "/uk/moia-istoriia/"
   },
   "kontakt/_index.md": {
     "en": "/contact/",
     "da": "/kontakt/",
     "de": "/kontakt/",
     "fr": "/contact/",
-    "pt-br": "/pt-br/contato/"
+    "pt-br": "/pt-br/contato/",
+    "uk": "/uk/kontakty/"
   },
   "medier/_index.md": {
     "en": "/media/",
     "da": "/medier/",
     "de": "/medien/",
     "fr": "/medias/",
-    "pt-br": "/pt-br/midia/"
+    "pt-br": "/pt-br/midia/",
+    "uk": "/uk/media/"
   },
   "samarbejde/_index.md": {
     "en": "/collaboration/",
     "da": "/samarbejde/",
     "de": "/zusammenarbeit/",
     "fr": "/collaborations/",
-    "pt-br": "/pt-br/parcerias/"
+    "pt-br": "/pt-br/parcerias/",
+    "uk": "/uk/spivpratsia/"
   },
   "signature/_index.md": {
     "en": "/signature/",
@@ -116,7 +130,8 @@
     "da": "/vaerksted/",
     "de": "/werkstatt/",
     "fr": "/atelier/",
-    "pt-br": "/pt-br/oficina/"
+    "pt-br": "/pt-br/oficina/",
+    "uk": "/uk/maisternia/"
   },
   "team-stomas/_index.md": {
     "da": "/team-stomas/",
